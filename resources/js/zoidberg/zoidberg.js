@@ -25,4 +25,31 @@ angular.module("zoidberg", ["ui.router"])
 			item.active = true;
 			$state.go(item.state);
 		}
+	}])
+	.controller("UsersCtrl", ['$scope', '$http', function($scope, $http) {
+		$scope.secgroups = [];
+		$http.get('/zoidberg/users/secgroups').success(function (data) {
+			for (var i = 0; i < data.length; i++)
+				$scope.secgroups.push({name: data[i], users: [], active: false});
+		});
+
+		$scope.GetUsersForGroup = function(group) {
+			if (group.users.length > 0)
+				return;
+			$http.get('/zoidberg/users/secgroups/' + group.name).success(function (data) {
+				group.users = [];
+				for (var i = 0; i < data.length; i++)
+					group.users.push(data[i]);
+			});
+		}
+
+		$scope.SecGroupClick = function(group) {
+			$scope.GetUsersForGroup(group);
+			for (var i = 0; i < $scope.secgroups.length; i++)
+			{
+				$scope.secgroups[i].active = false;
+			}
+			group.active = true;
+		}
 	}]);
+	

@@ -1,1 +1,8 @@
-p Users
+div(ng-controller="UsersCtrl")
+	div
+		p Security Groups
+		ol
+			li(ng-repeat="secgroup in secgroups")
+					a(href="" ng-click='SecGroupClick(secgroup)') {{secgroup.name}}
+					ul(ng-show="secgroup.active")
+						li(ng-repeat="user in secgroup.users") {{user}}

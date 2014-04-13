@@ -5,11 +5,12 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 var stylus = require('stylus');
+var uglify = require('express-uglify-middleware');
 
 var app = module.exports = express();
 
 app.use(stylus.middleware({
-	src: __dirname + "/stylesheets/",
+	src: __dirname + "/resources/stylesheets/",
 	dest: __dirname + "/public/css/",
 	compile: function(str, path) {
 		return stylus(str)
@@ -17,6 +18,13 @@ app.use(stylus.middleware({
 			.set('compress', true);
 	}})
 );
+app.use(uglify({
+	src: __dirname + "/resources/js/",
+	dest: __dirname + "/public/js/",
+	prefix: "/js",
+	compressFilter: /\.js$/,
+	compress: true
+}));
 app.set('port', process.env.PORT || 4000);
 app.set('view engine', 'jade');
 app.use(cookieParser());

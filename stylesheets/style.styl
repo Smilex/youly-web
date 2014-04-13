@@ -1,3 +1,29 @@
-#navbar {
-	background-color: #0808A8
+.navbar {
+	color: #555;
+	width: 100%;
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		li {
+			float: left;
+			width: 80px;
+			display: block;
+			a
+			{
+				border-bottom: 1px solid lightblue;
+				color: inherit;
+				font-family: "Helvetica", Georgia;
+				font-size: 16pt;
+				text-decoration: none;
+				&:hover {
+					border-color: yellow;
+				}
+			}
+			a.active
+			{
+				border-color: red;
+			}
+		}
+	}
 }

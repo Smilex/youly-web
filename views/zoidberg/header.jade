@@ -1,4 +1,5 @@
-div(ng-controller="HeaderCtrl")
+div(class="navbar" ng-controller="HeaderCtrl")
 	ul
 		li(ng-repeat="item in items")
-			a(href="{{item.href}}") {{item.text}}
+			a(href="#" ng-class="{active:item.active}" ng-click="ClickItem(item)") {{item.text}}
+

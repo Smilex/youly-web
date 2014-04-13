@@ -30,6 +30,7 @@ app.set('view engine', 'jade');
 app.use(cookieParser());
 app.use(session({secret: 'whoop'}));
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/bower_components'));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use("/zoidberg", zoidberg);

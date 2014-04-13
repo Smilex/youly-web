@@ -13,6 +13,14 @@ zoidberg.route("/")
 		});
 	});
 
+zoidberg.get("/home", function (req, res) {
+		res.render("zoidberg/home", function (err, html) {
+			if (err)
+				console.log(err);
+			res.send(html);
+		});
+	});
+
 zoidberg.get("/login", function (req, res) {
 		res.render("zoidberg/login", function (err, html) {
 			if (err)

@@ -1,4 +1,13 @@
-angular.module("zoidberg", [])
+angular.module("zoidberg", ["ui.router"])
+	.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
+		$urlRouterProvider
+			.otherwise('/');
+		$stateProvider
+			.state("home", {
+				url: "/",
+				templateUrl: "/zoidberg/home"
+			});
+	}])
 	.controller('HeaderCtrl', ['$scope', function($scope) {
 		$scope.items = [
 			{text: "Home", href: "/zoidberg/", active: true},

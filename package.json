@@ -13,6 +13,7 @@
     "cookie-parser": "~1.0.1",
     "mongodb": "~1.4.0",
     "monk": "~0.8.1",
-    "express-logger": "0.0.2"
+    "express-logger": "0.0.2",
+    "stylus": "~0.43.1"
   }
 }

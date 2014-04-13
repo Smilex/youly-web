@@ -4,9 +4,19 @@ var zoidberg = require("./routes/zoidberg").zoidberg;
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
+var stylus = require('stylus');
 
 var app = module.exports = express();
 
+app.use(stylus.middleware({
+	src: __dirname + "/stylesheets/",
+	dest: __dirname + "/public/css/",
+	compile: function(str, path) {
+		return stylus(str)
+			.set('filename', path)
+			.set('compress', true);
+	}})
+);
 app.set('port', process.env.PORT || 4000);
 app.set('view engine', 'jade');
 app.use(cookieParser());

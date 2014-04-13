@@ -1,17 +1,21 @@
 angular.module("zoidberg", ["ui.router"])
 	.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 		$urlRouterProvider
-			.otherwise('/');
+			.otherwise('/home');
 		$stateProvider
 			.state("home", {
-				url: "/",
+				url: "/home",
 				templateUrl: "/zoidberg/home"
+			})
+			.state("users", {
+				url: "/users",
+				templateUrl: "/zoidberg/users"
 			});
 	}])
-	.controller('HeaderCtrl', ['$scope', function($scope) {
+	.controller('HeaderCtrl', ['$scope','$state', function($scope, $state) {
 		$scope.items = [
-			{text: "Home", href: "/zoidberg/", active: true},
-			{text: "Users", href: "/zoidberg/users", active: false}
+			{text: "Home", state: "home", active: true},
+			{text: "Users", state: "users", active: false}
 		];
 		$scope.ClickItem = function(item) {
 			for(var i = 0; i < $scope.items.length; i++)
@@ -19,5 +23,6 @@ angular.module("zoidberg", ["ui.router"])
 				$scope.items[i].active = false;
 			}
 			item.active = true;
+			$state.go(item.state);
 		}
 	}]);

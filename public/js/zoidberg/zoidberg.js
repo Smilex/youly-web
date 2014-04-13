@@ -1,9 +1,7 @@
 angular.module("zoidberg", [])
-	.controller('test', ['$scope', function($scope) {
-		$scope.todos = [];
-		$scope.editing = "";
-		$scope.addTODO = function(text) {
-			$scope.todos.push(text);
-			$scope.editing = "";
-		};
+	.controller('HeaderCtrl', ['$scope', function($scope) {
+		$scope.items = [
+			{text: "Home", href: "/zoidberg/"},
+			{text: "Users", href: "/zoidberg/users"}
+		];
 	}]);

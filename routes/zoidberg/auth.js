@@ -22,7 +22,6 @@ passport.use(new GoogleStrategy({
 	},
 	function(identifier, profile, done) {
 		var users = db.get("users");
-		console.log(profile);
 		users.findOne({openid: identifier})
 			.on('success', function (doc) {
 				if (doc === null)
@@ -41,7 +40,6 @@ passport.use(new GoogleStrategy({
 ));
 
 exports.authZoidberg = function (req, res, next) {
-	console.log(req.user)
 	if (!req.user)
 	{
 		res.redirect("/zoidberg/login");

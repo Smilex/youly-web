@@ -49,6 +49,11 @@ exports.authZoidberg = function (req, res, next) {
 		var secgroups = db.get('securitygroups');
 		secgroups.findOne({name: "zoidberg"})
 			.on("success", function (doc) {
+				if (doc === null)
+				{
+					res.redirect("/zoidberg/login");
+					return;
+				}
 				var zoid_id = doc._id;
 				userssec.findOne({user_id: req.user._id, sec_id: zoid_id})
 					.on("success", function (doc) {

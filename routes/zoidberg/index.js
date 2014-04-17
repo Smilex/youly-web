@@ -8,7 +8,11 @@ zoidberg.use("/users", users.users);
 zoidberg.route("/")
 	//.all(auth.authZoidberg)
 	.get(function(req, res, next) {
-		res.render("zoidberg/index", function (err, html) {
+		var user = {
+			name: "The Dude",
+			img: "/images/neon/thumb-1@2x.png"
+		};
+		res.render("zoidberg/index", {user: user}, function (err, html) {
 			if (err)
 				console.log(err);
 			res.send(html);

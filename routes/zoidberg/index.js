@@ -6,7 +6,7 @@ var users = require('./users');
 zoidberg.use("/auth", auth.auth);
 zoidberg.use("/users", users.users);
 zoidberg.route("/")
-	//.all(auth.authZoidberg)
+	.all(auth.authZoidberg)
 	.get(function(req, res, next) {
 		var user = {
 			name: "The Dude",
@@ -20,7 +20,7 @@ zoidberg.route("/")
 	});
 
 zoidberg.route("/home")
-	//.all(auth.authZoidberg)
+	.all(auth.authZoidberg)
 	.get(function (req, res) {
 		res.render("zoidberg/home", function (err, html) {
 			if (err)

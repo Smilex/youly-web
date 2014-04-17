@@ -3,7 +3,7 @@ var auth = require('./auth');
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('localhost:27017/youly'); 
-//users.use(auth.authZoidberg);
+users.use(auth.authZoidberg);
 
 users.get("/", function(req,res) {
 	res.render("zoidberg/users", function (err, html) {

@@ -5,6 +5,9 @@ angular.module("zoidberg", ["ui.router"])
 	.state("home", {
 		url: "/",
 		templateUrl: "dash.html"
+	})
+	.state("articles", {
+		url: "/articles",
 	});
 }])
 .directive("zoidBreadcrumbs", ["$location", function ($location) {

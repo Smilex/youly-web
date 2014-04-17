@@ -49,12 +49,10 @@ users.get("/secgroups/:name", function (req, res) {
 });
 
 users.get("/notifications", function(req, res) {
-	var notifications = [
-		{msg: "test", date: new Date()},
-		{msg: "test2", date: new Date()},
-		{msg: "test3", date: new Date()}
-	];
-	res.send(notifications);
+	var notifications = db.get('notifications');
+	notifications.find({user_id: req.user._id}).on("success", function (doc) {
+		res.send(doc);
+	});
 });
 
 exports.users = users;

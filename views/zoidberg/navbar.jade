@@ -1,0 +1,40 @@
+div.row
+	div.col-md-6.col-sm-8.clearfix
+		ul.user-info.pull-left.pull-none-xsm
+			li.profile-info.dropdown
+				a.dropdown-toggle(href="#" data-toggle="dropdown")
+					img.img-circle(src="/images/neon/thumb-1@2x.png" width="44")
+					span The Dude
+				ul.dropdown-menu
+					li.caret
+					li
+						a(href="#")
+							i.entypo-user
+							span Edit Profile
+					li
+						a(href="#")
+							i.entypo-mail
+							span Inbox
+					li
+						a(href="#")
+							i.entypo-calendar
+							span Calendar
+					li
+						a(href="#")
+							i.entypo-clipboard
+							span Tasks
+
+		ul.user-info.pull-left.pull-right-xs.pull-none-xsm
+			zoid-notifications
+hr
+script(id="notifications.html" type="text/ng-template")
+	li.notifications.dropdown
+		a.dropdown-toggle(href="#" data-toggle="dropdown" data-hover="dropdown" data-close-others="true")
+			i.entypo-attention
+			span.badge.badge-info
+		ul.dropdown-menu
+			li.top
+				p.small
+					a.pull-right(href="#") Mark all Read
+			li
+				ul.dropdown-menu-list.scroller

@@ -20,6 +20,10 @@ html(lang="en" ng-app="zoidberg")
 	body.page-body(data-url="http://neon.dev")
 		div.page-container
 			include sidebar
+			include content
+		// Templates
+		script(id="dash.html" type="text/ng-template")
+			include dash
 		// Bottom scripts
 		script(src="/js/neon/gsap/main-gsap.js")
 		script(src="/js/neon/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js")

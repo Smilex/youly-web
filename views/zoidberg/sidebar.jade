@@ -1,0 +1,22 @@
+div.sidebar-menu
+	header.logo-env
+		div.logo
+			a(href="#")
+				img(src="/images/neon/logo@2x.png" width="120")
+		div.sidebar-collapse
+			a.sidebar-collapse-icon.with-animation(href="#")
+				i.entypo-menu
+		div.sidebar-mobile-menu.visible-xs
+			a.with-animation(href="#")
+				i.entypo-menu
+	ul#main-menu
+		li#search
+			form
+				input.search-input(type="text")
+				button(type="submit")
+					i.entypo-search
+		li
+			a(ui-sref="dash")
+				i.entypo-gauge
+				span Dashboard
+

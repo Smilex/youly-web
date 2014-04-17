@@ -1,5 +1,5 @@
 doctype html
-html(lang="en")
+html(lang="en" ng-app="zoidberg")
 	head
 		meta(charset="utf-8")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
@@ -19,27 +19,7 @@ html(lang="en")
 		script(src="/js/neon/jquery-1.11.0.min.js")
 	body.page-body(data-url="http://neon.dev")
 		div.page-container
-			div.sidebar-menu
-				header.logo-env
-					div.logo
-						a(href="#")
-							img(src="/images/neon/logo@2x.png" width="120")
-					div.sidebar-collapse
-						a.sidebar-collapse-icon.with-animation(href="#")
-							i.entypo-menu
-					div.sidebar-mobile-menu.visible-xs
-						a.with-animation(href="#")
-							i.entypo-menu
-				ul#main-menu
-					li#search
-						form
-							input.search-input(type="text")
-							button(type="submit")
-								i.entypo-search
-					li
-						a(href="/zoidberg/")
-							i.entypo-gauge
-							span Dashboard
+			include sidebar
 		// Bottom scripts
 		script(src="/js/neon/gsap/main-gsap.js")
 		script(src="/js/neon/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js")
@@ -50,6 +30,6 @@ html(lang="en")
 		script(src="/js/neon/neon-custom.js")
 		script(src="/js/neon/neon-demo.js")
 
-		script(src="/js/zoidberg/zoidberg.js")
 		script(src="/js/angular.min.js")
 		script(src="/js/angular-ui-router.min.js")
+		script(src="/js/zoidberg/zoidberg.js")

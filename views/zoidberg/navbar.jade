@@ -3,8 +3,8 @@ div.row
 		ul.user-info.pull-left.pull-none-xsm
 			li.profile-info.dropdown
 				a.dropdown-toggle(href="#" data-toggle="dropdown")
-					img.img-circle(src="/images/neon/thumb-1@2x.png" width="44")
-					span The Dude
+					img.img-circle(src=user.img width="44")
+					span= user.name
 				ul.dropdown-menu
 					li.caret
 					li
@@ -26,6 +26,13 @@ div.row
 
 		ul.user-info.pull-left.pull-right-xs.pull-none-xsm
 			zoid-notifications
+
+	div.col-md-6.col-sm-4.clearfix.hidden-xs
+		ul.list-inline.links-list.pull-right
+			li
+				a(href="#")
+					span Log Out
+					i.entypo-logout.right
 hr
 script(id="notifications.html" type="text/ng-template")
 	li.notifications.dropdown

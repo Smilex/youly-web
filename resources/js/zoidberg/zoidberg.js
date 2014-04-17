@@ -1,55 +1,45 @@
 angular.module("zoidberg", ["ui.router"])
-	.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
-		$urlRouterProvider
-			.otherwise('/home');
-		$stateProvider
-			.state("home", {
-				url: "/home",
-				templateUrl: "/zoidberg/home"
-			})
-			.state("users", {
-				url: "/users",
-				templateUrl: "/zoidberg/users"
-			});
-	}])
-	.controller('HeaderCtrl', ['$scope','$state', function($scope, $state) {
-		$scope.items = [
-			{text: "Home", state: "home", active: true},
-			{text: "Users", state: "users", active: false}
-		];
-		$scope.ClickItem = function(item) {
-			for(var i = 0; i < $scope.items.length; i++)
-			{
-				$scope.items[i].active = false;
-			}
-			item.active = true;
-			$state.go(item.state);
-		}
-	}])
-	.controller("UsersCtrl", ['$scope', '$http', function($scope, $http) {
-		$scope.secgroups = [];
-		$http.get('/zoidberg/users/secgroups').success(function (data) {
-			for (var i = 0; i < data.length; i++)
-				$scope.secgroups.push({name: data[i], users: [], active: false});
-		});
-
-		$scope.GetUsersForGroup = function(group) {
-			if (group.users.length > 0)
+.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
+	$urlRouterProvider.otherwise("/dash");
+	$stateProvider
+	.state("dash", {
+		url: "/dash",
+		templateUrl: "dash.html"
+	});
+}])
+.directive("zoidNotifications", ["$http", function ($http) {
+	function link (scope, element, attrs)
+	{
+		$http.get("/zoidberg/users/notifications").success(function (data) {
+			if (!data)
 				return;
-			$http.get('/zoidberg/users/secgroups/' + group.name).success(function (data) {
-				group.users = [];
-				for (var i = 0; i < data.length; i++)
-					group.users.push(data[i]);
-			});
-		}
 
-		$scope.SecGroupClick = function(group) {
-			$scope.GetUsersForGroup(group);
-			for (var i = 0; i < $scope.secgroups.length; i++)
+			var len = data.length;
+			if (len > 0)
 			{
-				$scope.secgroups[i].active = false;
+				element.find("span.badge").first().text(len);
+				element.find("p.small").first().append("You have " + len + " new notifications.");
+				var list = element.find("ul.dropdown-menu-list").first(); 
+				for (var i = 0; i < len; i++)
+				{
+					list.append("<li class='unread'>" +
+						"<a href='#'>" +
+						//"<i class='entypo-user-add pull-right'></i>" +
+						"<span class='line'><strong>" +
+						data[i].msg +
+						"</strong></span>" +
+						"<span class='line small'>" +
+						data[i].date +
+						"</span>" +
+						"</a></li>"
+						);
+				}
 			}
-			group.active = true;
-		}
-	}]);
-	
+		});
+	}
+	return {
+		restrict: "E",
+		link: link,
+		templateUrl: "notifications.html"
+	};
+}]);

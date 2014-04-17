@@ -3,7 +3,7 @@ var auth = require('./auth');
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('localhost:27017/youly'); 
-users.use(auth.authZoidberg);
+//users.use(auth.authZoidberg);
 
 users.get("/", function(req,res) {
 	res.render("zoidberg/users", function (err, html) {
@@ -46,6 +46,15 @@ users.get("/secgroups/:name", function (req, res) {
 			});
 		}
 	});
+});
+
+users.get("/notifications", function(req, res) {
+	var notifications = [
+		{msg: "test", date: new Date()},
+		{msg: "test2", date: new Date()},
+		{msg: "test3", date: new Date()}
+	];
+	res.send(notifications);
 });
 
 exports.users = users;

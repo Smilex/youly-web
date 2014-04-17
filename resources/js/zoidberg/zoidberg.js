@@ -10,7 +10,7 @@ angular.module("zoidberg", ["ui.router"])
 		url: "/articles",
 	});
 }])
-.directive("zoidBreadcrumbs", ["$location", function ($location) {
+.directive("zoidBreadcrumbs", ["$location", "$rootScope", function ($location, $rootScope) {
 	function appendPath(element, path, icon) {
 		element.children().first().append("<li>" +
 			"<a href='#'>" +
@@ -19,7 +19,8 @@ angular.module("zoidberg", ["ui.router"])
 			"</a></li>"
 			);
 	}
-	function link (scope, element, attrs) {
+	function setPath(element) {
+		element.children().html("");
 		var paths = $location.path().split('/');
 		appendPath(element, "Home", "entypo-home");
 		for (var i = 0; i < paths.length; i++)
@@ -30,6 +31,11 @@ angular.module("zoidberg", ["ui.router"])
 			appendPath(element, path);
 		}
 		element.find("li").last().addClass("active");
+	}
+	function link (scope, element, attrs) {
+		$rootScope.$on("$locationChangeSuccess", function (e) {
+			setPath(element);
+		});
 	}
 	return {
 		restrict: "E",

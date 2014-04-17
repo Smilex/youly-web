@@ -1,0 +1,1 @@
+angular.module("zoidberg").controller("UserCtrl",["$scope","$http",function(o,i){o.notifications=[],i.get("/zoidberg/users/notifications").success(function(i){o.notifications=i})}]);

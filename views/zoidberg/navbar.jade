@@ -24,8 +24,23 @@ div.row
 							i.entypo-clipboard
 							span Tasks
 
-		ul.user-info.pull-left.pull-right-xs.pull-none-xsm
-			zoid-notifications
+		ul.user-info.pull-left.pull-right-xs.pull-none-xsm(ng-controller="UserCtrl")
+			li.notifications.dropdown(ng-cloak)
+				a.dropdown-toggle(href="#" data-toggle="dropdown" data-hover="dropdown" data-close-others="true")
+					i.entypo-attention
+					span.badge.badge-info(ng-show="notifications.length") {{notifications.length}}
+				ul.dropdown-menu
+					li.top
+						p.small
+							a.pull-right(href="#") Mark all Read
+							span You have {{notifications.length}} new messages
+					li
+						ul.dropdown-menu-list.scroller
+							li.unread(ng-repeat="notif in notifications")
+								a(href="#")
+									span.line
+										strong {{notif.msg}}
+									span.line.small {{notif.date}}
 
 	div.col-md-6.col-sm-4.clearfix.hidden-xs
 		ul.list-inline.links-list.pull-right
@@ -35,14 +50,3 @@ div.row
 					i.entypo-logout.right
 hr
 zoid-breadcrumbs
-script(id="notifications.html" type="text/ng-template")
-	li.notifications.dropdown
-		a.dropdown-toggle(href="#" data-toggle="dropdown" data-hover="dropdown" data-close-others="true")
-			i.entypo-attention
-			span.badge.badge-info
-		ul.dropdown-menu
-			li.top
-				p.small
-					a.pull-right(href="#") Mark all Read
-			li
-				ul.dropdown-menu-list.scroller

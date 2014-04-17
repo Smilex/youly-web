@@ -8,11 +8,16 @@ zoidberg.use("/users", users.users);
 zoidberg.route("/")
 	//.all(auth.authZoidberg)
 	.get(function(req, res, next) {
-		res.render("zoidberg/index", {user: req.user}, function (err, html) {
+		res.render("zoidberg/index", function (err, html) {
 			if (err)
 				console.log(err);
 			res.send(html);
 		});
+	});
+
+zoidberg.route("/home")
+	//.all(auth.authZoidberg)
+	.get(function (req, res) {
 	});
 
 zoidberg.route("/home")

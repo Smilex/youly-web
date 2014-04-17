@@ -22,11 +22,6 @@ zoidberg.route("/")
 zoidberg.route("/home")
 	//.all(auth.authZoidberg)
 	.get(function (req, res) {
-	});
-
-zoidberg.route("/home")
-	//.all(auth.authZoidberg)
-	.get(function (req, res) {
 		res.render("zoidberg/home", function (err, html) {
 			if (err)
 				console.log(err);
@@ -35,10 +30,9 @@ zoidberg.route("/home")
 	});
 
 zoidberg.get("/login", function (req, res) {
-		res.render("zoidberg/login", function (err, html) {
+		res.sendfile("views/zoidberg/login.html", function (err) {
 			if (err)
 				console.log(err);
-			res.send(html);
 		});
 	});
 

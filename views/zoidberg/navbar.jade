@@ -1,3 +1,4 @@
+style span.unread {font-weight: bold}
 div.row
 	div.col-md-6.col-sm-8.clearfix
 		ul.user-info.pull-left.pull-none-xsm
@@ -28,18 +29,18 @@ div.row
 			li.notifications.dropdown(ng-cloak)
 				a.dropdown-toggle(href="#" data-toggle="dropdown" data-hover="dropdown" data-close-others="true")
 					i.entypo-attention
-					span.badge.badge-info(ng-show="notifications.length") {{notifications.length}}
+					span.badge.badge-info(ng-show="GetNewNotifications().length") {{GetNewNotifications().length}}
 				ul.dropdown-menu
 					li.top
 						p.small
 							a.pull-right(href="#") Mark all Read
-							span You have {{notifications.length}} new messages
+							span You have {{GetNewNotifications().length}} new messages
 					li
 						ul.dropdown-menu-list.scroller
-							li.unread(ng-repeat="notif in notifications")
+							li.notification-info(ng-repeat="notif in GetNotifications()" ng-class="{unread: !notif.read}" ng-click="Read(notif)")
 								a(href="#")
-									span.line
-										strong {{notif.msg}}
+									i.entypo-info.pull-right
+									span.line(ng-class="{unread: !notif.read}") {{notif.msg}}
 									span.line.small {{notif.date}}
 
 	div.col-md-6.col-sm-4.clearfix.hidden-xs

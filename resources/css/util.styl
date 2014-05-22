@@ -1,0 +1,37 @@
+section
+	background-color: #fff;
+	float: left;
+	clear: both;
+	width: 100%;
+	height: auto;
+
+.row 
+	clear: both;
+	height: auto;
+	width: 100%;
+
+for num in (1..20) {
+	.col-{num} {
+		width: 5% * num;
+		float: left;
+	}
+}
+
+for num in (1..20) {
+	.col-offset-{num} {
+		margin-left: 5% * num;
+	}
+}
+.btn
+	padding: 7px;
+
+.center
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+col-test(c)
+	background-color: c;
+	
+.heyehey {
+	color: red;
+}

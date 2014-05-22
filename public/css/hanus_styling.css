@@ -1,0 +1,219 @@
+
+#yly-p-team {
+	min-height: 200px;
+}
+.yly-b-top {
+	margin-top: 30px;
+	padding-top: 30px;
+	border-top: 1px solid #eee;
+}
+.yly-b-left {
+	border-left: 1px solid #eee;
+}
+.yly-b-all {
+	border: 1px solid #eee;
+}
+.yly-blog-share img {
+	height: 20px;
+	width: 20px;
+	margin-left: 20px;
+	margin-right: 4px;
+}
+.tut2 {
+	background-color: red;
+}
+.white_arrow_down {
+	background-image: url(../img/icons/arrow_down.png);
+	background-repeat: no-repeat;
+	background-position: top center;
+	height: 8px;
+}
+.youly-dl-btn {
+	
+}
+.yly_footer {
+	padding: 20px 0px;
+	background-color: #2a2a2a;
+	color: #fff;
+}
+.yly_footer a {
+	color: #fff;
+}
+.yly_footer a:hover {
+	color: #aaa;
+}
+.tut_footer_social img {
+	height: 30px;
+	margin: 10px 5px;
+}
+.yly-logo-dl {
+	background-color: #3a3a3a;
+	color: #fff;
+	padding: 4px;
+}
+.bg_youly {
+	background-color: #0a9e90;
+}
+.yly-c-youly {
+	color: #0a9e90;
+}
+.yly-c-black a {
+	color: #000;
+}
+
+
+
+
+/* ************ index_navbar SM or higher ************ */
+#yly-content-tabs li {
+	width: 25%;
+}
+#yly-content-tabs a {
+	color: #000;
+	border-color: #fff;
+}
+#yly-content-tabs a:hover {
+	color: #000;
+	background-color: #fff;
+	border-color: #fff;
+}
+#yly-content-tabs > .active a {
+	color: #000;
+	background-image: url("img/icons/arrow_down.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#yly-content-tabs > .active h3 {
+	color: #0a9e90;
+}
+#yly-content-tabs > .active a:hover {
+}
+
+
+/* ************ index_navbar XS only ************ */
+#yly-content-tabs-xs li {
+	width: 25%;
+}
+#yly-content-tabs-xs a {
+	color: #000;
+	border-color: #fff;
+}
+#yly-content-tabs-xs a:hover {
+	color: #000;
+	background-color: #fff;
+	border-color: #fff;
+}
+#yly-content-tabs-xs > .active a {
+	color: #000;
+	background-image: url("img/icons/arrow_down.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#yly-content-tabs-xs > .active h3 {
+	color: #0a9e90;
+}
+#yly-content-tabs-xs > .active a:hover {
+}
+
+
+
+
+
+
+
+
+
+.yly-download-btn {
+	border-radius: 32px;
+	border: 1px solid auto;
+	color: #fff;
+	height: 60px;
+	width: 100%;
+	margin-left: -15px;
+	padding-left: 26%;
+	position: absolute;
+	bottom: -118px;
+}
+.yly-download-btn h2 {
+	margin-top: 4px;
+}
+.yly-download-btn p {
+	margin-top: -14px;
+}
+.yly-download-btn a {
+	color: #fff;
+}
+.yly-download-btn:hover {
+	cursor: pointer;
+	color: #ccc;
+}
+.yly-download-btn a:hover {
+	text-decoration: none;
+}
+
+.yly-download-btn-iOS {
+	background-color: #254574;
+	background-image: url("../img/icons/iPhone_small2.png");
+	background-repeat: no-repeat;
+	background-position: 25px 7px;
+}
+.yly-download-btn-iOS:hover { background-color: #305a96; }
+.yly-download-btn-iOS:active { background-color: #2a4e83; }
+
+
+
+.yly-download-btn-android {
+	background-color: red;
+	background-image: url("../img/icons/iPhone_small2.png");
+	background-repeat: no-repeat;
+	background-position: 25px 7px;
+}
+.yly-download-btn-android:hover { background-color: #305a96; }
+.yly-download-btn-android:active { background-color: #2a4e83; }
+
+.yly-download-btn-windows {
+	background-color: green;
+	background-image: url("../img/icons/iPhone_small2.png");
+	background-repeat: no-repeat;
+	background-position: 25px 7px;
+}
+.yly-download-btn-windows:hover { background-color: #305a96; }
+.yly-download-btn-windows:active { background-color: #2a4e83; }
+
+
+
+
+
+
+
+
+
+.youly-active {
+	background-color: none;
+}
+
+/* Color won't set */
+.youly-active a {
+	color: red;
+}
+
+
+/* Footer */
+.footer-lang-img img {
+	margin: 0px 8px 8px 0px;
+}
+
+li.active > .arrow {
+	position: absolute;
+	display: block;
+	width: 0px;
+	height: 0px;
+	border-color: transparent;
+	border-style: solid;
+	border-width: 12px;
+	left: 30%;
+	margin-left: -11px;
+	border-bottom-width: 0px;
+	border-top-color: #fff;
+	bottom: -11px;
+}

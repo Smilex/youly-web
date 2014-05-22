@@ -10,8 +10,8 @@ var uglify = require('express-uglify-middleware');
 var app = module.exports = express();
 
 app.use(stylus.middleware({
-	src: __dirname + "/resources/stylesheets/",
-	dest: __dirname + "/public/css/",
+	src: __dirname + "/resources",
+	dest: __dirname + "/public",
 	compile: function(str, path) {
 		return stylus(str)
 			.set('filename', path)
@@ -25,7 +25,7 @@ app.use(uglify({
 	compressFilter: /\.js$/,
 	compress: true
 }));
-app.set('port', process.env.PORT || 4000);
+app.set('port', process.env.PORT || 9001);
 app.set('view engine', 'jade');
 app.use(cookieParser());
 app.use(session({secret: 'whoop'}));
@@ -36,7 +36,10 @@ app.use(passport.session());
 app.use("/zoidberg", zoidberg);
 
 app.get('/', routes.index);
+app.get('/blog', routes.blog);
+app.get('/about', routes.about)
+app.get('/contact', routes.contact)
 
-var server = app.listen(4000, function() {
+var server = app.listen(9001, function() {
 	console.log("Listening on port %d", server.address().port);
 });

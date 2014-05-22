@@ -1,0 +1,78 @@
+/* Global Style Settings*/
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import	"util"
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: 'Lato', Georgia, sans-serif;
+	font-size: 62.5%;
+	color: #333;
+}
+p {
+	font-size: 1.6em;
+	line-height: 24px;
+	color: #333;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Lato', Georgia, sans-serif;
+	font-weight: bold;
+	color: #333;
+}
+h1 { font-size: 3.7em; }
+h2 { font-size: 2.4em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1em; }
+/**************************************************/
+/********************* HEADER *********************/
+/**************************************************/
+#headLogo 
+	background-color: red;
+	background-image: url('/img/logo.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	min-height: 100px;
+
+#headNav
+	col-test(#222)	
+	heigth: 35px;
+	float: left;
+	font-size: 1.8em;
+	color: #444;
+	ul
+		display: block;
+		height: auto;
+		float: left;
+		padding: 0;
+		li
+			display: inline;
+			a
+				font-weight: 700;
+				float: left;
+				display: inline;
+				text-decoration: none;
+				color: inherit;
+				margin: 15px 5px 4px 25px;
+			a:hover
+				color: red;
+
+#headRegLog
+	
+	col-test(#ccc)
+	
+.ayaya
+	background-color: red;
+
+
+/**************************************************/
+/********************* Content ********************/
+/**************************************************/
+#content {
+	height: 200px;
+}
+
+
+#footer {
+	background-color: #fff;
+}

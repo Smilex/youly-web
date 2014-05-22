@@ -1,0 +1,80 @@
+<!-- index_tabs for SM or higher only-->
+.hidden-xs
+	.container-fluid
+		.container
+			ul.nav.nav-tabs#yly-content-tabs(style="border: none;")
+				li.active
+					.arrow
+					a(href="#yly-content-tabs-download", data-toggle="tab")
+						h3 DOWNLOAD
+						span Just download it
+				li
+					.arrow
+					a(href="#yly-content-tabs-features", data-toggle="tab")
+						h3 FEATURES
+						span All them features
+				li
+					.arrow
+					a(href="#yly-content-tabs-services", data-toggle="tab") 
+						h3 SERVICES
+						span Let us serve you
+				li
+					.arrow
+					a(href="#yly-content-tabs-privacy", data-toggle="tab") 
+						h3 PRIVACY
+						span It means everything
+	.container-fluid(style="margin-top: 1px; min-height: 10px;")
+		.row
+			.tab-content
+				.tab-pane.active#yly-content-tabs-download
+					include index_tabs_download
+				.tab-pane#yly-content-tabs-features
+					include index_tabs_features
+				.tab-pane#yly-content-tabs-services
+					include index_tabs_services
+				.tab-pane#yly-content-tabs-privacy
+					include index_tabs_privacy
+
+
+
+
+<!-- index_tabs for XS only -->
+.visible-xs
+	.container-fluid
+		.container
+			ul.nav.nav-tabs#yly-content-tabs-xs
+				li.active
+					.arrow(style="left: 48%")
+					a(href="#yly-content-tabs-download-xs", data-toggle="tab")
+						h6.text-center DOWNLOAD
+						h3.text-center
+							span.glyphicon.glyphicon-download
+				li
+					.arrow(style="left: 48%")
+					a(href="#yly-content-tabs-features-xs", data-toggle="tab")
+						h6.text-center FEATURES
+						h3.text-center
+							span.glyphicon.glyphicon-ok
+				li
+					.arrow(style="left: 48%")
+					a(href="#yly-content-tabs-services-xs", data-toggle="tab") 
+						h6.text-center SERVICES
+						h3.text-center
+							span.glyphicon.glyphicon-heart
+				li
+					.arrow(style="left: 48%")
+					a(href="#yly-content-tabs-privacy-xs", data-toggle="tab") 
+						h6.text-center PRIVACY
+						h3.text-center
+							span.glyphicon.glyphicon-user
+	.container-fluid(style="margin-top: 1px; min-height: 10px;")
+		.row
+			.tab-content
+				.tab-pane.active#yly-content-tabs-download-xs
+					include index_tabs_download
+				.tab-pane#yly-content-tabs-features-xs
+					include index_tabs_features
+				.tab-pane#yly-content-tabs-services-xs
+					include index_tabs_services
+				.tab-pane#yly-content-tabs-privacy-xs
+					include index_tabs_privacy

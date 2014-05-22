@@ -1,0 +1,45 @@
+<!-- Top Navbar for SM or higher only-->
+nav.navbar.navbar-default.hidden-xs(role="navigation", style="background-color: #fff; border: 0 none; margin: 5px auto;")
+	.container
+		.navbar-header
+			a.navbar-brand(href="#", style="padding: 0; height: 70px;")
+				img.hidden-xs(src="/img//branding/youly_logo.png", style="height: 98%;")
+				img.visible-xs(src="/img//branding/youly_logo.png", style="height: 98%; margin-left: 10px;")
+		.collapse.navbar-collapse#nav-collapse(style="margin-top: 10px;")
+			ul.nav.navbar-nav.navbar-right(style="font-weight: bold;")
+				li
+					a(href="/") HOME
+				li
+					a(href="/about") ABOUT US
+				li
+					a(href="/blog") BLOG
+				li
+					a(href="/contact") CONTACTS
+
+
+
+
+<!-- Top Navbar for XS only-->
+nav.navbar.navbar-default.visible-xs(role="navigation", style="background-color: #fff; border: 0 none; margin: 5px auto;")
+	.container
+		.navbar-header
+			.navbar-toggle(data-toggle="collapse", data-target="#nav-collapse2" style="margin-top: 20px; border: 0 none;")
+				span.sr-only Toggle navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand(href="#", style="padding: 0; height: 70px;")
+				img.hidden-xs(src="/img//branding/youly_logo.png", style="height: 98%;")
+				img.visible-xs(src="/img//branding/youly_logo.png", style="height: 98%; margin-left: 30px;")
+		.collapse.navbar-collapse#nav-collapse2(style="margin-top: 10px; z-index: 1000; background-color: #fff; width: 100%; position: absolute; top: 64px; border-bottom: 1px solid #ccc; box-shadow: 0px 2px 2px #ccc;")
+
+
+			ul.nav.navbar-nav.navbar-right(style="font-weight: bold;")
+				li
+					a(href="/") HOME
+				li
+					a(href="/about") ABOUT US
+				li
+					a(href="/blog") BLOG
+				li
+					a(href="/contact") CONTACTS

@@ -1,0 +1,61 @@
+.container-fluid
+	.row
+		#carousel-example-generic.carousel.slide(data-ride="carousel")
+			ol.carousel-indicators
+				li.active(data-target="#carousel-example-generic", data-slide-to="0")
+				li(data-target="#carousel-example-generic", data-slide-to="1")
+				li(data-target="#carousel-example-generic", data-slide-to="2")
+				li(data-target="#carousel-example-generic", data-slide-to="3")
+				li(data-target="#carousel-example-generic", data-slide-to="4")
+				li(data-target="#carousel-example-generic", data-slide-to="5")
+			.carousel-inner
+				.item.active
+					img(src="img/index/carousel/vegetables.jpg", alt="zero", style="width: 100%; height: 500px;")
+					.carousel-caption
+						h1 Download
+						p 
+							i Scan the code, or click the button!
+							b  Youly is Free
+				.item
+					img(src="img/index/carousel/1.png", alt="zero", style="width: 100%; height: 500px;")
+					.carousel-caption
+						h1 Download
+						p 
+							i Scan the code, or click the button!
+							b  Youly is Free
+				.item
+					img(src="img/index/carousel/2.png", alt="zero", style="width: 100%; height: 500px;")
+					.carousel-caption
+						h1 Download
+						p 
+							i Scan the code, or click the button!
+							b  Youly is Free
+				.item
+					img(src="img/index/carousel/3.png", alt="zero", style="width: 100%; height: 500px;")
+					.carousel-caption
+						h1 Download
+						p 
+							i Scan the code, or click the button!
+							b  Youly is Free
+				.item
+					img(src="img/index/carousel/4.png", alt="zero", style="width: 100%; height: 500px;")
+					.carousel-caption
+						h1 Download
+						p 
+							i Scan the code, or click the button!
+							b  Youly is Free
+				.item
+					img(src="img/index/carousel/5.png", alt="zero", style="width: 100%; height: 500px;")
+					.carousel-caption
+						h1 Download
+						p 
+							i Scan the code, or click the button!
+							b  Youly is Free
+			a.left.carousel-control(href="#carousel-example-generic", data-slide="prev", style="background-image: none;")
+				span.glyphicon.glyphicon-chevron-left
+			a.right.carousel-control(href="#carousel-example-generic", data-slide="next", style="background-image: none;")
+				span.glyphicon.glyphicon-chevron-right
+	script.
+		$('.carousel').carousel({
+			interval: 2000
+		})

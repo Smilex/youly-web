@@ -1,0 +1,83 @@
+.container-fluid.hidden-xs.yly_footer
+	.container
+		.col-xs-12.col-sm-3
+			h4 COMPANY
+			p
+				a(href="/about") Team
+				br
+				a(href="#") Careers
+				br
+				a(href="#") Events
+				br
+				a(href="#") Press
+				br
+				a(href="#") Contacts
+				br
+				a(href="#") Policies
+				br
+				a(href="#") Terms &amp; Conditions
+		.col-xs-12.col-sm-3
+			h4 YOULY
+			p
+				a(href="#yly-content-tabs" onclick='sendToTab("#yly-content-tabs-download");') Download
+				br
+				a(href="#yly-content-tabs" onclick='sendToTab("#yly-content-tabs-features");') Features
+				br
+				a(href="#yly-content-tabs" onclick='sendToTab("#yly-content-tabs-services");') Services
+				br
+				a(href="#yly-content-tabs" onclick='sendToTab("#yly-content-tabs-privacy");') Privacy Policy
+		.col-xs-12.col-sm-4
+			h4 GET IN TOUCH
+			p
+				a(href="#") Facebook
+				br
+				a(href="#") LinkedIn
+				br
+				a(href="#") Google+
+				br
+				a(href="#") Twitter
+				br
+				br
+				i sign up for newsletters
+				.input-group.input-group-sm
+					.input-group-addon @
+					input.form-control(type="text", placeholder="Email address", style="width: 100%;")
+		.col-xs-12.col-sm-2
+			h4 LANGUAGE
+			p.footer-lang-img
+				a(href="#")
+					img(src="/img/lang/lang_jp.png")
+				a(href="#")
+					img(src="/img/lang/lang_en.png")
+				a(href="#")
+					img(src="/img/lang/lang_jp.png")
+				a(href="#")
+					img(src="/img/lang/lang_en.png")
+				a(href="#")
+					img(src="/img/lang/lang_en.png")
+
+
+.container-fluid.tut_footer2(style="margin: 30px auto;")
+	.container
+		.col-xs-6.col-sm-3
+			img(src="/img/branding/youly_logo.png", style="height: 50px;")
+		.col-xs-6.col-sm-4.tut_footer_social
+			a(href="#facebook")
+				img(src="/img/social/social_facebook.png")
+			a(href="#")
+				img(src="/img/social/social_linked_in.png")
+			a(href="#")
+				img(src="/img/social/social_pluss.png")
+			a(href="#")
+				img(src="/img/social/social_twitter.png")
+		.col-xs-12.col-sm-5.hidden-xs
+			p.text-right(style="margin-top: 17px;") &copy; Copyright Youly Sp/f, 2014.
+		.col-xs-12.col-sm-5.visible-xs
+			p.text-center(style="margin-top: 17px;") 
+				b &copy; Copyright Youly Sp/f, 2014.	
+
+script.
+	function sendToTab(id)
+	{
+		$("#yly-content-tabs a[href='" + id + "']").tab("show");
+	}

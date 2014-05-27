@@ -1,0 +1,19 @@
+.modal-body
+	span#modal_newsletter_label
+		| You can sign up to our newsletter and be alerted the minute we launch!
+		br
+		| Simply enter your contact details, and click subscribe.
+	.input-group(style="padding-top: 15px; width: 80%;")
+		span.yly-c-youly.input-group-addon.glyphicon.glyphicon-user
+		input.form-control(type="text", placeholder="Name...")
+	.input-group(style="padding-top: 5px; padding-bottom: 15px; width: 80%;")
+		span.yly-c-youly.input-group-addon @
+		input.form-control(type="text", placeholder="Email address...")
+
+
+.modal-footer
+	.col-xs-12.col-sm-10
+		p.text-left By clicking subscribe you agree to our 
+			a.yly-a(href="/test101", target="_blank", style="color: #0a9e90;") terms and conditions
+	.col-xs-12.col-sm-2
+		button.btn.btn-primary(type="button") Subscribe

@@ -1,6 +1,5 @@
 exports.index = function(req, res) {
-	console.log(req);
-	res.render('index', function(err, html) {
+	res.render('index', {page: "home"}, function(err, html) {
 		if (err)
 			console.log(err);
 		res.send(html);
@@ -8,7 +7,6 @@ exports.index = function(req, res) {
 }
 
 exports.blog = function(req, res) {
-	console.log(req);
 
 	var blogs = [
 		{title: "Title 1", content: "Content 1"},
@@ -16,7 +14,7 @@ exports.blog = function(req, res) {
 		{title: "Title 3", content: "Content 3"}
 	];
 
-	res.render('blog', {blogs: blogs}, function(err, html) {
+	res.render('blog', {blogs: blogs, page: "blog"}, function(err, html) {
 		if (err)
 			console.log(err);
 		res.send(html);
@@ -24,8 +22,7 @@ exports.blog = function(req, res) {
 }
 
 exports.about = function(req, res) {
-	console.log(req);
-	res.render('about', function(err, html) {
+	res.render('about', {page: "about"}, function(err, html) {
 		if (err)
 			console.log(err);
 		res.send(html);
@@ -33,8 +30,15 @@ exports.about = function(req, res) {
 }
 
 exports.contact = function(req, res) {
-	console.log(req);
-	res.render('contact', function(err, html) {
+	res.render('contact', {page: "contact"}, function(err, html) {
+		if (err)
+			console.log(err);
+		res.send(html);
+	});
+}
+
+exports.test101 = function(req, res) {
+	res.render('test101', {page: "test101"}, function(err, html) {
 		if (err)
 			console.log(err);
 		res.send(html);

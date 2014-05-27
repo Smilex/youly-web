@@ -6,15 +6,9 @@ nav.navbar.navbar-default.hidden-xs(role="navigation", style="background-color: 
 				img.hidden-xs(src="/img//branding/youly_logo.png", style="height: 98%;")
 				img.visible-xs(src="/img//branding/youly_logo.png", style="height: 98%; margin-left: 10px;")
 		.collapse.navbar-collapse#nav-collapse(style="margin-top: 10px;")
-			ul.nav.navbar-nav.navbar-right(style="font-weight: bold;")
-				li
-					a(href="/") HOME
-				li
-					a(href="/about") ABOUT US
-				li
-					a(href="/blog") BLOG
-				li
-					a(href="/contact") CONTACTS
+			
+			ul.nav.navbar-nav.navbar-right
+				include nav_btn
 
 
 
@@ -34,12 +28,5 @@ nav.navbar.navbar-default.visible-xs(role="navigation", style="background-color:
 		.collapse.navbar-collapse#nav-collapse2(style="margin-top: 10px; z-index: 1000; background-color: #fff; width: 100%; position: absolute; top: 64px; border-bottom: 1px solid #ccc; box-shadow: 0px 2px 2px #ccc;")
 
 
-			ul.nav.navbar-nav.navbar-right(style="font-weight: bold;")
-				li
-					a(href="/") HOME
-				li
-					a(href="/about") ABOUT US
-				li
-					a(href="/blog") BLOG
-				li
-					a(href="/contact") CONTACTS
+			ul.nav.navbar-nav.navbar-right
+				include nav_btn

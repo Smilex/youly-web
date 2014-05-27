@@ -1,3 +1,12 @@
+/* DEFAULT */
+.yly-a { 
+	color: #0a9e90;
+}
+.yly-a:hover {
+	text-decoration: underline;
+	color: #555;
+}
+
 
 #yly-p-team {
 	min-height: 200px;
@@ -19,32 +28,52 @@
 	margin-left: 20px;
 	margin-right: 4px;
 }
-.tut2 {
-	background-color: red;
-}
 .white_arrow_down {
 	background-image: url(../img/icons/arrow_down.png);
 	background-repeat: no-repeat;
 	background-position: top center;
 	height: 8px;
 }
-.youly-dl-btn {
-	
+
+
+/* HEADER */
+#nav_btn-active {
+	background-color: none;
+	color: #0a9e90;
 }
+
 .yly_footer {
-	padding: 20px 0px;
+	padding: 60px 0px;
 	background-color: #2a2a2a;
 	color: #fff;
 }
+
+
 .yly_footer a {
 	color: #fff;
 }
 .yly_footer a:hover {
 	color: #aaa;
 }
-.tut_footer_social img {
+.yly-footer-xs > li > a {
+	background-color: #2a2a2a;
+}
+.yly-footer-xs > li > a:hover {
+	background-color: #2a2a2a;
+	color: #fff;
+}
+.yly-footer-xs > li > a:active {
+	color: #aaa;
+}
+
+
+
+.yly-nav-buttom a {
+	margin-right: 10px;
+}
+.yly-nav-buttom img {
 	height: 30px;
-	margin: 10px 5px;
+	margin-top: 10px;
 }
 .yly-logo-dl {
 	background-color: #3a3a3a;
@@ -216,4 +245,10 @@ li.active > .arrow {
 	border-bottom-width: 0px;
 	border-top-color: #fff;
 	bottom: -11px;
+}
+
+.modal_newsletter_ul li {
+	margin-top: 0px;
+	padding-top: 0px;
+	height: 12px;
 }

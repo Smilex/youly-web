@@ -1,3 +1,5 @@
+var mail = require("./mail");
+exports.mail = mail.mail;
 exports.index = function(req, res) {
 	res.render('index', {page: "home"}, function(err, html) {
 		if (err)

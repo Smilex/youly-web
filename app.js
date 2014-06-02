@@ -6,6 +6,7 @@ var session = require('express-session');
 var passport = require('passport');
 var stylus = require('stylus');
 var uglify = require('express-uglify-middleware');
+var bodyParser = require('body-parser');
 
 var app = module.exports = express();
 
@@ -27,6 +28,8 @@ app.use(uglify({
 }));
 app.set('port', process.env.PORT || 9001);
 app.set('view engine', 'jade');
+app.use(bodyParser());
+app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(session({secret: 'whoop'}));
 app.use(express.static(__dirname + '/public'));
@@ -39,6 +42,7 @@ app.get('/', routes.index);
 app.get('/blog', routes.blog);
 app.get('/about', routes.about)
 app.get('/contact', routes.contact)
+app.post('/mail', routes.mail);
 
 var server = app.listen(9001, function() {
 	console.log("Listening on port %d", server.address().port);

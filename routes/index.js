@@ -40,8 +40,24 @@ exports.contact = function(req, res) {
 	});
 }
 
-exports.test101 = function(req, res) {
-	res.render('test101', {page: "test101"}, function(err, html) {
+exports.press = function(req, res) {
+	res.render('press', {page: "press"}, function(err, html) {
+		if (err)
+			console.log(err);
+		res.send(html);
+	});
+}
+
+exports.terms_and_conditions = function(req, res) {
+	res.render('terms_and_Conditions', {page: "terms_and_Conditions"}, function(err, html) {
+		if (err)
+			console.log(err);
+		res.send(html);
+	});
+}
+
+exports.privacy_policy = function(req, res) {
+	res.render('privacy_policy', {page: "privacy_policy"}, function(err, html) {
 		if (err)
 			console.log(err);
 		res.send(html);

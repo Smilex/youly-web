@@ -46,3 +46,11 @@ exports.test101 = function(req, res) {
 		res.send(html);
 	});
 }
+
+exports.download = function(req, res) {
+	var p = req.params.p;
+	if (p == "android")
+		res.download("public/app/Youly.apk");
+	else
+		res.redirect("/");
+}

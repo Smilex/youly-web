@@ -40,8 +40,9 @@ app.use("/zoidberg", zoidberg);
 
 app.get('/', routes.index);
 app.get('/blog', routes.blog);
-app.get('/about', routes.about)
-app.get('/contact', routes.contact)
+app.get('/about', routes.about);
+app.get('/contact', routes.contact);
+app.get('/download/:p', routes.download);
 app.post('/mail', routes.mail);
 
 var server = app.listen(9001, function() {

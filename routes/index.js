@@ -1,4 +1,8 @@
 var mail = require("./mail");
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('localhost:27017/youly'); 
+
 exports.mail = mail.mail;
 exports.index = function(req, res) {
 	res.render('index', {page: "home"}, function(err, html) {
@@ -9,17 +13,14 @@ exports.index = function(req, res) {
 }
 
 exports.blog = function(req, res) {
+	var blogs = db.get('blogs');
 
-	var blogs = [
-		{title: "Title 1", content: "Content 1"},
-		{title: "Title 2", content: "Content 2"},
-		{title: "Title 3", content: "Content 3"}
-	];
-
-	res.render('blog', {blogs: blogs, page: "blog"}, function(err, html) {
-		if (err)
-			console.log(err);
-		res.send(html);
+	blogs.find().on("success", function (doc) {
+		res.render('blog', {blogs: doc, page: "blog"}, function(err, html) {
+			if (err)
+				console.log(err);
+			res.send(html);
+		});
 	});
 }
 

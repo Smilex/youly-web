@@ -1,9 +1,28 @@
 <!-- index_tabs_features SM or higher -->
 .hidden-xs
 	.container-fluid.bg_youly
-		.container
-			p .hidden-xs
-			p Features
+		.container(style="min-height: 700px; padding-top: 20px;")
+			.col-xs-12
+				
+
+				div#slide1_container
+					div#slide1_images(style="transform: translateX(0px);")
+						img(src="img/index/carousel/0.png")
+						img(src="img/index/carousel/1.png")
+						img(src="img/index/carousel/2.png")
+						img(src="img/index/carousel/3.png")
+
+				p#slide1_controls
+					span.selected
+						| Image 1
+					span
+						| Image 2
+					span
+						| Image 3
+					span
+						| Image 4
+
+
 
 
 

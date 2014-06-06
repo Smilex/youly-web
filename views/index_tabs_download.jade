@@ -1,60 +1,61 @@
 <!-- index_tabs_download SM or higher -->
 .hidden-xs
-	.container-fluid.bg_youly
+	.container-fluid(style="background-color: #076B62;")
 		.container(style="margin: 60px auto 90px auto;")
 			.col-xs-12.col-sm-4
-				.col-sm-10.col-sm-offset-1
-					img(src="img/electronics/iPhone.png", style="width: 100%")
-					a(href="#")
-						.yly-download-btn.yly-download-btn-android
-							span
-								h2 Download
-								p 
-									b on Play Store
+				img.center-block(src="img/electronics/galaxys4.png", style="")
 			.col-xs-12.col-sm-4
-				.col-sm-10.col-sm-offset-1
-					img(src="img/electronics/iPhone.png", style="width: 100%")
-					a(href="#")
-						.yly-download-btn.yly-download-btn-windows
-							span
-								h2 Download
-								p 
-									b on Windows Store
+				img.center-block(src="img/electronics/windowsphone.png", style="")
 			.col-xs-12.col-sm-4
-				.col-sm-10.col-sm-offset-1
-					img(src="img/electronics/iPhone.png", style="width: 100%")
-
-					a(href="#")
-						.yly-download-btn.yly-download-btn-iOS
-							span
-								h2 Download
-								p 
-									b on The App Store
-
-
+				img.center-block(src="img/electronics/iphone.png", style="")
 
 	.container-fluid(style="background-color: #fff;")
-		.container(style="margin: 30px auto;")
+		.container
+			.col-xs-12.col-sm-4
+				a.download-btn.rounded.center-block#android-btn(href="#")
+					span.d-btn-icon
+					.btn-text
+						| Download
+					small On Google Play
+					span.slide-down-icon
+			.col-xs-12.col-sm-4
+				a.download-btn.rounded.center-block#window-btn(href="#")
+					span.a-btn-icon 
+					.btn-text.center-block
+						| Download
+					small on Windows Store
+					span.slide-down-icon
+			.col-xs-12.col-sm-4
+				a.download-btn.rounded.center-block#app-btn(href="#")
+					span.c-btn-icon
+					.btn-text
+						| Download
+					small on App Store
+					span.slide-down-icon
+
+
+		.container(style="margin: 20px auto 0px auto;")
 			.col-sm-12.hidden-xs
-				h2.text-center.color-youly.yly-c-youly
-					i Scan the code or click the button,
-					b  Youly is free!
-		.container(style="margin: 30px auto;")
+				p.text-center.yly-c-youly(style="font-size: 38px")
+					span(style="font-weight: 100") Scan the code or click the button,
+					span(style="font-weight: 800") Youly is free!
+
+
+		.container(style="margin: 50px auto;")
 			.col-xs-12.col-sm-4
 				.col-sm-10.col-sm-offset-1
-					img.center-block(src="img/tech/qr.png", style="width: 60%")
+					img.center-block(src="img/tech/qr_android.png")
 			.col-xs-12.col-sm-4
 				.col-sm-10.col-sm-offset-1
-					img.center-block(src="img/tech/qr.png", style="width: 60%")
+					img.center-block(src="img/tech/qr_windows.png")
 			.col-xs-12.col-sm-4
 				.col-sm-10.col-sm-offset-1
-					img.center-block(src="img/tech/qr.png", style="width: 60%")
+					img.center-block(src="img/tech/qr_ios.png")
 
 
 
 
-
-ss<!-- index_tabs_download XS only -->
+<!-- index_tabs_download XS only -->
 .visible-xs
 	.container-fluid.bg_youly
 		.container

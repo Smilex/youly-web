@@ -1,78 +1,331 @@
-.container
-	.col-xs-12
-		h1.center-block Pressroom
-		hr
-.container
-	.col-xs-12.col-sm-5
-		h3.yly-c-youly Press contacts
-		h5 Press dude name
-		span.glyphicon.glyphicon-envelope
-		span(style="margin-left: 20px;") 
-			a(href="press@youly.dk") press@youly.dk
-		br
-		span.glyphicon.glyphicon-phone
-		span(style="margin-left: 20px;") (+298) 24 33 42
-		br
-		br
-		span(style="margin-left: 35px;") L&uuml;tzenstr&oslash;&eth; 4
-		br
-		span(style="margin-left: 35px;") 100 T&oslash;rshavn
-		br
-		span(style="margin-left: 35px;") The Faroe Islands
-	.col-xs-12.col-sm-7
-		.row
-			.col-xs-12
-				h3.yly-c-youly Direct email:
-			.col-xs-12
-				.input-group
-					.input-group-addon @
-					input.form-control(type="text", placeholder="Email...", style="width: 70%;")
-			.col-xs-12
-				.input-group(style="margin-top: 10px;")
-					.input-group-addon
-						span.glyphicon.glyphicon-user
-					input.form-control(type="text", placeholder="First name...", style="width: 70%;")
-			.col-xs-12
-				.input-group(style="margin-top: 10px;")
-					.input-group-addon
-						span.glyphicon.glyphicon-user
-					input.form-control(type="text", placeholder="Last name...", style="width: 70%;")
-				.input-group(style="margin-top: 10px;")
-					.input-group-addon
+doctype html		
+html(lang="en")
+	head
+		include meta
+		title="Contact . Youly"
+		include style
+		link(rel="icon", href="img/branding/favicon.ico" type="image/x-icon")
+
+		style.
+			#sidebar > div {
+				width: 100px;
+				height: 600px; 
+				margin-top: 10px; 
+				background-color: blue; 
+				position: fixed; 
+				left: 0; 
+				top: 172px;
+			}
+			#stuff {
+				height: 1000px;
+				width: 300px;
+	
+			}
+			#footer, #header{
+				height: 172px;
+				width: 300px;
+				background-color: yellow; 
+			}
+
+		body(onLoad="load()")
+		include header
+
+
+
+		.container-fluid.bg_eee
+			.container.yly-m-t_b
+				.col-xs-12
+					h2 Press contact
+					p
 						span.glyphicon.glyphicon-phone
-					input.form-control(type="text", placeholder="Phone...", style="width: 70%;")
-				.input-group(style="margin-top: 10px;")
-					.input-group-addon
-						span.glyphicon.glyphicon-home
-					input.form-control(type="text", placeholder="Company...", style="width: 70%;")
-				textarea.form-control(rows="3", placeholder="Write something...", style="max-width: 72%; margin-top: 10px;")
-				.btn-group(style="margin-top: 10px;")
-					button.btn.btn-primary(type="button") Send!
-.container
-	.col-xs-12
-		h3.yly-c-youly(style="margin-top: 120px;") Logo
-		hr
-	.col-xs-12.col-sm-6.col-md-4
-		img(src="img/branding/youly_logo.png", style="width: 100%;", title="w: 821px - h: 348px")
-		h3
-			span.pull-right
-				a(href="img/branding/youly_logo.png", title="Download", download="youly_logo.png", style="color: #3a3a3a;")
-					span.glyphicon.glyphicon-download
-				a(href="img/branding/youly_logo.png", title="Full screen" target="_blank", style="color: #3a3a3a;")
-					span.glyphicon.glyphicon-fullscreen(style="margin-left: 20px;")
-	.col-xs-12.col-sm-6.col-md-4
-		img(src="img/branding/youly_text_white_shadow.png", style="width: 100%;", title="w: 821px - h: 348px")
-		h3
-			span.pull-right
-				a(href="img/branding/youly_text_white_shadow.png", title="Download", download="youly_text_white_shadow.png", style="color: #3a3a3a;")
-					span.glyphicon.glyphicon-download
-				a(href="img/branding/youly_text_white_shadow.png", title="Full screen" target="_blank", style="color: #3a3a3a;")
-					span.glyphicon.glyphicon-fullscreen(style="margin-left: 20px;")
-	.col-xs-12.col-sm-6.col-md-4
-		img(src="img/branding/youly_green_bg.png", style="width: 100%;", title="w: 821px - h: 348px")
-		h3
-			span.pull-right
-				a(href="img/branding/youly_green_bg.png", title="Download", download="youly_green_bg.png", style="color: #3a3a3a;")
-					span.glyphicon.glyphicon-download
-				a(href="img/branding/youly_green_bg.png", title="Full screen" target="_blank", style="color: #3a3a3a;")
-					span.glyphicon.glyphicon-fullscreen(style="margin-left: 20px;")
+						span(style="margin-left: 20px;") (+298) 24 33 42
+						br
+						span.glyphicon.glyphicon-envelope
+						span(style="margin-left: 20px;") 
+							a(href="mailto:press@youly.dk", target="_top") press@youly.dk
+
+					p
+						| For any other general enquiries, please contact us at 
+						a(href="mailto:support@youly.dk", target="_top") support@youly.dk 
+						| or visit our 
+						a(href="/contact") contact page.
+				
+
+		.container
+			.col-xs-12.col-sm-9.yly-m-t_b#press_design-guidelines-wrapper
+				.row.section.yly-m-t#press_design_guidelines
+					.col-xs-12
+						h3.yly-m-t_b Design Guidelines
+				.row
+					.col-xs-12.col-sm-6
+						p
+							| eget volutpat mi. Maecenas hendrerit, leo nec consequat suscipit, lorem turpis egestas 
+							| purus, elementum volutpat mauris ante condimentum nulla. Proin eu nibh eu felis semper 
+							| convallis quis vel sapien. Praesent gravida purus nec nulla ultricies pharetra. Quisque 
+							| dignissim nulla ut velit luctus venenatis. Suspendisse potenti.
+						.btn-group
+							button.btn.btn-info(type="button") DOWNLOAD - 38 MB
+
+					.col-xs-12.col-sm-5.col-sm-offset-1.yly_press-download
+						p.visible-xs
+							|  
+						h4 Logos
+						p
+							a(href="#") PNG
+							span |
+							a(href="#") PSD
+
+						h4 Youly Photography
+						p
+							a(href="#") RAR
+							span |
+							a(href="#") ZIP
+							
+						h4 Color Palette
+						p
+							a(href="#") RGB
+							span |
+							a(href="#") CMYK
+
+						h4 Typography
+						p
+							a(href="#") PDF
+
+
+
+				.row.section.yly-b-top#press_logos
+					.col-xs-12
+						h3.text-center.yly-m-b Logos
+
+
+
+
+				.row.yly-m-t#press_logos_default
+					.col-xs-12
+						h4 Default logo
+					.col-xs-12.col-sm-5
+						p
+							| Our default logo is set with our green brandign colour. This image 
+						p
+
+							| Downlaod as 
+							a(href="#") PNG 
+							span or 
+							a(href="#") PSD
+					.col-xs-12.col-sm-4.col-sm-offset-1
+						a(href="img/branding/youly_text_green_shadow.png", target="_blank")
+							img.bg_eee(src="img/branding/youly_text_green_shadow.png", width="100%")
+
+
+				.row.yly-m-t#press_logos_inverted
+					.col-xs-12
+						h4 Inverted logo
+					.col-xs-12.col-sm-5
+						p
+							| convallis quis vel sapien. Praesent gravida purus nec nulla ultricies pharetra. Quisque 
+							| dignissim nulla ut velit luctus venenatis. Suspendisse potenti.
+						p
+
+							| Downlaod as 
+							a(href="#") PNG 
+							span or 
+							a(href="#") PSD
+					.col-xs-12.col-sm-4.col-sm-offset-1
+						a(href="img/branding/youly_green_bg.png", target="_blank")
+							img(src="img/branding/youly_green_bg.png", width="100%")
+
+
+
+				.row.yly-m-t#press_logos_white
+					.col-xs-12
+						h4 White logo
+					.col-xs-12.col-sm-5
+						p
+							| convallis quis vel sapien. Praesent gravida purus nec nulla ultricies pharetra. Quisque 
+							| dignissim nulla ut velit luctus venenatis. Suspendisse potenti.
+						p
+
+							| Downlaod as 
+							a(href="#") PNG 
+							span or 
+							a(href="#") PSD
+					.col-xs-12.col-sm-4.col-sm-offset-1
+						a(href="img/branding/youly_text_white_shadow.png", target="_blank")
+							img(src="img/branding/youly_text_white_shadow.png", width="100%")
+
+
+
+
+				.row.section.yly-b-top#press_youly_photography
+					.col-xs-12
+						h3.text-center.yly-m-b Youly Photography
+
+				.row
+					.col-xs-12
+						#carousel-example-generic1.carousel.slide(data-ride="carousel")
+							ol.carousel-indicators
+								li.active(data-target="#carousel-example-generic_0", data-slide-to="0")
+								li(data-target="#carousel-example-generic_1", data-slide-to="1")
+								li(data-target="#carousel-example-generic_2", data-slide-to="2")
+								li(data-target="#carousel-example-generic_3", data-slide-to="3")
+							.carousel-inner
+								.item.active
+									img(src="img/index/carousel/1.png", alt="zero", style="width: 100%; height: 500px;")
+									.carousel-caption
+										h1.heeeyawd Download
+										p 
+											i Scan the code, or click the button!
+											b  Youly is Free
+								.item
+									img(src="img/index/carousel/2.png", alt="zero", style="width: 100%; height: 500px;")
+									.carousel-caption
+										h1.heeeyawd Download
+										p 
+											i Scan the code, or click the button!
+											b  Youly is Free
+								.item
+									img(src="img/index/carousel/3.png", alt="zero", style="width: 100%; height: 500px;")
+									.carousel-caption
+										h1.heeeyawd Download
+										p 
+											i Scan the code, or click the button!
+											b  Youly is Free
+								.item
+									img(src="img/index/carousel/4.png", alt="zero", style="width: 100%; height: 500px;")
+									.carousel-caption
+										h1.heeeyawd Download
+										p 
+											i Scan the code, or click the button!
+											b  Youly is Free
+							a.left.carousel-control(href="#carousel-example-generic1", data-slide="prev", style="background-image: none;")
+								span.glyphicon.glyphicon-chevron-left
+							a.right.carousel-control(href="#carousel-example-generic1", data-slide="next", style="background-image: none;")
+								span.glyphicon.glyphicon-chevron-right
+					script.
+						$('.carousel').carousel({
+							interval: 2000
+						})
+
+
+
+
+
+				<!-- Color Palette-->
+				.row.section.yly-b-top#press_color_palette
+					.col-xs-12
+						h3.text-center.yly-m-b Color Palette
+					.col-xs-12
+						.row
+							- var colors = [{c: "#FFFFFF", r: 255, g: 255, b: 255}];
+							- colors.push({c: "#EEEEEE", r: 238, g: 238, b: 238});
+							- colors.push({c: "#888888", r: 136, g: 136, b: 136});
+							- colors.push({c: "#3C3C3C", r: 60, g: 60, b: 60});
+							- colors.push({c: "#2A2A2A", r: 42, g: 42, b: 42});
+							- colors.push({c: "#000000", r: 0, g: 0, b: 0});
+							- colors.push({c: "#3FAEA4", r: 63, g: 174, b: 164});
+							- colors.push({c: "#0A9E90", r: 10, g: 158, b: 144});
+							- colors.push({c: "#076B62", r: 10, g: 107, b: 98});
+
+							- each val in colors
+								.col-xs-6.col-sm-4.col-md-3
+									div.yly_press-clr
+										h2(style="background-color: #{val.c};") &nbsp;
+										span
+											b.center-block= val.c
+										.row.text-center
+											.col-xs-6
+												B R:
+											.col-xs-6
+												span= val.r
+										.row.text-center
+											.col-xs-6
+												B G:
+											.col-xs-6
+												span= val.g
+										.row.text-center
+											.col-xs-6
+												B B:
+											.col-xs-6
+												span= val.b
+
+
+
+
+
+
+
+
+				.row.section.yly-b-top#press_typography
+					.col-xs-12
+						h3.text-center.yly-m-b Typography
+					.col-xs-12
+						pre
+							p
+								h1.yly_press-typography Heading 1
+								span - Font Name - Size - Line-Height
+								h2.yly_press-typography Heading 2
+								span - Font Name - Size - Line-Height
+								h3.yly_press-typography Heading 3
+								span - Font Name - Size - Line-Height
+								h4.yly_press-typography Heading 4
+								span - Font Name - Size - Line-Height
+								h5.yly_press-typography Heading 5
+								span - Font Name - Size - Line-Height
+								h6.yly_press-typography Heading 6
+								span - Font Name - Size - Line-Height
+								p.yly_press-typography Paragraph
+								span - Font Name - Size - Line-Height
+				
+
+
+
+
+			<!-- Vertical right navbar, fixed top 300 -->
+			.col-xs-12.col-sm-3.yly-m-t_b
+				.row
+					.col-xs-12.hidden-xs
+						.container-fluid#vertical-right-navbar_theFIxed
+							.col-xs-2#theFixed(style="position: fixed; top: 325px;")
+								.vertical-right-navbar
+									ul.list-unstyled
+										li
+											a.vertical-right-navbar-active(href="#press_design_guidelines") Design Guidelines
+										li
+											a(href="#press_logos") Logos
+										li
+											a(href="#press_youly_photography") Youly Photography
+										li
+											a(href="#press_color_palette") Color Palette
+										li
+											a(href="#press_typography") Typography
+
+
+
+		include nav_buttom
+		include footer
+		include script
+
+		script.
+			// Gives ".vertical-right-navbar" the same height as Press Content
+			function load() {
+				var h = $('#press_design-guidelines-wrapper').height();
+				$('#vertical-right-navbar_theFIxed').height(h);
+			}
+		script.
+			// Sets ".vertical-right-navbar" to fixed-top after 300px are scrolled
+			$(window).scroll(function(){
+				var scroll_top = $(this).scrollTop(); // get scroll position top
+				var height_element_parent =  $("#theFixed").parent().outerHeight(); //get high parent element
+				var height_element = $("#theFixed").height(); //get high of elemeneto
+				var position_fixed_max = height_element_parent - height_element; // get the maximum position of the elemen
+				var position_fixed = scroll_top < 325 ? 325 - scroll_top : position_fixed_max > scroll_top ? 0 : position_fixed_max - scroll_top ;
+				$("#theFixed").css("top",position_fixed);
+
+				$('#press_design-guidelines-wrapper').find('.section').each(function(i){
+					console.log(i);
+					if ($(this).position().top <= scroll_top - 300) {
+						$('#theFixed').find('a.vertical-right-navbar-active').removeClass('vertical-right-navbar-active');
+						$('#theFixed').find('a').eq(i).addClass('vertical-right-navbar-active');
+					}
+				});
+			});

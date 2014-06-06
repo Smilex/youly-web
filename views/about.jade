@@ -7,6 +7,37 @@ html(lang="en")
 	
 	body
 		include header
-		include team
+		.container-fluid.yly-about_us-bg-team
+			.container
+				h1.yly-about_us-bg-team-h1.center-block.text-center We knew, there had to be a solution.
+				p(style="height: 300px;")
+					| always
+		.container-fluid
+			h2(style="padding-top: 100px;").center-block.text-center.yly-c-youly Leadership Team
+		.container-fluid(style="padding-top: 50px;")
+			.col-xs-12.col-sm-4.text-center
+				.row
+					img.center-block.img-circle(src="img/team/hanus.png" width="50%")
+				.row
+					h4 Hanus á Bøgarði
+					i.text-center CFO and Co-founder
+					br
+					button.btn.btn-default(type="button", data-toggle="tooltip", data-placement="left", title="Tooltip on left") Tooltip on left
+			.col-xs-12.col-sm-4.text-center
+				.row
+					img.center-block.img-circle(src="img/team/tummas.png" width="50%")
+				.row
+					h4 Tummas Jóhan Sigvardsen
+					i.text-center CEO and Co-founder
+			.col-xs-12.col-sm-4.text-center
+				.row
+					img.center-block.img-circle(src="img/team/ian.png" width="50%")
+				.row
+					h4 Ian Thomasen Jacobsen
+					i.text-center CTO and Co-founder
+
+
+
+		include nav_buttom
 		include footer
 		include script

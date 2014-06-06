@@ -43,6 +43,9 @@ app.get('/blog', routes.blog);
 app.get('/about', routes.about)
 app.get('/contact', routes.contact)
 app.post('/mail', routes.mail);
+app.get('/press', routes.press)
+app.get('/legal', routes.terms_and_conditions)
+app.get('/privacy', routes.privacy_policy)
 
 var server = app.listen(9001, function() {
 	console.log("Listening on port %d", server.address().port);

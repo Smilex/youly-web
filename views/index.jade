@@ -2,8 +2,44 @@ doctype html
 html(lang="en")
 	head
 		include meta
-		title="Youly | Index"
+		title="Youly"
 		include style
+		link(rel="icon", href="img/branding/favicon.ico" type="image/x-icon")
+		style.
+			p#slide1_controls {
+				text-align:center;
+			}
+			#slide1_controls span {
+				padding-right:2em;
+				cursor:pointer;
+			}
+			#slide1_container {
+				width:450px;
+				height:281px;
+				overflow:hidden;
+				margin:0 auto;
+			}
+			#slide1_images {
+				width:1800px;
+				-webkit-transition:all 1.0s ease-in-out;
+				-moz-transition:all 1.0s ease-in-out;
+				-o-transition:all 1.0s ease-in-out;
+				transition:all 1.0s ease-in-out;
+			}
+			#slide1_images img {
+				padding:0;
+				margin:0;
+				float:left;
+			}
+			
+		script.
+			$(document).ready(function() {
+				$('#slide1_controls').on('click', 'span', function(){
+					$("#slide1_images").css("transform","translateX("+$(this).index() * -450+"px)");
+					$("#slide1_controls span").removeClass("selected");
+					$(this).addClass("selected");
+				});
+			});
 	
 	body
 		include header
@@ -13,3 +49,7 @@ html(lang="en")
 		include nav_buttom
 		include footer
 		include script
+
+		script.
+			var heightFind = $('#yly-content-tabs').height();
+			$('ul#yly-content-tabs li a').height(heightFind);

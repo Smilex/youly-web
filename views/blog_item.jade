@@ -1,24 +1,19 @@
-.container
+.row.blog_item(id="#{blog._id}")
+	.col-xs-12.col-sm-2
+		img(src="#{blog.img}")
 	.col-xs-12.col-sm-9
 		.row
-			.col-xs-12.col-sm-10
-				h3= item.title
-				p Share this article on
-					a(href="#")
-						span.yly-blog-share
-							img(src="img/social/social_facebook.png")
-							code 15
-					a(href="#")
-						span.yly-blog-share
-							img(src="img/social/social_linked_in.png")
-							code 48
-					a(href="#")
-						span.yly-blog-share
-							img(src="img/social/social_pluss.png")
-							code 121
-					a(href="#")
-						span.yly-blog-share
-							img(src="img/social/social_twitter.png")
-							code 34
-				img.pull-right.hidden-xs(src="img/social/social_linked_in.png", style="width: 30%;")
-				p= item.content
+			.col-xs-12
+				h2= blog.title
+		.row
+			.col-xs-12.blog_item_author_date
+				span by - 
+					a(href="#")= blog.author
+				span.pull-right= blog.date
+		.row
+			.col-xs-12
+				= blog.post
+		.row
+			.col-xs-12
+				span.blog_item_share
+					p WAWDWDA

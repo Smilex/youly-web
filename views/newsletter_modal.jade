@@ -1,5 +1,5 @@
 .modal-body
-	span#modal_newsletter_label
+	span#modal_newsletter_label(style="font-weight: 100;")
 		| You can sign up to our newsletter and be alerted the minute we launch!
 		br
 		| Simply enter your contact details, and click subscribe.
@@ -11,9 +11,13 @@
 		input.form-control(type="text", placeholder="Email address...")
 
 
+
+
 .modal-footer
 	.col-xs-12.col-sm-10
-		p.text-left By clicking subscribe you agree to our 
-			a.yly-a(href="/test101", target="_blank", style="color: #0a9e90;") terms and conditions
+		p.text-left(style="font-weight: 100;") By clicking subscribe you agree to our 
+			a.yly-a(href="/Legal", target="_blank", style="color: #0a9e90;") terms and conditions
+			|  our 
+			a.yly-a(href="/privacy", target="_blank", style="color: #0a9e90;") Privacy Policy
 	.col-xs-12.col-sm-2
 		button.btn.btn-primary(type="button") Subscribe

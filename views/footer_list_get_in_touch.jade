@@ -5,7 +5,11 @@ ul.list-unstyled
 		a(href="#") Twitter
 	li
 		a(href="#") Google Plus
-	li
-		a(href="#") Blog
+	if page == "blog"
+		li
+			a(href="/blog", id="nav_btn-active") Blog
+	else
+		li
+			a(href="/blog") Blog
 	li
 		a(href="#") Contact us (email)

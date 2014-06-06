@@ -2,11 +2,125 @@ doctype html
 html(lang="en")
 	head
 		include meta
-		title="Youly | Contact"
+		title="Contact . Youly"
 		include style
+		link(rel="icon", href="img/branding/favicon.ico" type="image/x-icon")
 	
 	body
 		include header
-		include press
+		.container-fluid.yly-m-t.hidden-xs
+			.container
+				.col-xs-12
+					h2 Contact
+					hr
+		.container-fluid.yly-m-t_b
+			.container
+				.col-xs-12.col-sm-3
+					p
+						span.glyphicon.glyphicon-envelope
+						span(style="margin-left: 20px;") 
+							a(href="mailto:support@youly.dk", target="_top") support@youly.dk 
+						br
+						span.glyphicon.glyphicon-phone
+						span(style="margin-left: 20px;") (+298) 28 99 70
+					p
+
+						span.glyphicon.glyphicon-map-marker
+						span(style="margin-left: 20px;") L&uuml;tzenstr&oslash;&eth; 4
+						br
+						span(style="margin-left: 34px;") 100 T&oslash;rshavn
+						br
+						span(style="margin-left: 34px;") The Faroe Islands
+				.col-xs-12.col-sm-9
+					.row
+						.col-xs.12.col-sm-4
+							.input-group.input-group-lg(style="width: 100%;")
+								input.form-control(type="text", placeholder="Email*")
+						.col-xs.12.col-sm-4
+							.input-group.input-group-lg(style="width: 100%;")
+								input.form-control(type="text", placeholder="Name*")
+						.col-xs.12.col-sm-4
+							.input-group.input-group-lg(style="width: 100%;")
+								input.form-control(type="text", placeholder="Subject")
+					.row
+						.col-xs-12
+							textarea.form-control.yly-m-t(rows="8", placeholder="Any questiosn or comments?... Write to us.", style="max-width: 100%;")
+							.btn-group(style="margin-top: 10px;")
+								button.btn.btn-primary(type="button") Send!
+					.row
+						hr
+		.container-fluid.yly-m-t_b
+			.container
+				#map_canvas
+
+
+		.container-fluid
+			.container
+				.col-xs-12.yly-m-t
+					h2.hidden-xs.text-center Commonly Asked Questions
+					h4.visible-xs.text-center Commonly Asked Questions
+			.container.yly-b-top
+				.col-xs-12.col-sm-4
+					ul.list-unstyled.yly_contact-c-a-q
+						li 
+							h3 Getting Started
+						li
+							a(href="#") What is Youly?
+						li 
+							a(href="#") Who's using Youly?
+						li 
+							a(href="#") Which countries does Youly Cover?
+						li 
+							a(href="#") How to use Youly?
+
+
+
+					ul.list-unstyled.yly_contact-c-a-q
+						li 
+							h3 Legal Obligation
+						li
+							a(href="/legal", target="_blank") Which are the 
+								u Terms of Use?
+						li 
+							a(href="/privacy", target="_blank") How is the 
+								u Privacy Policy?
+
+				.col-xs-12.col-sm-4
+					ul.list-unstyled.yly_contact-c-a-q
+						li 
+							h3 Features
+						li
+							a(href="#") Which features are free?
+						li
+							a(href="#") Which extra features comes with Youly Subscription?
+						li
+							a(href="#") How are the Youly Pricing?
+						li
+							a(href="#") How can I pay?
+
+					ul.list-unstyled.yly_contact-c-a-q
+						li 
+							h3 Youly Community
+						li
+							a(href="#") Where can I associate and share tips with other Youly users?
+						li
+							a(href="#") How and where do I get in contact with Youly support?
+				.col-xs-12.col-sm-4
+					ul.list-unstyled.yly_contact-c-a-q
+						li 
+							h3 Account
+						li
+							a(href="#") What was my Username?
+						li
+							a(href="#") What was my Password?
+
+
+		.container-fluid
+			.container
+				.col-xs-12.yly-m-t
+					p
+						| &nbsp;
+
+		include nav_buttom
 		include footer
 		include script

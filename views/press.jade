@@ -49,13 +49,13 @@ html(lang="en")
 						a(href="mailto:support@youly.dk", target="_top") support@youly.dk 
 						| or visit our 
 						a(href="/contact") contact page.
-				
+
 
 		.container
 			.col-xs-12.col-sm-9.yly-m-t_b#press_design-guidelines-wrapper
 				.row.section.yly-m-t#press_design_guidelines
 					.col-xs-12
-						h3.yly-m-t_b Design Guidelines
+						h3.text-center.yly-m-t_b Design Guidelines
 				.row
 					.col-xs-12.col-sm-6
 						p
@@ -64,7 +64,7 @@ html(lang="en")
 							| convallis quis vel sapien. Praesent gravida purus nec nulla ultricies pharetra. Quisque 
 							| dignissim nulla ut velit luctus venenatis. Suspendisse potenti.
 						.btn-group
-							button.btn.btn-info(type="button") DOWNLOAD - 38 MB
+							button.btn.btn-youly.btn-lg(type="button") DOWNLOAD - 38 MB
 
 					.col-xs-12.col-sm-5.col-sm-offset-1.yly_press-download
 						p.visible-xs
@@ -205,7 +205,9 @@ html(lang="en")
 						$('.carousel').carousel({
 							interval: 2000
 						})
-
+					.col-xs-12
+						h6 Download all photos as
+							a(href="#") &nbsp;.RAR
 
 
 
@@ -247,7 +249,9 @@ html(lang="en")
 												B B:
 											.col-xs-6
 												span= val.b
-
+					.col-xs-12
+						h6 Download as
+							a(href="#") &nbsp;.PDF
 
 
 
@@ -262,30 +266,29 @@ html(lang="en")
 						pre
 							p
 								h1.yly_press-typography Heading 1
-								span - Font Name - Size - Line-Height
+								span Font: Lato, size: 52px, weight: 300;
 								h2.yly_press-typography Heading 2
-								span - Font Name - Size - Line-Height
+								span Font: Lato, size: 34px, weight: 400;
 								h3.yly_press-typography Heading 3
-								span - Font Name - Size - Line-Height
+								span Font: Lato, size: 24px, weight: 400;
 								h4.yly_press-typography Heading 4
-								span - Font Name - Size - Line-Height
+								span Font: Lato, size: 16px, weight: 700;
 								h5.yly_press-typography Heading 5
-								span - Font Name - Size - Line-Height
+								span Font: Lato, size: 16px, weight: 700;
 								h6.yly_press-typography Heading 6
-								span - Font Name - Size - Line-Height
+								span Font: Lato, size: 14px, weight: 400;
 								p.yly_press-typography Paragraph
-								span - Font Name - Size - Line-Height
-				
-
-
-
+								span Font: Lato, size: 14px, weight: 400;
+					.col-xs-12
+						h6
+							a(href="http://fonts.googleapis.com/css?family=Lato:400,700,300") View fonts
 
 			<!-- Vertical right navbar, fixed top 300 -->
 			.col-xs-12.col-sm-3.yly-m-t_b
 				.row
 					.col-xs-12.hidden-xs
 						.container-fluid#vertical-right-navbar_theFIxed
-							.col-xs-2#theFixed(style="position: fixed; top: 325px;")
+							.col-xs-2#theFixed(style="position: fixed; top: 380px;")
 								.vertical-right-navbar
 									ul.list-unstyled
 										li
@@ -300,32 +303,32 @@ html(lang="en")
 											a(href="#press_typography") Typography
 
 
-
 		include nav_buttom
 		include footer
 		include script
 
-		script.
-			// Gives ".vertical-right-navbar" the same height as Press Content
-			function load() {
-				var h = $('#press_design-guidelines-wrapper').height();
-				$('#vertical-right-navbar_theFIxed').height(h);
-			}
-		script.
-			// Sets ".vertical-right-navbar" to fixed-top after 300px are scrolled
-			$(window).scroll(function(){
-				var scroll_top = $(this).scrollTop(); // get scroll position top
-				var height_element_parent =  $("#theFixed").parent().outerHeight(); //get high parent element
-				var height_element = $("#theFixed").height(); //get high of elemeneto
-				var position_fixed_max = height_element_parent - height_element; // get the maximum position of the elemen
-				var position_fixed = scroll_top < 325 ? 325 - scroll_top : position_fixed_max > scroll_top ? 0 : position_fixed_max - scroll_top ;
-				$("#theFixed").css("top",position_fixed);
+			script.
+				// Gives ".vertical-right-navbar" the same height as Press Content
+				function load() {
+					var h = $('#press_design-guidelines-wrapper').height();
+					$('#vertical-right-navbar_theFIxed').height(h);
+				};
+			script.
+				// Sets ".vertical-right-navbar" to fixed-top after 300px are scrolled
+				$(window).scroll(function(){
+					var f_h = $('#yly_Press_featured').height(); //Getting the height of Featured list
+					var scroll_top = $(this).scrollTop(); // get scroll position top
+					var height_element_parent = $("#theFixed").parent().outerHeight(); //get high parent element
+					var height_element = $("#theFixed").height(); //get high of elemeneto
+					var position_fixed_max = height_element_parent + f_h; // get the maximum position of the elemen
+					var position_fixed = scroll_top < 375 + f_h ? 375 + f_h - scroll_top : position_fixed_max > scroll_top ? 0 : position_fixed_max - scroll_top ;
+					$("#theFixed").css("top",position_fixed);
 
-				$('#press_design-guidelines-wrapper').find('.section').each(function(i){
-					console.log(i);
-					if ($(this).position().top <= scroll_top - 300) {
-						$('#theFixed').find('a.vertical-right-navbar-active').removeClass('vertical-right-navbar-active');
-						$('#theFixed').find('a').eq(i).addClass('vertical-right-navbar-active');
-					}
+					$('#press_design-guidelines-wrapper').find('.section').each(function(i){
+						console.log(i);
+						if ($(this).position().top <= scroll_top - 370 + f_h) {
+							$('#theFixed').find('a.vertical-right-navbar-active').removeClass('vertical-right-navbar-active');
+							$('#theFixed').find('a').eq(i).addClass('vertical-right-navbar-active');
+						}
+					});
 				});
-			});

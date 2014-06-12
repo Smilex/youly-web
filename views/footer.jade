@@ -1,76 +1,43 @@
 <!-- Footer for SM or higher only -->
-.container-fluid.yly_footer.hidden-xs
+.container-fluid.yly_footer
 	.container
 		.row
-			.col-xs-12.col-sm-2
+			.col-sm-3.col-md-2.hidden-xs
 				.yly_foorer-logo
 					a(href="/")
 						img(src="img/branding/youly_text_white_shadow.png")
 
 			.col-xs-12.col-sm-3.col-sm-offset-1
-				h4(style="margin-bottom: 15px;") LEARN MORE
-				ul.list-unstyled.yly_footer-list
+				h4.hidden-xs(style="margin-bottom: 15px;") LEARN MORE
+				h4.visible-xs
+					apan(href="#nav-collapse22", data-toggle="collapse", data-target="#nav-collapse22") LEARN MORE
+					span.pull-right.glyphicon.glyphicon-chevron-down.c_fff(data-toggle="collapse", data-target="#nav-collapse22", style="cursor: pointer;")
+				.collapse.navbar-collapse#nav-collapse22.yly_footer-list(style="padding-left: 0px")
 					include footer_list_learn_more
 
 			.col-xs-12.col-sm-4
-				h4(style="margin-bottom: 15px;") GET IN TOUCH
-				include footer_list_get_in_touch
-					li
-					<!-- Link to trigger newsletter_modal -->
-					a(href="#myModal", data-toggle="modal", data-target="#myModal") Newsletter
-
-					<!-- newsletter_modal -->
-					.modal.fade#myModal(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true", style="color: #000;")
-						.modal-dialog
-							.modal-content
-								.modal-header
-									button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
-									h4.modal-title.yly-c-youly#myModalLabel Subscribe to our newsletter
-								include newsletter_modal
-
-
-
-<!-- Footer for XS only -->
-.container-fluid.visible-xs
-	.row
-		.col-xs-12
-			h4
-				a(href="#nav-collapse22", data-toggle="collapse", data-target="#nav-collapse22") LEARN MORE
-				span.pull-right.glyphicon.glyphicon-chevron-down(data-toggle="collapse", data-target="#nav-collapse22", style="cursor: pointer;")
-			.collapse.navbar-collapse#nav-collapse22.yly_footer-list_xs
-				ul.list-unstyled
-					include footer_list_learn_more
-
-		.col-xs-12
-			h4
-				a(href="#nav-collapse23", data-toggle="collapse", data-target="#nav-collapse23") GET IN TOUCH
-				span.pull-right.glyphicon.glyphicon-chevron-down(data-toggle="collapse", data-target="#nav-collapse23", style="cursor: pointer;")
-			.collapse.navbar-collapse#nav-collapse23.yly_footer-list_xs
-				include footer_list_get_in_touch
-					li
-						<!-- Link to trigger newsletter_modal -->
-						a(href="#myModal2", data-toggle="modal", data-target="#myModal2") Newsletter
-
-						<!-- newsletter_modal -->
-						.modal.fade#myModal2(tabindex="-1", role="dialog", aria-labelledby="myModalLabel2", aria-hidden="true", style="color: #000;")
-							.modal-dialog
-								.modal-content
-									.modal-header
-										button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
-										h4.modal-title.yly-c-youly#myModalLabel Subscribe to our newsletter
-									include newsletter_modal
-
-
+				h4.hidden-xs(style="margin-bottom: 15px;") GET IN TOUCH
+				h4.visible-xs
+					span(href="#nav-collapse23", data-toggle="collapse", data-target="#nav-collapse23") GET IN TOUCH
+					span.pull-right.glyphicon.glyphicon-chevron-down.c_fff(data-toggle="collapse", data-target="#nav-collapse23", style="cursor: pointer;")
+				.collapse.navbar-collapse#nav-collapse23.yly_footer-list(style="padding-left: 0px")
+					include footer_list_get_in_touch
 
 .container-fluid(style="background-color: #3c3c3c; color: #646464;")
 	.container(style="margin: 15px auto; padding-top: 15px;")
 		p &copy; 2014 Youly, Sp/f. All rights reserved.
 
-
-
-
 script.
-	function sendToTab(id)
-	{
-		$("#yly-content-tabs a[href='" + id + "']").tab("show");
-	}
+	function footer() {
+		var w = $(window).width()
+		var li = $('.yly_footer li')
+		var a = $('.yly_footer a')
+		if (w < 768) {
+			a.css('font-weight', '700')
+			li.css('padding-top', '15px')
+		}
+		else {
+			a.css('font-weight', '400')
+			li.css('padding-top', '0px')
+		}
+	};

@@ -1,24 +1,25 @@
-if page == "about"
-	li
-		a(href="/about", id="nav_btn-active") Meet our team
-else
-	li
-		a(href="/about") Meet our team
-if page == "press"
-	li
-		a(href="/press", id="nav_btn-active") Press
-else
-	li
-		a(href="/Press") Press
-if page == "terms_and_Conditions"
-	li
-		a(href="/legal", id="nav_btn-active") Terms and Conditions
-else
-	li
-		a(href="/legal") Terms and Conditions
-if page == "privacy_policy"
-	li
-		a(href="/privacy", id="nav_btn-active") Privacy Policy
-else
-	li
-		a(href="/privacy") Privacy Policy
+ul.list-unstyled
+	if page == "about"
+		li
+			a(href="/about", id="nav_btn-active") Meet our team
+	else
+		li
+			a(href="/about") Meet our team
+	if page == "press"
+		li
+			a(href="/press", id="nav_btn-active") Press
+	else
+		li
+			a(href="/Press") Press
+	if page == "terms_and_Conditions"
+		li
+			a(href="/legal", id="nav_btn-active") Terms and Conditions
+	else
+		li
+			a(href="/legal") Terms and Conditions
+	if page == "privacy_policy"
+		li
+			a(href="/privacy", id="nav_btn-active") Privacy Policy
+	else
+		li
+			a(href="/privacy") Privacy Policy

@@ -4,17 +4,3 @@ script(type='text/javascript' src='//maps.googleapis.com/maps/api/js?sensor=fals
 
 script(type='text/javascript' src='js/modernizr.js')
 script(type='text/javascript' src='js/search.property.js')
-
-script.
-	function initialize() {
-		var map_canvas = document.getElementById('map_canvas');
-		var map_options = {
-			center: new google.maps.LatLng(62.0118, -6.7670),
-			zoom: 16,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		}
-		var map = new google.maps.Map(map_canvas, map_options)
-	}
-	google.maps.event.addDomListener(window, 'load', initialize);
-
-

@@ -11,5 +11,21 @@ ul.list-unstyled
 	else
 		li
 			a(href="/blog") Blog
+	if page == "contact"
+		li
+			a(href="/contact", id="nav_btn-active") Contact us
+	else
+		li
+			a(href="/contact") Contact us
 	li
-		a(href="#") Contact us (email)
+		<!-- Link to trigger newsletter_modal -->
+		a(href=".myModal", data-toggle="modal", data-target=".myModal") Newsletter
+
+		<!-- newsletter_modal -->
+		.modal.fade.myModal(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true", style="color: #000;")
+			.modal-dialog
+				.modal-content
+					.modal-header
+						button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
+						h4.modal-title.yly-c-youly.myModalLabel Subscribe to our newsletter
+					include newsletter_modal

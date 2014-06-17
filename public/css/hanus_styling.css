@@ -416,9 +416,16 @@ a:hover {
 .yly_press-clr span {
 	margin-top: 30px;
 }
+.vertical-affix.affix {
+	top: 20px;
+}
+.vertical-affix.affix-bottom {
+	position: absolute;
+}
 .vertical-right-navbar a {
 	color: #000;
 	line-height: 26px;
+	padding: 3px 0px !important;
 }
 .vertical-right-navbar a:hover {
 	color: #0A9E90;
@@ -430,7 +437,7 @@ a:hover {
 .vertical-right-navbar li {
 	margin-left: 15px;
 }
-.vertical-right-navbar-active {
+.vertical-right-navbar .active {
 	font-weight: bold;
 	padding-left: 10px;
 	border-left: 2px solid #0A9E90;

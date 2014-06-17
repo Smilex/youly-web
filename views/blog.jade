@@ -12,16 +12,9 @@ html(lang="en")
 				.col-xs-12.col-sm-9#blog_item-wrapper
 					- each blog in blogs
 						include blog_item
-				.hidden-xs.col-sm-3#blog_vertical-right-navbar
-					include blog_right
+				.hidden-xs.col-sm-3
+					.vertical-affix
+						include blog_right
 		include nav_buttom
 		include footer
 		include script
-
-
-		script.
-			// Gives ".vertical-right-navbar" the same height as Press Content
-			function load() {
-				var h = $('#blog_item-wrapper').height();
-				$('#blog_vertical-right-navbar').height(h);
-			}

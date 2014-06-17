@@ -27,7 +27,7 @@ html(lang="en")
 				background-color: yellow; 
 			}
 
-		body(onLoad="load()")
+		body(data-spy="scroll" data-target=".vertical-right-navbar")
 		include header
 
 
@@ -277,50 +277,20 @@ html(lang="en")
 
 			<!-- Vertical right navbar, fixed top 300 -->
 			.col-xs-12.col-sm-3.yly-m-t_b
-				.row
-					.col-xs-12.hidden-xs
-						.container-fluid#vertical-right-navbar_theFIxed
-							.col-xs-2#theFixed(style="position: fixed; top: 380px;")
-								.vertical-right-navbar
-									ul.list-unstyled
-										li
-											a.vertical-right-navbar-active(href="#press_design_guidelines") Design Guidelines
-										li
-											a(href="#press_logos") Logos
-										li
-											a(href="#press_youly_photography") Youly Photography
-										li
-											a(href="#press_color_palette") Color Palette
-										li
-											a(href="#press_typography") Typography
+				.vertical-right-navbar.vertical-affix
+					ul.list-unstyled.nav
+						li
+							a(href="#press_design_guidelines") Design Guidelines
+						li
+							a(href="#press_logos") Logos
+						li
+							a(href="#press_youly_photography") Youly Photography
+						li
+							a(href="#press_color_palette") Color Palette
+						li
+							a(href="#press_typography") Typography
 
 
 		include nav_buttom
 		include footer
 		include script
-
-			script.
-				// Gives ".vertical-right-navbar" the same height as Press Content
-				function load() {
-					var h = $('#press_design-guidelines-wrapper').height();
-					$('#vertical-right-navbar_theFIxed').height(h);
-				};
-			script.
-				// Sets ".vertical-right-navbar" to fixed-top after 300px are scrolled
-				$(window).scroll(function(){
-					var f_h = $('#yly_Press_featured').height(); //Getting the height of Featured list
-					var scroll_top = $(this).scrollTop(); // get scroll position top
-					var height_element_parent = $("#theFixed").parent().outerHeight(); //get high parent element
-					var height_element = $("#theFixed").height(); //get high of elemeneto
-					var position_fixed_max = height_element_parent + f_h; // get the maximum position of the elemen
-					var position_fixed = scroll_top < 375 + f_h ? 375 + f_h - scroll_top : position_fixed_max > scroll_top ? 0 : position_fixed_max - scroll_top ;
-					$("#theFixed").css("top",position_fixed);
-
-					$('#press_design-guidelines-wrapper').find('.section').each(function(i){
-						console.log(i);
-						if ($(this).position().top <= scroll_top - 370 + f_h) {
-							$('#theFixed').find('a.vertical-right-navbar-active').removeClass('vertical-right-navbar-active');
-							$('#theFixed').find('a').eq(i).addClass('vertical-right-navbar-active');
-						}
-					});
-				});

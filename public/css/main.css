@@ -55,7 +55,7 @@
 }
 
 .a-btn-icon {
-    background: url(../images/window.png) no-repeat 1px -4px;
+    background: url(../img/icons/window.png) no-repeat 1px -4px;
     height: 48px;
     left: 20px;
     -moz-transition: opacity 0.3s ease-in-out;
@@ -67,7 +67,7 @@
 }
 
 .b-btn-icon {
-    background: url(../images/app.png) no-repeat 1px -4px;
+    background: url(../img/icons/app.png) no-repeat 1px -4px;
     height: 48px;
     left: 20px;
     -moz-transition: opacity 0.3s ease-in-out;
@@ -79,7 +79,7 @@
 }
 
 .c-btn-icon {
-    background: url(../images/apple.png) no-repeat 1px 0px;
+    background: url(../img/icons/apple.png) no-repeat 1px 0px;
     height: 48px;
     left: 20px;
     -moz-transition: opacity 0.3s ease-in-out;
@@ -91,7 +91,7 @@
 }
 
 .d-btn-icon {
-    background: url(../images/and.png) no-repeat 1px 0px;
+    background: url(../img/icons/and.png) no-repeat 1px 0px;
     height: 48px;
     left: 20px;
     -moz-transition: opacity 0.3s ease-in-out;

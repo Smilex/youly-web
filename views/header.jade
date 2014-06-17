@@ -1,39 +1,38 @@
 .container-fluid
 	.container
 		nav.navbar.navbar-default(role="navigation")
-				<!-- Brand and toggle get grouped for better mobile display -->
-				.navbar-header(style="margin-top: 5px;")
-					a.navbar-brand(href="/", style="padding: 0; height: 75px;")
-						img(src="/img/branding/youly_logo.png", style="height: 100%;")
-					
-					button.navbar-toggle(type="button", data-toggle="collapse", data-target="#yly_head_collapse", style="margin-top: 25px;")
-						span.sr-only Toggle navigation
-						span.icon-bar
-						span.icon-bar
-						span.icon-bar
+			<!-- Brand and toggle get grouped for better mobile display -->
+			.navbar-header(style="margin-top: 5px;")
+				a.navbar-brand(href="/", style="padding: 0; height: 75px;")
+					img(src="/img/branding/youly_logo.png", style="height: 100%;")
 
-				.collapse.navbar-collapse#yly_head_collapse
-					
-					ul.nav.navbar-nav.navbar-right.navbar-nav-xs.visible-xs
-						include nav_btn
-					
-					ul.nav.navbar-nav.navbar-right.navbar-nav-sm.hidden-xs
-						include nav_btn
-						li.dropdown.hidden-xs
-							a.dropdown-toggle(href="#", style="color: #fff; background-color: #0a9e90; padding: 35px 15px;", data-toggle="dropdown") 
-								span(style="margin-right: 5px; background-color: inherit;") DOWNLOAD
-								span.glyphicon.glyphicon-chevron-down(style="top: 1px; font-size: 0.8em;")
+				button.navbar-toggle(type="button", data-toggle="collapse", data-target="#yly_head_collapse", style="margin-top: 25px;")
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
 
-							ul.dropdown-menu.navbar-nav-sm-dl
-								li
-									a.bususs(href="#")
-										img(src="img/icons/and_gray.png")
-										span Android
-								li
-									a(href="#")
-										img(src="img/icons/apple_gray.png")
-										span iOS
-								li
-									a(href="#")
-										img(src="img/icons/window_gray.png")
-										span Windows
+			.collapse.navbar-collapse#yly_head_collapse
+				ul.nav.navbar-nav.navbar-right.navbar-nav-xs.visible-xs
+					include nav_btn
+
+				ul.nav.navbar-nav.navbar-right.navbar-nav-sm.hidden-xs
+					include nav_btn
+					li.dropdown.hidden-xs
+						a.dropdown-toggle(href="#", style="color: #fff; background-color: #0a9e90; padding: 35px 15px;", data-toggle="dropdown") 
+							span(style="margin-right: 5px; background-color: inherit;") DOWNLOAD
+							span.glyphicon.glyphicon-chevron-down(style="top: 1px; font-size: 0.8em;")
+
+						ul.dropdown-menu.navbar-nav-sm-dl
+							li
+								a.bususs(href="#")
+									img(src="img/icons/and_gray.png")
+									span Android
+							li
+								a(href="#")
+									img(src="img/icons/apple_gray.png")
+									span iOS
+							li
+								a(href="#")
+									img(src="img/icons/window_gray.png")
+									span Windows

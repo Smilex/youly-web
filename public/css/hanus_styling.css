@@ -31,7 +31,38 @@
 }
 .yly-m-b { margin-bottom: 20px; }
 .yly-m-t { margin-top: 20px; }
-/*************** DEFAULT ENDS *************/
+
+
+/* ************* Header ************* */
+.navbar-default {
+	background-color: #fff;
+	border: 0 none;
+	min-height: 90px;
+	margin-bottom: 0px;
+}
+#yly_head_collapse { border-top: 0 none; }
+.navbar-nav-xs li a {
+	color: red;
+	font-weight: 700;
+	margin: 5px auto;
+}
+.navbar-nav-sm li a {
+	padding: 35px 10px;
+}
+.navbar-nav-sm-dl {
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-top: 1px solid #fff;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+	padding: 0px;
+	position: absolute;
+	top: 90px;
+}
+.navbar-nav-sm-dl li a span {
+	margin-left: 25px;
+}
+.navbar-nav-sm-dl li a {
+	padding: 10px 50px;
+}
 
 
 /*************** Go to Top ****************/
@@ -224,6 +255,8 @@
 	border-top-color: #fff;
 	bottom: -11px;
 }
+
+
 
 /* ************ index_navbar XS only ************ */
 #yly-content-tabs-xs li {

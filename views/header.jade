@@ -1,55 +1,39 @@
-<!-- Top Navbar for SM or higher only-->
-.container-fluid.hidden-xs
-	.row
-		nav.navbar.navbar-default(role="navigation", style="background-color: #fff; border: 0 none; margin-bottom: 0px;")
-			.container
+.container-fluid
+	.container
+		nav.navbar.navbar-default(role="navigation")
+				<!-- Brand and toggle get grouped for better mobile display -->
 				.navbar-header(style="margin-top: 5px;")
 					a.navbar-brand(href="/", style="padding: 0; height: 75px;")
 						img(src="/img/branding/youly_logo.png", style="height: 100%;")
-				style.
-					.navbar-nav-sm > li > a {
-						padding: 35px 10px;
-					}
-				.collapse.navbar-collapse#nav-collapse(style="width: 100%;")
-					ul.nav.navbar-nav.navbar-right.navbar-nav-sm
-						include nav_btn
-						li.dropdown
-							a.dropdown-toggle(href="#", style="color: #fff; background-color: #0a9e90;", data-toggle="dropdown") 
-								span(style="margin-right: 5px; background-color: inherit;") DOWNLOAD
-								span.glyphicon.glyphicon-chevron-down(style="top: 1px; font-size: 0.8em;")
-
-							ul.dropdown-menu.header_download.bg_youly
-								li
-									a(href="#")
-										img(src="images/and.png")
-										span ANDROID
-								li
-									a(href="#")
-										img(src="images/apple.png")
-										span iOS
-								li.header_download-soon
-									a(href="#")
-										img(src="images/window.png")
-										span WINDOWS
-
-	<!-- Top Navbar for XS only-->
-.container-fluid.visible-xs
-	.row
-		nav.navbar.navbar-default(role="navigation", style="background-color: #fff; border: 0 none; margin: 5px auto;")
-			.container
-				.navbar-header
-					a.navbar-brand(href="#", style="padding: 0; height: 70px;")
-						img(src="/img/branding/youly_logo.png", style="height: 98%; margin-left: 30px;")
 					
-
-					.navbar-toggle(data-toggle="collapse", data-target="#nav-collapse2" style="margin-top: 20px; border: 0 none;")
+					button.navbar-toggle(type="button", data-toggle="collapse", data-target="#yly_head_collapse", style="margin-top: 25px;")
 						span.sr-only Toggle navigation
 						span.icon-bar
 						span.icon-bar
 						span.icon-bar
 
-				.collapse.navbar-collapse#nav-collapse2(style="margin-top: 10px; z-index: 1000; background-color: #fff; width: 100%; position: absolute; top: 64px; border-bottom: 1px solid #ccc; box-shadow: 0px 2px 2px #ccc;")
-					ul.nav.navbar-nav.navbar-right
+				.collapse.navbar-collapse#yly_head_collapse
+					
+					ul.nav.navbar-nav.navbar-right.navbar-nav-xs.visible-xs
 						include nav_btn
+					
+					ul.nav.navbar-nav.navbar-right.navbar-nav-sm.hidden-xs
+						include nav_btn
+						li.dropdown.hidden-xs
+							a.dropdown-toggle(href="#", style="color: #fff; background-color: #0a9e90; padding: 35px 15px;", data-toggle="dropdown") 
+								span(style="margin-right: 5px; background-color: inherit;") DOWNLOAD
+								span.glyphicon.glyphicon-chevron-down(style="top: 1px; font-size: 0.8em;")
 
-script.
+							ul.dropdown-menu.navbar-nav-sm-dl
+								li
+									a.bususs(href="#")
+										img(src="img/icons/and_gray.png")
+										span Android
+								li
+									a(href="#")
+										img(src="img/icons/apple_gray.png")
+										span iOS
+								li
+									a(href="#")
+										img(src="img/icons/window_gray.png")
+										span Windows

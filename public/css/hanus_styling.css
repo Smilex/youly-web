@@ -121,7 +121,7 @@
 	height: auto;
 }
 .yly_footer {
-	padding: 60px 0px;
+	padding: 50px 0px;
 	background-color: #2a2a2a;
 	color: #fff;
 }
@@ -129,9 +129,21 @@
 .yly_footer a:hover {
 	color: #0a9e90;
 }
-.yly_footer-list_xs li {
-	padding-top: 20px;
-	font-weight: bold;
+.yly_footer_li_xs li a {
+	padding-top: 10px;
+	font-weight: 700;
+}
+.yly_footer_li_sm li a {
+
+}
+.yly_footer_copyright {
+	background-color: #3c3c3c;
+	color: #646464;
+}
+.yly_footer_copyright_p {
+	margin: 0px;
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
 
 

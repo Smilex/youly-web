@@ -120,17 +120,12 @@
 	width: 100%;
 	height: auto;
 }
-
-
-
 .yly_footer {
 	padding: 60px 0px;
 	background-color: #2a2a2a;
 	color: #fff;
 }
-.yly_footer a {
-	color: #fff;
-}
+.yly_footer a { color: #fff; }
 .yly_footer a:hover {
 	color: #0a9e90;
 }

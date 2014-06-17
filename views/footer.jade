@@ -26,18 +26,3 @@
 .container-fluid(style="background-color: #3c3c3c; color: #646464;")
 	.container(style="margin: 15px auto; padding-top: 15px;")
 		p &copy; 2014 Youly, Sp/f. All rights reserved.
-
-script.
-	function footer() {
-		var w = $(window).width()
-		var li = $('.yly_footer li')
-		var a = $('.yly_footer a')
-		if (w < 768) {
-			a.css('font-weight', '700')
-			li.css('padding-top', '15px')
-		}
-		else {
-			a.css('font-weight', '400')
-			li.css('padding-top', '0px')
-		}
-	};

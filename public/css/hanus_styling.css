@@ -255,12 +255,11 @@ a:hover {
 	background-color: none;
 	color: #0a9e90;
 }
-.yly-nav-buttom a {
-	margin: 0px 0px 0px 10px;
+.yly-nav-buttom {
+	padding-top: 20px;
 }
 .yly-nav-buttom img {
-	padding: 0px;
-	margin: 0px;
+	margin-left: 10px;
 	height: 47px;
 }
 .yly-nav-buttom-press {

@@ -1,12 +1,13 @@
-nav.navbar.navbar-default.hidden-xs(role="navigation", style="background-color: #fff; border: 0 none; padding-top: 15px; padding-bottom: 15px; margin-bottom: 0px;")
+.container-fluid
 	.container
-		.col-xs-8
-			ul.nav.navbar-nav.navbar-left
-				include nav_btn
-		.col-xs-4.yly-nav-buttom.text-right
-			a(href="#facebook")
-				img(src="/img/social/facebook_round.png")
-			a(href="#")
-				img(src="/img/social/pluss_round.png")
-			a(href="#")
-				img(src="/img/social/twitter_round.png")
+		nav.navbar.navbar-default.yly-nav-buttom.hidden-xs
+			.col-xs-8
+				ul.nav.navbar-nav.navbar-left
+					include nav_btn
+			.col-xs-4.text-right
+				a(href="#facebook")
+					img(src="/img/social/facebook_round.png")
+				a(href="#")
+					img(src="/img/social/pluss_round.png")
+				a(href="#")
+					img(src="/img/social/twitter_round.png")

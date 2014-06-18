@@ -6,22 +6,14 @@ html(lang="en")
 		include style
 		link(rel="icon", href="img/branding/favicon.ico" type="image/x-icon")
 		style.
-			.alert_red {
-				color: red;
-			}
-			.alert_green {
-				color: green;
-			}
+			.alert_red { color: red; }
+			.alert_green { color: green; }
+			.alert-info { color: #3c3c3c; }
 	body
 		include header
-		.container-fluid.yly-m-t.hidden-xs
-			.container
-				.col-xs-12
-					h2 We're here to help!
-					hr
-		.container-fluid.yly-m-t_b
-			.container
-				.col-xs-12.col-sm-3
+		.container-fluid.yly-contact-bg
+			.container.yly-contact-cnt
+				.col-xs-12.col-sm-6
 					p
 						span.glyphicon.glyphicon-envelope
 						span(style="margin-left: 20px;") 
@@ -29,17 +21,22 @@ html(lang="en")
 						br
 						span.glyphicon.glyphicon-phone
 						span(style="margin-left: 20px;") (+298) 28 99 70
-					p
-
+						br
+						br
 						span.glyphicon.glyphicon-map-marker
 						span(style="margin-left: 20px;") L&uuml;tzenstr&oslash;&eth; 4
 						br
 						span(style="margin-left: 34px;") 100 T&oslash;rshavn
 						br
 						span(style="margin-left: 34px;") Faroe Islands
+				.col-xs-12.col-sm-6
+					h1.hidden-xs Youly, at your service.
 
-
-				.col-xs-12.col-sm-9
+		.container-fluid.segment.bg_sky
+			.container
+				.col-xs-12
+					h2.segment-heading.yly-c-youly.text-center We are here to help!
+				.col-xs-12.yly-contact-form
 					form(method="POST", action="/mail", target="_blank" id="contact_form")
 						.row
 							.col-xs.12.col-sm-4
@@ -53,13 +50,12 @@ html(lang="en")
 									input.form-control(type="text", name="subject" placeholder="Subject*")
 						.row
 							.col-xs-12
-								textarea.form-control.yly-m-t(rows="8", name="message", placeholder="Any questiosn or comments?... Write to us.", style="max-width: 100%;")
+								textarea.form-control(rows="8", name="message", placeholder="Write something...", style="max-width: 100%;")
 								.btn-group(style="margin-top: 10px;")
 									button.btn.btn-youly(type="button", onclick="contact_send();") Send!
 								span#form_alert(style="margin-left: 15px; margin-top: 17px; position: absolute;")
-						
 
-					
+
 						script.
 							function contact_send() {
 								var email = $("#contact_form [name=email]").val();
@@ -91,9 +87,7 @@ html(lang="en")
 									$("#contact_form [type=button]").addClass("btn-danger");
 									$("#form_alert").removeClass("alert_green");
 									$("#form_alert").addClass("alert_red");
-									$("#form_alert").text("Just make sure all the fields are correctly filled");
-									
-
+									$("#form_alert").text("Oh snap! Change a few things up and try send again. ");
 
 									if (!is_message)
 										$("#contact_form [name=message]").parent().addClass("has-error"),
@@ -123,81 +117,57 @@ html(lang="en")
 								
 							}
 
-
-
-					.row
-						hr
-		.container-fluid.yly-m-t_b
+		.container-fluid.segment
 			.container
-				#map_canvas
+				.col-xs-12
+					#map_canvas
 
 
-		.container-fluid
+		.container-fluid.segment.bg_sky#yly_contact-c-a-q
 			.container
-				.col-xs-12.yly-m-t
-					h2.hidden-xs.text-center Commonly Asked Questions
-					h4.visible-xs.text-center Commonly Asked Questions
-			.container.yly-b-top
-				.col-xs-12.col-sm-4
-					ul.list-unstyled.yly_contact-c-a-q
-						li 
-							h3 Getting Started
-						li
-							a(href="#") What is Youly?
-						li 
-							a(href="#") Who's using Youly?
-						li 
-							a(href="#") Which countries does Youly Cover?
-						li 
-							a(href="#") How to use Youly?
-
-
-
-					ul.list-unstyled.yly_contact-c-a-q
-						li 
-							h3 Legal Obligation
-						li
-							a(href="/legal", target="_blank") Which are the 
-								u Terms of Use?
-						li 
-							a(href="/privacy", target="_blank") How is the 
-								u Privacy Policy?
-
-				.col-xs-12.col-sm-4
-					ul.list-unstyled.yly_contact-c-a-q
-						li 
-							h3 Features
-						li
-							a(href="#") Which features are free?
-						li
-							a(href="#") Which extra features comes with Youly Subscription?
-						li
-							a(href="#") How are the Youly Pricing?
-						li
-							a(href="#") How can I pay?
-
-					ul.list-unstyled.yly_contact-c-a-q
-						li 
-							h3 Youly Community
-						li
-							a(href="#") Where can I associate and share tips with other Youly users?
-						li
-							a(href="#") How and where do I get in contact with Youly support?
-				.col-xs-12.col-sm-4
-					ul.list-unstyled.yly_contact-c-a-q
-						li 
-							h3 Account
-						li
-							a(href="#") What was my Username?
-						li
-							a(href="#") What was my Password?
-
-
-		.container-fluid
+				.col-xs-12
+					h2.hidden-xs.segment-heading.text-center Commonly Asked Questions
+					h3.visible-xs.segment-heading.text-center Commonly Asked Questions
 			.container
-				.col-xs-12.yly-m-t
-					p
-						| &nbsp;
+				.col-xs-12.col-sm-4
+					div.alert.alert-info(style="margin-top: 30px;")
+						button.close(type="button", data-dismiss="alert", aria-hidden="true") &times;
+						h4 Question #8?
+						p
+							b No!
+							| Youly works for the users... lorem ipsum
+							| Suspendisse potenti. Pellentesque quis velit ipsum. Sed tincidunt metus enim, et pellentesque 
+							| ipsum varius vel. Proin vel felis purus. Proin non nibh nulla. Pellentesque eu quam lectus.
+						p
+							| Fusce urna ipsum, tempor vitae elit a, tempor eleifend lorem.
+				.col-xs-12.col-sm-4
+					ul.list-unstyled
+						li
+							h3 Youly in General
+						li
+							a(href="contact#yly_contact-c-a-q") Question #1?
+						li
+							a(href="contact#yly_contact-c-a-q") Question #2?
+						li
+							a(href="contact#yly_contact-c-a-q") Question #3?
+						li
+							a(href="contact#yly_contact-c-a-q") Question #4?
+				.col-xs-12.col-sm-4
+					ul.list-unstyled
+						li
+							h3 Youly in General
+						li
+							a(href="contact#yly_contact-c-a-q") Question #5?
+						li
+							a(href="contact#yly_contact-c-a-q") Question #6?
+						li
+							a(href="contact#yly_contact-c-a-q") Question #7?
+						li
+							a(href="contact#yly_contact-c-a-q") Question #8?
+						li
+							a(href="contact#yly_contact-c-a-q") Who's using Youly?
+						li
+							a(href="contact#yly_contact-c-a-q") Who's using Youly?
 
 		include nav_buttom
 		include footer

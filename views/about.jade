@@ -21,20 +21,45 @@ html(lang="en")
 						img.center-block.img-circle(src="img/team/hanus.png")
 					.row
 						h4 Hanus á Bøgarði
-						i.text-center CFO and Co-founder
+						i.text-center CFO and Co-founder&nbsp;
+						span.about_cnt_info.glyphicon.glyphicon-chevron-down(data-toggle="dropdown", style="cursor: pointer;")
+						ul.dropdown-menu(role="menu", aria-labelledby="dLabel")
+							.glyphicon.glyphicon-phone
+							span(style="margin-left: 20px;") (+298) 28 99 77
+							br
+							.glyphicon.glyphicon-envelope
+							span(style="margin-left: 20px;")
+								a(href="mailto:hanus@youly.dk", target="_top") hanus@youly.dk
+
 				.col-xs-12.col-sm-4.text-center
 					.row
 						img.center-block.img-circle(src="img/team/ian.png")
 					.row
 						h4 Ian Thomasen Jacobsen
-						i.text-center CTO and Co-founder
+						i.text-center CTO and Co-founder&nbsp;
+						span.about_cnt_info.glyphicon.glyphicon-chevron-down(data-toggle="dropdown", style="cursor: pointer;")
+						ul.dropdown-menu(role="menu", aria-labelledby="dLabel")
+							.glyphicon.glyphicon-phone
+							span(style="margin-left: 20px;") (+298) 28 90 46
+							br
+							.glyphicon.glyphicon-envelope
+							span(style="margin-left: 20px;")
+								a(href="mailto:ian@youly.dk", target="_top") ian@youly.dk
+
 				.col-xs-12.col-sm-4.text-center
 					.row
 						img.center-block.img-circle(src="img/team/tummas.png")
 					.row
 						h4 Tummas Jóhan Sigvardsen
-						i.text-center CEO and Co-founder
-
+						i.text-center CEO and Co-founder&nbsp;
+						span.about_cnt_info.glyphicon.glyphicon-chevron-down(data-toggle="dropdown", style="cursor: pointer;")
+						ul.dropdown-menu(role="menu", aria-labelledby="dLabel")
+							.glyphicon.glyphicon-phone
+							span(style="margin-left: 20px;") (+298) 24 33 42
+							br
+							.glyphicon.glyphicon-envelope
+							span(style="margin-left: 20px;")
+								a(href="mailto:tummas@youly.dk", target="_top") tummas@youly.dk
 
 		.container-fluid.segment.bg_sky
 			.container
@@ -42,12 +67,25 @@ html(lang="en")
 					h2.segment-heading.yly-c-youly.text-center The Youly Story
 				.col-xs-12.col-sm-4
 					h4.yly-c-3c
-						span(style="font-size: 40px;") &lsquo;&lsquo;
+						span(style="font-size: 50px;") &lsquo;&lsquo;
 						| Our story began when... lorem ipsum semper, a ultricies mauris fermentum. Pellentesque aliquet nisi&nbsp;
 						| quis blandit convallis. Integer euismod massa at iaculis commodo. Vivamus eleifend bibendum lacinia. Sed consequat nec felis id fermentum
 						br
 						span.pull-right(style="font-size: 40px;") &rsquo;&rsquo;
 					h5 - Tummas J. Sigvardsen
+				.col-xs-12.col-sm-6.col-sm-offset-2
+					#carousel_about_us.carousel.slide(data-ride="carousel", style="margin-top: 30px;")
+						ol.carousel-indicators
+							li.active(data-target="#carousel_about_us", data-slide-to="0")
+							li(data-target="#carousel_about_us", data-slide-to="1")
+							li(data-target="#carousel_about_us", data-slide-to="2")
+						.carousel-inner
+							.item.carousel-item.active
+								img(src="img/office/office1.jpg", width="100%", height="auto")
+							.item.carousel-item
+								img(src="img/office/office2.jpg", width="100%", height="auto")
+							.item.carousel-item
+								img(src="img/office/office3.jpg", width="100%", height="auto")
 
 
 		.container-fluid.segment
@@ -55,17 +93,49 @@ html(lang="en")
 				.col-xs-12
 					h2.segment-heading.yly-c-youly.text-center Partners
 				.col-xs-12.col-sm-4.col-md-2.col-md-offset-1
-					img.center-block(src="img/partners/1worldsync.png", width="100%;")
+					a(href="#")
+						img.center-block(src="img/partners/1worldsync.png", width="100%;")
 				.col-xs-12.col-sm-4.col-md-2
-					img.center-block(src="img/partners/brand_bank.jpg", width="100%;")
+					a(href="#")
+						img.center-block(src="img/partners/brand_bank.jpg", width="100%;")
 				.col-xs-12.col-sm-4.col-md-2
-					img.center-block(src="img/partners/miklagardur.jpg", width="100%;")
+					a(href="#")
+						img.center-block(src="img/partners/miklagardur.jpg", width="100%;")
 				.col-xs-12.col-sm-4.col-md-2
-					img.center-block(src="img/partners/poul_hansen.png", width="100%;")
+					a(href="#")
+						img.center-block(src="img/partners/poul_hansen.png", width="100%;")
 				.col-xs-12.col-sm-4.col-md-2
-					img.center-block(src="img/partners/super_gros.jpg", width="100%;")
+					a(href="#")
+						img.center-block(src="img/partners/super_gros.jpg", width="100%;")
+
+
+		.container-fluid.segment.bg_sky
+			.container.yly-about_us-manage-team
+				.col-xs-12
+					h2.segment-heading.yly-c-youly.text-center Venture Capital
+				.col-xs-12.col-sm-4
+					a(href="#")
+						img.center-block(src="img/partners/1worldsync.png", width="60%")
+				.col-xs-12.col-sm-4
+					a(href="#")
+						img.center-block(src="img/partners/brand_bank.jpg", width="60%")
+				.col-xs-12.col-sm-4
+					a(href="#")
+						img.center-block(src="img/partners/poul_hansen.png", width="60%")
 
 
 		include nav_buttom
 		include footer
 		include script
+		script.
+			$('.carousel-item').height(300)
+			$('#carousel_about_us').css('border', '2px solid #3c3c3c');
+			$('.carousel-indicators').css('bottom', '-10px');
+
+			$('.about_cnt_info').css('margin-left', '5px')
+			$('.about_cnt_info').css('top', '3px')
+
+			$('.dropdown-menu').css('width', '80%');
+			$('.dropdown-menu').css('left', '10%');
+			$('.dropdown-menu').css('text-align', 'left')
+			$('.dropdown-menu').css('padding', '20px');

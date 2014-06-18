@@ -1,51 +1,7 @@
-.row
-	ul.list-unstyled.blog-right-item.blog_recent
+.vertical-right-navbar.vertical-affix
+	ul.list-unstyled.nav
 		li
-			h3.text-center Recent blogs
+			h4 Something
 		- each blog in blogs
 			li
-				a.myDiv(href="##{blog.blog_id}")= blog.title
-
-.row.blog-right-item.blog_elsewhere
-	.col-xs-12
-		h3.text-center Elsewhere
-	.col-xs-12
-		a(href="#facebook")
-			img(src="/img/social/facebook_round.png")
-		a(href="#")
-			img(src="/img/social/pluss_round.png")
-		a(href="#")
-			img(src="/img/social/twitter_round.png")
-
-.row.blog-right-item
-	.col-xs-12
-		h3.text-center Subscribe
-		p Never miss a blog, sign up for our newsletter and stay in touch!
-
-.row.blog-right-item
-	.col-xs-12
-		script(type="text/javascript", src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
-		script(type="text/javascript", src="http://arrow.scrolltotop.com/arrow79.js")
-		noscript Not seeing a
-			a(href="http://www.scrolltotop.com/") Scroll to Top Button
-			| Go to our FAQ page for more info.
-
-script.
-	$(document).ready(function(){
-		
-		//Check to see if the window is top if not then display button
-		$(window).scroll(function(){
-			if ($(this).scrollTop() > 100) {
-				$('.scrollToTop').fadeIn();
-			} else {
-				$('.scrollToTop').fadeOut();
-			}
-		});
-		
-		//Click event to scroll to top
-		$('.scrollToTop').click(function(){
-			$('html, body').animate({scrollTop : 0},800);
-			return false;
-		});
-		
-	});
+				a(href="##{blog._id}")= blog.title

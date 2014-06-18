@@ -5,16 +5,15 @@ html(lang="en")
 		title="Youly | Blog"
 		include style
 	
-	body(onload="load()")
+	body(data-spy="scroll" data-target=".vertical-right-navbar")
 		include header
 		.container-fluid.yly-m-t
-			.container.yly-m-t
-				.col-xs-12.col-sm-9#blog_item-wrapper
+			.container.yly-m-t(style="min-height: 1000px;")
+				.col-xs-12.col-sm-9
 					- each blog in blogs
 						include blog_item
 				.hidden-xs.col-sm-3
-					.vertical-affix
-						include blog_right
+					include blog_right
 		include nav_buttom
 		include footer
 		include script

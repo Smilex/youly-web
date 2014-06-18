@@ -396,7 +396,6 @@ a:hover {
 
 
 /***************** About Us *****************/
-
 .yly-about_us-bg-team {
 	background-image: url("../img/team/team_sample.jpg");
 	background-size: 100% auto;
@@ -427,7 +426,6 @@ a:hover {
 	margin-top: 50px;
 	width: 70% !important;
 }
-
 /***************** Vertical info list *****************/
 .yly-info-list-head {
 	margin-top: 20px; 

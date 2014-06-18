@@ -390,10 +390,6 @@ a:hover {
 	position: absolute;
 	bottom: -118px;
 }
-.yly_contact-c-a-q li {
-	margin-top: 10px;
-}
-
 
 /***************** About Us *****************/
 .yly-about_us-bg-team {
@@ -515,7 +511,44 @@ a:hover {
 }
 
 
-/***************** Contact Google Map *****************/
+/***************** Contact *****************/
+.yly-contact-bg {
+	background-image: url("../img/office/office4.png");
+	background-size: 100% auto;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center 0px;
+	min-height: 500px;
+}
+.yly-contact-cnt {
+	margin-top: 40px;
+	color: #fff;
+}
+.yly-contact-cnt a { color: #fff; }
+.yly-contact-cnt a:hover { color: #3c3c3c; }
+.yly-contact-cnt p {
+	padding: 15px 30px;
+	float: left;
+	background-color: rgba(10,158,144,0.8);
+}
+.yly-contact-cnt h1 {
+	margin-top: 0px;
+	padding: 15px 30px;
+	float: right;
+	text-align: right;
+	background-color: rgba(10,158,144,0.8);
+}
+.yly-contact-bg_info a {
+	color: #eee;
+	font-weight: 700;
+}
+.yly-contact-form input, textarea {
+	margin-top: 20px;
+	min-width: 100%;
+}
+.yly-contact-form > div {
+	width: 100%;
+}
 #map_canvas {
 	width: 100%;
 	height: 400px;
@@ -545,4 +578,7 @@ a:hover {
 	height: 30px;
 	margin-top: -30px;
 	background-color: rgba(20, 20, 20, 0.8);
+}
+#yly_contact-c-a-q li {
+	margin-top: 10px;
 }

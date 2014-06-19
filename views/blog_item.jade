@@ -4,7 +4,7 @@
 	.col-xs-12.col-sm-9
 		.row
 			.col-xs-12
-				h2= blog.title
+				h1= blog.title
 		.row
 			.col-xs-12.blog_item_author_date
 				span by - 
@@ -13,11 +13,32 @@
 		.row
 			.col-xs-12
 				= blog.post
-
-		.row
-			.col-xs-12
 				include blog_item1
-		.row
+		.row.blog_item_share
 			.col-xs-12
-				span.blog_item_share
-					p WAWDWDA
+				a(href="#", title="Facebook")
+					img(src="img/social/facebook_round.png")
+				a(href="#", title="Google+")
+					img(src="img/social/pluss_round.png")
+				a(href="#", title="Google+")
+					img(src="img/social/twitter_round.png")
+				a(href="#", title="Twitter", data-toggle="modal", data-target="#blog_modal_#{blog._id}")
+					img(src="img/social/envelope_round.png")
+
+				.modal.fade(tabindex="-1", id="blog_modal_#{blog._id}" role="dialog", aria-labelledby="blog_label_#{blog._id}", aria-hidden="true")
+					.modal-dialog.modal-sm
+						.modal-content
+							form(method="POST", action="/mail", target="_blank" id="blog_form_#{blog._id}")
+								.modal-header
+									button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
+									h4.yly-c-youly.modal-title(id="blog_label_#{blog._id}" style="margin-top: 0px;")= blog.title
+								.modal-body
+									.input-group(style="width: 100%;")
+										h5 Your friend(s) email	
+										input.form-control(type="text", name="email", placeholder="Email*", style="margin-bottom: 15px;")
+									.input-group(style="width: 100%;")
+										h5 Leave a short message
+										textarea.form-control(rows="5", name="message", placeholder="Write something...", style="max-width: 100%; margin-top: 0px;")
+								.modal-footer(style="padding-top: 0px")
+										.btn-group(style="margin-top: 10px;")
+											button.btn.btn-youly(type="button") Send!

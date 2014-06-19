@@ -1,7 +1,6 @@
-.vertical-right-navbar.vertical-affix
+.vertical-right-navbar
+	h4 Recent Blogs
 	ul.list-unstyled.nav
-		li
-			h4 Something
 		- each blog in blogs
 			li
 				a(href="##{blog._id}")= blog.title

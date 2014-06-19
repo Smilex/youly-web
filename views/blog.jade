@@ -4,17 +4,19 @@ html(lang="en")
 		include meta
 		title="Youly | Blog"
 		include style
-	
-	body(onload="load()")
+		style.
+	body(data-spy="scroll" data-target=".vertical-right-navbar")
 		include header
-		.container-fluid.yly-m-t
-			.container.yly-m-t
-				.col-xs-12.col-sm-9#blog_item-wrapper
+		.container-fluid
+			.container
+				.col-xs-12.col-sm-9
 					- each blog in blogs
 						include blog_item
-				.hidden-xs.col-sm-3
-					.vertical-affix
-						include blog_right
+				.hidden-xs.col-sm-3.yly-m-t
+					.col-xs-12
+						.vertical-affix
+							include blog_right
+
 		include nav_buttom
 		include footer
 		include script

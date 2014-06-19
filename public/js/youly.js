@@ -1,3 +1,4 @@
+// Vertical Navbar
 $(window).bind("scroll", function () {
 });
 
@@ -18,4 +19,6 @@ $(window).on("load", function () {
 			}
 		}
 	});
+	if (!$(".vertical-affix").find("li").hasClass("active"))
+		$('.vertical-affix').find('li').first().addClass("active");
 });

@@ -1,73 +1,63 @@
-var passport = require("passport")
-  , GoogleStrategy = require('passport-google').Strategy;
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('localhost:27017/youly');
 var auth = require("express").Router();
+var passport = require("passport");
+var localStrategy = require("passport-local").Strategy;
 
-passport.serializeUser(function(user,done) {
+passport.serializeUser(function(user, done) {
 	done(null, user._id);
 });
 
 passport.deserializeUser(function(id, done) {
 	var users = db.get('users');
-	users.findOne({_id: id}).on('success', function (doc) {
-		done(null, doc);
+	users.findOne({_id: id}, function(err, user) {
+		done(err, user);
 	});
 });
 
-passport.use(new GoogleStrategy({
-	returnURL: 'http://localhost:4000/zoidberg/auth/google/return',
-	realm: 'http://localhost:4000/'
-	},
-	function(identifier, profile, done) {
-		var users = db.get("users");
-		users.findOne({openid: identifier})
-			.on('success', function (doc) {
-				if (doc === null)
-				{
-					users.insert({openid: identifier, name: profile.displayName})
-						.on('success', function (doc) {
-							done(null, doc);
-						});
-				}
-				else
-				{
-					done(null, doc);
-				}
-			});
+passport.use(new localStrategy (
+	function (username, password, done) {
+		var users = db.get('users');
+		users.findOne({username: username}, function (err, user) {
+			if (err)
+				return done(err);
+			if (!user)
+				return done(null, false, {message: "Incorrect username."});
+			if (user.password != password)
+				return done(null, false, {message: "Incorrect password."});
+
+			return done(null, user);
+		});
 	}
 ));
 
 exports.authZoidberg = function (req, res, next) {
+	console.log(req.user);
 	if (!req.user)
 	{
 		res.redirect("/zoidberg/login");
 	}
 	else {
-		var userssec = db.get('userssec');
-		var secgroups = db.get('securitygroups');
-		secgroups.findOne({name: "zoidberg"})
-			.on("success", function (doc) {
-				if (doc === null)
-				{
+		var users = db.get('users');
+		users.findOne({username: req.user.username,
+			password: req.user.password},
+			function (err, user) {
+				console.log(err);
+				if (err)
 					res.redirect("/zoidberg/login");
-					return;
-				}
-				var zoid_id = doc._id;
-				userssec.findOne({user_id: req.user._id, sec_id: zoid_id})
-					.on("success", function (doc) {
-						if (doc === null)
-							res.redirect("/zoidberg/login");
-						else
-							next();
-					});
-			});
+				console.log(user);
+				if (!user)
+					res.redirect("/zoidberg/login");
+				next();
+			}
+		);
 	}
 }
 
-auth.get("/google", passport.authenticate('google'));
-auth.get("/google/return",
-	passport.authenticate('google', {successRedirect: "/zoidberg/", failureRedirect: "/zoidberg/login" }));
+auth.post("/", passport.authenticate("local", {
+	successRedirect: "/zoidberg",
+	failureRedirect: "/zoidberg/login"
+}));
 
 exports.auth = auth;

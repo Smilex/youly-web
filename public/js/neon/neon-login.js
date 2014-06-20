@@ -40,6 +40,7 @@ var neonLogin = neonLogin || {};
 			
 			submitHandler: function(ev)
 			{
+				$("#form_login").submit();
 				/* 
 					Updated on v1.1.4
 					Login form now processes the login data, here is the file: data/sample-login-form.php
@@ -61,7 +62,7 @@ var neonLogin = neonLogin || {};
 											
 					// Send data to the server
 					$.ajax({
-						url: baseurl + 'data/sample-login-form.php',
+						url: baseurl + 'auth',
 						method: 'POST',
 						dataType: 'json',
 						data: {
@@ -70,10 +71,12 @@ var neonLogin = neonLogin || {};
 						},
 						error: function()
 						{
-							alert("An error occoured!");
+							$(".login-page").removeClass('logging-in');
+							neonLogin.resetProgressBar(true);
 						},
 						success: function(response)
 						{
+							alert("success");
 							// Login status [success|invalid]
 							var login_status = response.login_status;
 															

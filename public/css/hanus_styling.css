@@ -271,32 +271,28 @@ a:hover {
 
 
 
-/* ************ index_navbar SM or higher ************ */
+/* ************ index_Tabs  ************ */
 #yly-content-tabs {
 	height: auto;
+	border: none;
 }
-#yly-content-tabs h3 {
-	text-align: center;
+#yly-content-tabs {
+
 }
 #yly-content-tabs li {
 	width: 25%;
-	height: 100%;
 }
 #yly-content-tabs a {
 	color: #000;
 	border: none;
-	border-color: green;
-	min-height: 118px;
 }
 #yly-content-tabs a:hover {
 	color: #000;
 	background-color: #fff;
 	border-color: #fff;
 }
-#yly-content-tabs > .active h3 {
+#yly-content-tabs > .active h3, #yly-content-tabs > .active h6 {
 	color: #0a9e90;
-}
-#yly-content-tabs > .active a:hover {
 }
 #yly-content-tabs li.active > .arrow {
 	position: absolute;
@@ -312,35 +308,6 @@ a:hover {
 	border-top-color: #fff;
 	bottom: -11px;
 }
-
-
-
-/* ************ index_navbar XS only ************ */
-#yly-content-tabs-xs li {
-	width: 33%;
-}
-#yly-content-tabs-xs a {
-	color: #000;
-	border-color: #fff;
-}
-#yly-content-tabs-xs a:hover {
-	color: #000;
-	background-color: #fff;
-	border-color: #fff;
-}
-#yly-content-tabs-xs > .active a {
-	color: #000;
-	background-image: url("img/icons/arrow_down.png");
-	background-repeat: no-repeat;
-	background-position: center;
-}
-#yly-content-tabs-xs > .active h3 {
-	color: #0a9e90;
-}
-#yly-content-tabs-xs > .active a:hover {
-}
-
-
 /* ********** Index_Tabs-Features ******************************************************************* */
 
 

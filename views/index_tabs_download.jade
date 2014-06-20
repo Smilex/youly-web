@@ -10,7 +10,7 @@
 				img.center-block(src="img/electronics/iphone.png", style="")
 
 	.container-fluid(style="background-color: #fff;")
-		.container
+		.container.index-tabs-dl-sm
 			.col-xs-12.col-sm-4
 				a.download-btn.rounded.center-block#android-btn(href="#")
 					span.d-btn-icon
@@ -36,9 +36,9 @@
 
 		.container(style="margin: 20px auto 0px auto;")
 			.col-sm-12.hidden-xs
-				p.text-center.yly-c-youly(style="font-size: 38px")
-					span(style="font-weight: 100") Scan the code or click the button,
-					span(style="font-weight: 800") Youly is free!
+				h1.text-center.yly-c-youly
+					span(style="font-weight: 300") Scan the code or click the button,
+					span(style="font-weight: 400") Youly is free!
 
 
 		.container(style="margin: 50px auto;")
@@ -53,13 +53,30 @@
 					img.center-block(src="img/tech/qr_ios.png")
 
 
-
-
 <!-- index_tabs_download XS only -->
-.visible-xs
-	.container-fluid.bg_youly
-		.container
-			p .visible-xs
-			p Download
+
+.container-fluid.visible-xs(style="background-color: #076B62;")
+	.container(style="margin-top: 90px;")
+		.col-xs-12.col-sm-4
+			a.download-btn.rounded.center-block#android-btn(href="#")
+				span.d-btn-icon
+				.btn-text
+					| Download
+				small On Google Play
+				span.slide-down-icon
+		.col-xs-12.col-sm-4
+			a.download-btn.rounded.center-block#window-btn(href="#")
+				span.a-btn-icon
+				.btn-text.center-block
+					| Download
+				small on Windows Store
+				span.slide-down-icon
+		.col-xs-12.col-sm-4
+			a.download-btn.rounded.center-block#app-btn(href="#")
+				span.c-btn-icon
+				.btn-text
+					| Download
+				small on App Store
+				span.slide-down-icon
 
 include index_best_app

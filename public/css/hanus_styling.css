@@ -270,8 +270,9 @@ a:hover {
 
 
 
-
+/* ************************************* */
 /* ************ index_Tabs  ************ */
+/* ************************************* */
 #yly-content-tabs {
 	height: auto;
 	border: none;
@@ -308,8 +309,44 @@ a:hover {
 	border-top-color: #fff;
 	bottom: -11px;
 }
-/* ********** Index_Tabs-Features ******************************************************************* */
 
+
+
+/* **** Index_tabs_download **** */
+.index-tabs-dl-xs a {
+	margin-bottom: 30px;
+	max-width: 250px;
+	min-width: 225px;
+}
+/* **** Index_tabs_features **** */
+
+
+/* **** Index_tabs_users **** */
+
+
+/* **** Index_tabs_data **** */
+.index-tabs-data h1 {
+	height: 128px;
+}
+.index-tabs-data h4 {
+	text-align: center;
+	clear: both;
+	background-color: #e4e9f0;
+	padding: 10px 0px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.data_gs1 {
+	background-size: 100% auto;
+	background-position: top center;
+	background-image: url("../img/icons/manufacture.png");
+	background-color: #e4e9f0;
+}
+.data-line-v {
+	background-image: url("../img/icons/border_middle-yly-light.png");
+	background-position: top center;
+	background-repeat: repeat-y;
+}
 
 
 

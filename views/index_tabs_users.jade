@@ -1,0 +1,70 @@
+<!-- index_tabs_users SM or higher -->
+.hidden-xs
+	.container-fluid.tabs_yly
+		.tabs-right
+			ul.nav.nav-tabs
+				li.active
+					a(href="#tab_use_all", data-toggle="tab") Allergies
+				li
+					a(href="#tab_use_dia", data-toggle="tab") Diabetic
+				li
+					a(href="#tab_use_ove", data-toggle="tab") Over Weight
+				li
+					a(href="#tab_use_pre", data-toggle="tab") Pregnancy
+				li
+					a(href="#tab_use_veg", data-toggle="tab") Veggies
+				li
+					a(href="#tab_use_eld", data-toggle="tab") Elderly
+				li
+					a(href="#tab_use_mus", data-toggle="tab") Muslims
+
+
+			.tab-content(style="padding-top: 60px;")
+				.tab-pane.active#tab_use_all
+					include users/allergies
+				.tab-pane#tab_use_dia 
+					include users/diabetic
+				.tab-pane#tab_use_ove 
+					include users/overweight
+				.tab-pane#tab_use_pre 
+					include users/pregnancy
+				.tab-pane#tab_use_veg 
+					include users/veggies
+				.tab-pane#tab_use_eld 
+					include users/elderly
+				.tab-pane#tab_use_mus 
+					include users/muslims
+
+
+<!-- index_tabs_features XS only -->
+.visible-xs
+	.container-fluid(style="padding: 40px 0px; background-color: #e4e9f0;")
+		.text-center
+			div
+				.col-xs-12(style="margin-top: 30px;")
+					h2 Allergies
+				include users/allergies
+			div
+				.col-xs-12(style="margin-top: 30px;")
+					h2 Diabetic
+				include users/diabetic
+			div
+				.col-xs-12(style="margin-top: 30px;")
+					h2 Over Weight
+				include users/overweight
+			div
+				.col-xs-12(style="margin-top: 30px;")
+					h2 Pregnancy
+				include users/pregnancy
+			div
+				.col-xs-12(style="margin-top: 30px;")
+					h2 Veggies
+				include users/veggies
+			div
+				.col-xs-12(style="margin-top: 30px;")
+					h2 Elderly
+				include users/elderly
+			div
+				.col-xs-12(style="margin-top: 30px;")
+					h2 Muslims
+				include users/muslims

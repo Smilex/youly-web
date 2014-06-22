@@ -30,7 +30,10 @@ angular.module("zoidberg")
 			{id: blog._id, published: !blog.published})
 			.success(function () {
 				blog.published = !blog.published;
-				alert_info("'" + blog.title + "' has been published.");
+				if (blog.published)
+					alert_info("'" + blog.title + "' has been published.");
+				else
+					alert_info("'" + blog.title + "' has been unpublished.");
 			})
 			.error(function () {
 				alert_error("Failed to change publish status of blog");

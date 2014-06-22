@@ -15,11 +15,38 @@ exports.index = function(req, res) {
 exports.blog = function(req, res) {
 	var blogs = db.get('blogs');
 
-	blogs.find().on("success", function (doc) {
-		res.render('blog', {blogs: doc, page: "blog"}, function(err, html) {
-			if (err)
-				console.log(err);
-			res.send(html);
+	blogs.find({published: true}, function (err, doc) {
+		if (err) {
+			res.status(500).send("");
+			return;
+		}
+
+		var users = db.get("users");
+		users.find({}, function (err, user) {
+			if (err) {
+				res.status(500).send("");
+				return;
+			}
+			var authors = [];
+			for (var i = 0; i < user.length; i++)
+				authors.push({id: user[i]._id, name: user[i].username, img: user[i].img});
+			for (var i = 0; i < doc.length; i++) {
+				doc[i]._id = i;
+				for (var j = 0; j < authors.length; j++) {
+					if (doc[i].author.toString() == authors[j].id.toString()) {
+						doc[i].author = authors[j].name;
+						doc[i].img = authors[j].img;
+					}
+				}
+			}
+
+			res.render('blog', {blogs: doc, page: "blog"}, function(err, html) {
+				if (err) {
+					res.status(500).send("");
+					return;
+				}
+				res.send(html);
+			});
 		});
 	});
 }

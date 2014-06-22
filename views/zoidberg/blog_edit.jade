@@ -1,0 +1,13 @@
+.row
+	.col-sm-10
+		input.form-control.input-lg(name="blog_title" placeholder="Title"
+		value="{{blog_edit.title}}" ng-model="blog_edit.title")
+	.col-sm-2
+		button.btn.btn-blue.btn-lg.btn-block.btn-icon(type="button" ng-click="save()") Save
+			i.entypo-check
+br
+.row
+	.col-sm-12
+		zoid-editor(value="{{blog_edit.content}}")
+br
+.row

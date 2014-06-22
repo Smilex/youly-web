@@ -1,0 +1,11 @@
+div(ng-controller="BlogCtrl")
+	.row
+		.col-sm-4
+			button.btn.btn-green.btn-sm(ng-click="new()") New Blog
+	br
+	.row(ng-show="alert")
+		.col-md-8.col-md-offset-2
+			.alert.alert-dismissable(ng-class="alert_class")
+				button.close(ng-click="dismiss()") &times
+				span {{alert_msg}}
+	.ui-view

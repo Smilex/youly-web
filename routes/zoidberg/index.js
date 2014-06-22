@@ -2,9 +2,11 @@ var express = require("express");
 var zoidberg = express.Router();
 var auth = require('./auth');
 var users = require('./users');
+var blogs = require('./blogs');
 
 zoidberg.use("/auth", auth.auth);
 zoidberg.use("/users", users.users);
+zoidberg.use("/blogs", blogs.blogs);
 zoidberg.route("/")
 	.all(auth.authZoidberg)
 	.get(function(req, res, next) {

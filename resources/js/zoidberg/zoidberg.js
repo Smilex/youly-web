@@ -1,4 +1,4 @@
-angular.module("zoidberg", ["ui.router"])
+angular.module("zoidberg", ["ui.router", "ui.bootstrap"])
 .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise("/");
 	$stateProvider
@@ -6,8 +6,18 @@ angular.module("zoidberg", ["ui.router"])
 		url: "/",
 		templateUrl: "dash.html"
 	})
-	.state("articles", {
-		url: "/articles",
+	.state("blogs", {
+		url: "/blogs",
+		abstract: true,
+		templateUrl: "blogs.html"
+	})
+	.state("blogs.list", {
+		url: "/",
+		templateUrl: "blog_list.html"
+	})
+	.state("blogs.edit", {
+		url: "/edit",
+		templateUrl: "blog_edit.html"
 	});
 }])
 .directive("zoidBreadcrumbs", ["$location", "$rootScope", function ($location, $rootScope) {
@@ -42,4 +52,37 @@ angular.module("zoidberg", ["ui.router"])
 		link: link,
 		template: "<ol class='breadcrumb bc-3'></ol>"
 	}
-}]);
+}])
+.directive("zoidEditor", function () {
+	var self = this;
+	var directive = {
+		restrict: "E",
+		replace: true,
+		transclude: true,
+		scope: {
+		},
+		template :
+		 
+			"<div>" +
+			 
+			"<textarea class=\"wysihtml5 form-control\" rows=\"18\"></textarea>"+
+			 
+			"</div>",
+		link: function ($scope, $element, $attrs) {
+			$scope.textarea = $($element.find("textarea"));
+			$scope.wysi = $scope.textarea.wysihtml5({
+				stylesheet: "/css/neon/wysihtml5-color.css",
+				events: {
+					"change": function () {
+						$scope.$parent.blog_edit.content = this.getValue();
+						$scope.$parent.save();
+					}
+				}
+			});
+
+			$scope.wysi.val($attrs.value);
+		}
+	};
+
+	return directive;
+});

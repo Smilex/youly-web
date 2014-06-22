@@ -4,8 +4,10 @@ html(lang="en" ng-app="zoidberg")
 		meta(charset="utf-8")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
-		meta(name="description" content="Neon Admin Panel")
-		meta(name="author" content="")
+		meta(name="description" content="Zoidberg")
+		meta(name="author" content="Youly Sp/F")
+
+		title Zoidberg
 
 		link(rel="stylesheet" href="/js/neon/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css")
 		link(rel="stylesheet" href="/css/neon/font-icons/entypo/css/entypo.css")
@@ -15,6 +17,10 @@ html(lang="en" ng-app="zoidberg")
 		link(rel="stylesheet" href="/css/neon/neon-theme.css")
 		link(rel="stylesheet" href="/css/neon/neon-forms.css")
 		link(rel="stylesheet" href="/css/neon/custom.css")
+		link(rel="stylesheet" href="/js/neon/datatables/responsive/css/datatables.responsive.css")
+		link(rel="stylesheet" href="/js/neon/select2/select2-bootstrap.css")
+		link(rel="stylesheet" href="/js/neon/select2/select2.css")
+		link(rel="stylesheet" href="/js/neon/wysihtml5/bootstrap-wysihtml5.css")
 
 		script(src="/js/neon/jquery-1.11.0.min.js")
 	body.page-body
@@ -24,6 +30,12 @@ html(lang="en" ng-app="zoidberg")
 		// Templates
 		script(id="dash.html" type="text/ng-template")
 			include dash
+		script(id="blogs.html" type="text/ng-template")
+			include blog
+		script(id="blog_list.html" type="text/ng-template")
+			include blog_list
+		script(id="blog_edit.html" type="text/ng-template")
+			include blog_edit
 		// Bottom scripts
 		script(src="/js/neon/gsap/main-gsap.js")
 		script(src="/js/neon/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js")
@@ -33,8 +45,20 @@ html(lang="en" ng-app="zoidberg")
 		script(src="/js/neon/neon-api.js")
 		script(src="/js/neon/neon-custom.js")
 		script(src="/js/neon/neon-demo.js")
+		script(src="/js/neon/jquery.dataTables.min.js")
+		script(src="/js/neon/datatables/TableTools.min.js")
+		script(src="/js/neon/dataTables.bootstrap.js")
+		script(src="/js/neon/datatables/jquery.dataTables.columnFilter.js")
+		script(src="/js/neon/datatables/lodash.min.js")
+		script(src="/js/neon/datatables/responsive/js/datatables.responsive.js")
+		script(src="/js/neon/select2/select2.min.js")
+		script(src="/js/neon/bootstrap-switch.min.js")
+		script(src="/js/neon/wysihtml5/wysihtml5-0.4.0pre.min.js")
+		script(src="/js/neon/wysihtml5/bootstrap-wysihtml5.js")
 
 		script(src="/js/angular.min.js")
 		script(src="/js/angular-ui-router.min.js")
+		script(src="/js/ui-bootstrap-tpls-0.11.0.min.js")
 		script(src="/js/zoidberg/zoidberg.js")
 		script(src="/js/zoidberg/user-controller.js")
+		script(src="/js/zoidberg/blog-controller.js")

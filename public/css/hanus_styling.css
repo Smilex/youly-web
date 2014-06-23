@@ -325,9 +325,6 @@ a:hover {
 
 
 /* **** Index_tabs_data **** */
-.index-tabs-data h1 {
-	height: 128px;
-}
 .index-tabs-data h4 {
 	text-align: center;
 	clear: both;
@@ -336,12 +333,10 @@ a:hover {
 	margin-top: 40px;
 	margin-bottom: 40px;
 }
-.data_gs1 {
-	background-size: 100% auto;
-	background-position: top center;
-	background-image: url("../img/icons/manufacture.png");
+.data-img-top {
 	background-color: #e4e9f0;
 }
+
 .data-line-v {
 	background-image: url("../img/icons/border_middle-yly-light.png");
 	background-position: top center;

@@ -18,6 +18,10 @@ angular.module("zoidberg", ["ui.router", "ui.bootstrap"])
 	.state("blogs.edit", {
 		url: "/edit",
 		templateUrl: "blog_edit.html"
+	})
+	.state("products", {
+		url: "/products",
+		templateUrl: "products.html"
 	});
 }])
 .directive("zoidBreadcrumbs", ["$location", "$rootScope", function ($location, $rootScope) {

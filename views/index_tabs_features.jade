@@ -1,36 +1,152 @@
 <!-- index_tabs_features SM or higher -->
+style.
+	.tabs_yly {
+		background-color: #e4e9f0;
+		padding: 0px;
+		min-height: 500px;
+	}
+	.tabs-right > .nav-tabs,
+	.tabs-left > .nav-tabs {
+		border: 0 none;
+		background-color: #fff;
+		min-height: 700px;
+	}
+	.tab-content > .tab-pane,
+	.pill-content > .pill-pane {
+		display: none;
+	}
+	.tab-content > .active,
+	.pill-content > .active {
+		display: block;
+	}
+	.tabs-left > .nav-tabs > li,
+	.tabs-right > .nav-tabs > li {
+		float: none;
+		background-color: #fff;
+		padding: 0px;
+		margin: 0px;
+		border: 0 none;
+	}
+	.tabs-left > .nav-tabs > li > a,
+	.tabs-right > .nav-tabs > li > a {
+		min-width: 74px;
+		margin-right: 0;
+		margin-bottom: 0px;
+		border: 0 none;
+		padding: 20px 40px;
+		font-weight: 700;
+		font-size: 1em;
+		color: #333;
+	}
+	.tabs-left > .nav-tabs {
+		float: left;
+	}
+	.tabs-left > .nav-tabs > li > a:hover,
+	.tabs-left > .nav-tabs > li > a:focus {
+
+	}
+	.tabs-left > .nav-tabs .active > a,
+	.tabs-left > .nav-tabs .active > a:hover,
+	.tabs-left > .nav-tabs .active > a:focus {
+		color: #000;
+		border: 0 none;
+		border-radius: 0px;
+		background-color: #e4e9f0 !important;
+		border-left: 10px solid #333;
+		padding-left: 30px;
+	}
+	.tabs-right > .nav-tabs {
+		float: right;
+	}
+	.tabs-right > .nav-tabs > li > a {
+	}
+	.tabs-right > .nav-tabs > li > a:hover,
+	.tabs-right > .nav-tabs > li > a:focus {
+	}
+	.tabs-right > .nav-tabs .active > a,
+	.tabs-right > .nav-tabs .active > a:hover,
+	.tabs-right > .nav-tabs .active > a:focus {
+		color: #000;
+		border: 0 none;
+		border-radius: 0px;
+		background-color: #e4e9f0 !important;
+		border-right: 10px solid #333;
+		padding-right: 30px;
+	}
+	.tab-content_h3 {
+		color: #333;
+		width: 100%;
+		padding: 0px 15%;
+		text-align: justify;
+	}
+	.tab-content-h3-r {
+		color: #333;
+		margin-left: 150px;
+		text-align: justify;
+	}
 .hidden-xs
-	.container-fluid.bg_youly
-		.container(style="min-height: 700px; padding-top: 20px;")
-			.col-xs-12
-				
-
-				div#slide1_container
-					div#slide1_images(style="transform: translateX(0px);")
-						img(src="img/index/carousel/0.png")
-						img(src="img/index/carousel/1.png")
-						img(src="img/index/carousel/2.png")
-						img(src="img/index/carousel/3.png")
-
-				p#slide1_controls
-					span.selected
-						| Image 1
-					span
-						| Image 2
-					span
-						| Image 3
-					span
-						| Image 4
+	.container-fluid.tabs_yly#awdawdawd
+		.tabs-left
+			ul.nav.nav-tabs
+				li.active
+					a(href="#tab_fet_bar", data-toggle="tab") Barcode Scanning
+				li
+					a(href="#tab_fet_man", data-toggle="tab") Manuel Search
+				li
+					a(href="#tab_fet_alt", data-toggle="tab") Alternative Finder
+				li
+					a(href="#tab_fet_fam", data-toggle="tab") Family Friendly
+				li
+					a(href="#tab_fet_die", data-toggle="tab") Diets
+				li
+					a(href="#tab_fet_nut", data-toggle="tab") Nutritional Info
+				li
+					a(href="#tab_fet_kit", data-toggle="tab") Kitchen Assistant
 
 
-
-
-
-
-
+			.tab-content(style="padding-top: 60px;")
+				.tab-pane.active#tab_fet_bar
+					include features/barcode
+				.tab-pane#tab_fet_man 
+					include features/manuel
+				.tab-pane#tab_fet_alt 
+					include features/alternative
+				.tab-pane#tab_fet_fam 
+					include features/family
+				.tab-pane#tab_fet_die 
+					include features/diets
+				.tab-pane#tab_fet_nut 
+					include features/nutritional
+				.tab-pane#tab_fet_kit 
+					include features/kitchen
 <!-- index_tabs_features XS only -->
 .visible-xs
-	.container-fluid.bg_youly
-		.container
-			p .visible-xs
-			p Features
+	.container-fluid(style="padding: 40px 0px; background-color: #e4e9f0;")
+		.text-center
+			div(style="margin-top: 40px;")
+				h2 Barcode Scanning
+				include features/barcode
+			div(style="margin-top: 40px;")
+				hr
+				h2 Manuel Search
+				include features/manuel
+			div(style="margin-top: 40px;")
+				hr
+				h2 Alternative Finder
+				include features/alternative
+			div(style="margin-top: 40px;")
+				hr
+				h2 Family Friendly
+				include features/family
+			div(style="margin-top: 40px;")
+				hr
+				h2 Diets
+				include features/diets
+			div(style="margin-top: 40px;")
+				hr
+				h2 Nutritional Info
+				include features/nutritional
+			div(style="margin-top: 40px;")
+				hr
+				h2 Kitchen Assistant
+				include features/kitchen

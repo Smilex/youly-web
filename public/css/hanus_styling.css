@@ -279,33 +279,30 @@ a:hover {
 	min-height: 500px;
 }
 
-
-/* ************ index_navbar SM or higher ************ */
+/* ************************************* */
+/* ************ index_Tabs  ************ */
+/* ************************************* */
 #yly-content-tabs {
 	height: auto;
+	border: none;
 }
-#yly-content-tabs h3 {
-	text-align: center;
+#yly-content-tabs {
+
 }
 #yly-content-tabs li {
 	width: 25%;
-	height: 100%;
 }
 #yly-content-tabs a {
 	color: #000;
 	border: none;
-	border-color: green;
-	min-height: 118px;
 }
 #yly-content-tabs a:hover {
 	color: #000;
 	background-color: #fff;
 	border-color: #fff;
 }
-#yly-content-tabs > .active h3 {
+#yly-content-tabs > .active h3, #yly-content-tabs > .active h6 {
 	color: #0a9e90;
-}
-#yly-content-tabs > .active a:hover {
 }
 #yly-content-tabs li.active > .arrow {
 	position: absolute;
@@ -324,35 +321,79 @@ a:hover {
 
 
 
-/* ************ index_navbar XS only ************ */
-#yly-content-tabs-xs li {
-	width: 33%;
+/* **** Index_tabs_download **** */
+.index-tabs-dl-xs a {
+	margin-bottom: 30px;
+	max-width: 250px;
+	min-width: 225px;
 }
-#yly-content-tabs-xs a {
-	color: #000;
-	border-color: #fff;
+/* **** Index_tabs_features **** */
+
+
+/* **** Index_tabs_users **** */
+
+
+/* **** Index_tabs_data **** */
+.index-tabs-data h4 {
+	text-align: center;
+	clear: both;
+	background-color: #e4e9f0;
+	padding: 10px 0px;
+	margin-top: 40px;
+	margin-bottom: 40px;
 }
-#yly-content-tabs-xs a:hover {
-	color: #000;
-	background-color: #fff;
-	border-color: #fff;
-}
-#yly-content-tabs-xs > .active a {
-	color: #000;
-	background-image: url("img/icons/arrow_down.png");
+.data-img-top {
+	background-color: #e4e9f0;
+	background-image: url("../img/icons/sircle.png");
 	background-repeat: no-repeat;
-	background-position: center;
+	background-size: 100% auto;
+	background-position: center top;
+	margin-right: auto;
+	margin-left: auto;
+	width: 186px;
+	cursor: pointer;
 }
-#yly-content-tabs-xs > .active h3 {
-	color: #0a9e90;
+.data-img-top_active {
+	background-image: url("../img/icons/sirclehover.png");
+	cursor: pointer;
 }
-#yly-content-tabs-xs > .active a:hover {
+.data-img-top_active > img {
+	opacity: 0;
 }
 
+.data-img {
+	background-color: #e4e9f0;
+}
+.data-line-v {
+	background-image: url("../img/icons/border_middle-yly-light.png");
+	background-position: top center;
+	background-repeat: repeat-y;
+}
+.data_dropdown {
+	padding: 15px;
+	cursor: initial;
+}
+.data_dropdown_h {
+	background-color: #fff !important;
+	color: #333 !important;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+	padding-top: 0px !important;
+	text-align: left !important;
+}
+.logoParade
+{
+	width: 100%;
+	height: 75px;
+	position: relative;
+}
 
-/* ********** Index_Tabs-Features ******************************************************************* */
-
-
+.logoParade div.scrollableArea a
+{
+	display: block;
+	float: left;
+	padding-left: 10px;
+}
 
 
 /* Index_Tabs_Features Sliding Image */

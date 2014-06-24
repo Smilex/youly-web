@@ -269,6 +269,15 @@ a:hover {
 
 
 
+/* ************ index ************ */
+.yly-index-bg {
+	background-image: url("../img/index/carousel/2.jpg");
+	background-size: auto 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center 0px;
+	min-height: 500px;
+}
 
 
 /* ************ index_navbar SM or higher ************ */

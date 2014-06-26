@@ -12,15 +12,15 @@
 				th Unit
 				th Edit
 		tbody
-			tr
-				th 5701000138076
-				th Faxe Kondi
-				th Booster Blue
-				th Royal Unibrew
-				th Drinks &#47; energy
+			tr(ng-repeat="product in products")
+				th {{product.barcode}}
+				th {{product.name}}
+				th {{product.brand_name}}
+				th {{product.brand_owner}}
+				th {{product.category}}
 				th
 					a.entypo-camera
-				th 50
-				th cl
+				th {{product.size}}
+				th {{product.unit}}
 				th
-					a.entypo-pencil
+					a.entypo-pencil(ng-click="edit(product)")

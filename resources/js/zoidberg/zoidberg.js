@@ -22,7 +22,8 @@ angular.module("zoidberg", ["ui.router", "ui.bootstrap"])
 	.state("products", {
 		url: "/products",
 		abstract: true,
-		templateUrl: "products.html"
+		templateUrl: "products.html",
+		controller: "ProductsCtrl"
 	})
 	.state("products.list", {
 		url: "/",

@@ -1,0 +1,1 @@
+angular.module("zoidberg").controller("ProductsCtrl",["$scope","$http","$state",function(e,t,o){e.p_edit={},e.products=[{barcode:"5741000138076",name:"Booster Blue",brand_name:"Faxe Kondi",brand_owner:"Royal Unibrew",category:"Drinks > Energy",size:"50",unit:"cl"}],e.edit=function(t){e.p_edit=t,o.go("products.edit")},e.new=function(){e.p_edit={},o.go("products.edit")}}]);

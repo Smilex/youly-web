@@ -3,7 +3,7 @@ style.
 .panel.panel-dark
 	.panel-heading
 		.panel-title
-			| New Product
+			| Edit Product
 	.panel-body
 		.row
 			.col-sm-6.col-md-3.col-xs-12
@@ -40,9 +40,9 @@ style.
 				.panel.panel-info
 					.panel-heading
 						.panel-title
-							| Image Selection
+							| "Chosen img file name"
 					.panel-body
-						| Yes!
+						| Vand, Sukker, Druesukker:4%, E330, kuldioxid, salt, koffein:0,032%, E211, E339, E500, E331, E501, quinin, E133
 			.col-sm-8.col-xs-12
 				.row
 					.col-sm-3
@@ -60,11 +60,92 @@ style.
 							option Milliliters
 							option Kilo Grams
 							option Grams
+				.row
+					.col-xs-12
+						hr
+				.row
+					.col-sm-2
+						label
+							b Nutritions per
+						input.form-control(type="text", value="100")
 					.col-sm-3
+						label
+							b Unit 
+						select.form-control
+							option Undefined
+							option Liter
+							option Deceliters
+							option Centiliters
+							option Milliliters
+							option Kilo Grams
+							option Grams
+					.col-sm-2
+						label
+							b KJ
+						input.form-control(type="text", placeholder="20")
+					.col-sm-2
 						label
 							b Kcal
 						input.form-control(type="text", placeholder="20")
 					.col-sm-3
 						label
-							b KJ
-						input.form-control(type="text", placeholder="20")
+							b Protein
+						input.form-control(type="text", placeholder="")
+				.row
+					.col-sm-3
+						label
+							b Fat
+						input.form-control(type="text", placeholder="")
+					.col-sm-3
+						label
+							b Carbohydrate
+						input.form-control(type="text", placeholder="")
+					.col-sm-3
+						label
+							b Sodium
+						input.form-control(type="text", placeholder="")
+					.col-sm-3
+						label
+							b Natrium
+						input.form-control(type="text", placeholder="")
+				.row
+					.col-sm-3
+						label
+							b Cholesterol
+						input.form-control(type="text", placeholder="")
+					.col-sm-3
+						label
+							b Potassium
+						input.form-control(type="text", placeholder="")
+		.row
+			.col-xs-12
+				hr
+		.row
+			.col-sm-3
+				label
+					b Ingredients
+				input.form-control(type="text", placeholder="")
+				.panel.panel-default
+					.panel-body
+						| &nbsp;
+			.col-sm-3
+				label
+					b Vitamins
+				input.form-control(type="text", placeholder="")
+				.panel.panel-default
+					.panel-body
+						| &nbsp;
+			.col-sm-3
+				label
+					b Minerals
+				input.form-control(type="text", placeholder="")
+				.panel.panel-default
+					.panel-body
+						| &nbsp;
+			.col-sm-3
+				.row
+					.col-xs-12
+						label
+							b &nbsp;
+					.col-xs-12
+						button.btn.btn-green Submit Product

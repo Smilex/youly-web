@@ -9,25 +9,28 @@ style.
 			.col-sm-6.col-md-3.col-xs-12
 				label
 					b Barcode
-				input.form-control(type="text", placeholder="7.310525.701416")
+				input.form-control(type="text", placeholder="7.310525.701416",
+				value="{{p_edit.barcode}}")
 			.col-sm-6.col-md-3.col-xs-12
 				label
 					b Product Name
-				input.form-control(type="text", placeholder="Remi")
+				input.form-control(type="text", placeholder="Remi", value="{{p_edit.name}}")
 			.col-sm-6.col-md-3.col-xs-12
 				label
 					b Brand Name
-				input.form-control(type="text", placeholder="Göteborgs")
+				input.form-control(type="text", placeholder="Göteborgs", value="{{p_edit.brand_name}}")
 			.col-sm-6.col-md-3.col-xs-12
 				label
 					b Brand Owner
-				input.form-control(type="text", placeholder="Orkla Confectionery & Snacks Sverige AB")
+				input.form-control(type="text", placeholder="Orkla Confectionery & Snacks Sverige AB",
+				value="{{p_edit.brand_owner}}")
 		.row
 			.col-md-6.col-xs-12
 				label
 					b Additional Description
-				input.form-control(type="text", placeholder="")
+				input.form-control(type="text", placeholder="", value="{{p_edit.add_desc}}")
 			.col-md-6.col-xs-12
 				label
 					b Category
-				input.form-control(type="text", placeholder="Snacks > Biscuit > Chocolade")
+				input.form-control(type="text", placeholder="Snacks > Biscuit > Chocolade",
+				value="{{p_edit.category}}")

@@ -64,9 +64,11 @@ div(collapse="isCollapsed")
 											.col-xs-12 "Use comma to separate search rules"
 
 					.input-group
-						input.form-control(type="text", placeholder="Search product, brand, title etc...")
+						input.form-control(type="text",
+						placeholder="Search product, brand, title etc...",
+						ng-model="search_str")
 						span.input-group-btn
-							button.btn.btn-primary
+							button.btn.btn-primary(ng-click="parse_search()")
 								i.entypo-search
 				.col-xs-12.visible-xs &nbsp;
 				.col-xs-12.col-sm-2

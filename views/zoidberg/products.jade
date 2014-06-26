@@ -1,11 +1,12 @@
 .row
-	.col-xs-4
+	.col-xs-3
 		button.btn.btn-green.btn-sm(ng-click="new()") New Product
-	.col-xs-4
-		.alert.alert-info.text-center(style="margin: 0px; padding: 3px 10px;")
-			i.entypo-check
-			b Filter has been refreshed
-	.col-xs-4
+	.col-xs-6
+		.col-xs-12(ng-show="alert")
+			.alert.alert-dismissable(ng-class="alert_class")
+				button.close(ng-click="dismiss()") &times
+				span {{alert_msg}}
+	.col-xs-3
 		div.pull-right(ng-init="isCollapsed = false")
 			button.btn.btn-primary.btn-sm(ng-click="isCollapsed = !isCollapsed")
 				i.glyphicon.glyphicon-filter

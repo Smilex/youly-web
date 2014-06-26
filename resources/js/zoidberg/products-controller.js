@@ -7,7 +7,9 @@ angular.module("zoidberg")
 			name: "Booster Blue",
 			brand_name: "Faxe Kondi",
 			brand_owner: "Royal Unibrew",
-			category: "Drinks > Energy"
+			category: "Drinks > Energy",
+			size: "50",
+			unit: "cl"
 		}
 	];
 

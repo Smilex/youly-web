@@ -9,51 +9,51 @@ style.
 			.col-sm-6.col-md-3.col-xs-12
 				label
 					b Barcode
-				input.form-control(type="text", placeholder="7.310525.701416",
-				value="{{p_edit.barcode}}")
+				input.form-control(type="text", value="{{p_edit.barcode}}")
 			.col-sm-6.col-md-3.col-xs-12
 				label
 					b Product Name
-				input.form-control(type="text", placeholder="Remi", value="{{p_edit.name}}")
+				input.form-control(type="text", value="{{p_edit.name}}")
 			.col-sm-6.col-md-3.col-xs-12
 				label
 					b Brand Name
-				input.form-control(type="text", placeholder="Göteborgs", value="{{p_edit.brand_name}}")
+				input.form-control(type="text", value="{{p_edit.brand_name}}")
 			.col-sm-6.col-md-3.col-xs-12
 				label
 					b Brand Owner
-				input.form-control(type="text", placeholder="Orkla Confectionery & Snacks Sverige AB",
-				value="{{p_edit.brand_owner}}")
+				input.form-control(type="text", value="{{p_edit.brand_owner}}")
 		.row
 			.col-md-6.col-xs-12
 				label
 					b Additional Description
-				input.form-control(type="text", placeholder="", value="{{p_edit.add_desc}}")
+				input.form-control(type="text", value="{{p_edit.add_desc}}")
 			.col-md-6.col-xs-12
 				label
 					b Category
-				input.form-control(type="text", placeholder="Snacks > Biscuit > Chocolade",	value="{{p_edit.category}}")
+				input.form-control(type="text",	value="{{p_edit.category}}")
 		.row
 			.col-sm-4.col-xs-12
 				label
 					b Product Image
-				.panel.panel-info
-					.panel-heading
-						.panel-title
-							| "Chosen img file name"
-					.panel-body
-						| Vand, Sukker, Druesukker:4%, E330, kuldioxid, salt, koffein:0,032%, E211, E339, E500, E331, E501, quinin, E133
+				.fileinput.fileinput-new(data-provides="fileinput")
+					input(type="hidden")
+					.fileinput-new.thumbnail(data-trigger="fileinput", style="width: 250px; height: 250px;")
+						img(alt="..." src="http://placehold.it/250x250")
+					.fileinput-preview.fileinput-exists.thumbnail(style="max-width: 200px; max-height: 150px; line-height: 6px;")
+
+
+
 			.col-sm-8.col-xs-12
 				.row
 					.col-sm-3
 						label
 							b Size
-						input.form-control(type="text", placeholder="20")
+						input.form-control(type="text", value="{{p_edit.size}}")
 					.col-sm-3
 						label
 							b Unit
-						select.form-control
-							option All
+						select.form-control(value="{{p_edit.size_unit}}")
+							option Undefined
 							option Liter
 							option Deceliters
 							option Centiliters
@@ -67,11 +67,11 @@ style.
 					.col-sm-2
 						label
 							b Nutritions per
-						input.form-control(type="text", value="100")
+						input.form-control(type="text", value="{{p_edit.nut_pr}}")
 					.col-sm-3
 						label
 							b Unit 
-						select.form-control
+						select.form-control(value="{{p_edit.nut_unit}}")
 							option Undefined
 							option Liter
 							option Deceliters
@@ -82,41 +82,45 @@ style.
 					.col-sm-2
 						label
 							b KJ
-						input.form-control(type="text", placeholder="20")
+						input.form-control(type="text", value="{{p_edit.kj}}")
 					.col-sm-2
 						label
 							b Kcal
-						input.form-control(type="text", placeholder="20")
+						input.form-control(type="text", value="{{p_edit.kcal}}")
 					.col-sm-3
 						label
 							b Protein
-						input.form-control(type="text", placeholder="")
+						input.form-control(type="text", value="{{p_edit.protein}}")
 				.row
 					.col-sm-3
 						label
 							b Fat
-						input.form-control(type="text", placeholder="")
+						input.form-control(type="text", value="{{p_edit.fat}}")
 					.col-sm-3
 						label
 							b Carbohydrate
-						input.form-control(type="text", placeholder="")
+						input.form-control(type="text", value="{{p_edit.carbs}}")
 					.col-sm-3
 						label
 							b Sodium
-						input.form-control(type="text", placeholder="")
+						input.form-control(type="text", value="{{p_edit.sodium}}")
 					.col-sm-3
 						label
 							b Natrium
-						input.form-control(type="text", placeholder="")
+						input.form-control(type="text", value="{{p_edit.natrium}}")
 				.row
 					.col-sm-3
 						label
 							b Cholesterol
-						input.form-control(type="text", placeholder="")
+						input.form-control(type="text", value="{{p_edit.cholesterol}}")
 					.col-sm-3
 						label
 							b Potassium
-						input.form-control(type="text", placeholder="")
+						input.form-control(type="text", value="{{p_edit.potassium}}")
+					.col-sm-3
+						label
+							b Caffeine
+						input.form-control(type="text", value="{{p_edit.caffeine }}")
 		.row
 			.col-xs-12
 				hr
@@ -124,21 +128,21 @@ style.
 			.col-sm-3
 				label
 					b Ingredients
-				input.form-control(type="text", placeholder="")
+				input.form-control(type="text")
 				.panel.panel-default
 					.panel-body
 						| &nbsp;
 			.col-sm-3
 				label
 					b Vitamins
-				input.form-control(type="text", placeholder="")
+				input.form-control(type="text")
 				.panel.panel-default
 					.panel-body
 						| &nbsp;
 			.col-sm-3
 				label
 					b Minerals
-				input.form-control(type="text", placeholder="")
+				input.form-control(type="text")
 				.panel.panel-default
 					.panel-body
 						| &nbsp;

@@ -12,10 +12,15 @@ style.
 						label
 							b Product Image
 						.fileinput.fileinput-new(data-provides="fileinput")
-							input(type="hidden")
-							.fileinput-new.thumbnail(data-trigger="fileinput", style="width: 120px; height: 120px;")
-								img(alt="..." src="http://placehold.it/120x120")
-							.fileinput-preview.fileinput-exists.thumbnail(style="max-width: 120px; max-height: 120px; line-height: 6px;")
+							.fileinput-new.thumbnail(style="width: 120px; height: 120px;", data-trigger="fileinput")
+								img(src="http://placehold.it/120x120", alt="...")
+							.fileinput-preview.fileinput-exists.thumbnail(style="max-width: 120px; max-height: 120px")
+							div
+								span.btn.btn-white.btn-file
+									span.fileinput-new Select image
+									span.fileinput-exists Change
+									input(type="file", name="...", accept="image/*")
+								a.btn.btn-orange.fileinput-exists(href="#", data-dismiss="fileinput") Remove
 					.col-xs-12.col-sm-8
 						.row
 							.col-xs-12
@@ -43,7 +48,7 @@ style.
 							b Category
 								span.pull-right(data-toggle="dropdown", style="cursor: pointer;") ?
 								div.text-center.dropdown-menu.alert-info(role="menu", aria-labelledby="dLabel", style="margin-left: -90%; width: 380%; padding: 15px; color: #222;")
-									| Category
+									a(href="zoidberg/pdf/Categories.pdf") Category Tree PDF
 						input.form-control(type="text",	value="{{p_edit.category}}")
 					.col-xs-12.col-sm-6
 						label
@@ -51,20 +56,20 @@ style.
 						input.form-control(type="text", value="{{p_edit.approval}}")
 					.col-xs-12.col-sm-6
 						label(style="width: 100%;")
-							b Allergence
+							b Allergence / Warning
 								span.pull-right(data-toggle="dropdown", style="cursor: pointer;") ?
 								ul.dropdown-menu.dropdown_about_cnt.alert-info(role="menu", aria-labelledby="dLabel", style="width: 100%; padding: 15px;")
 									li.text-center(style="color: #222;")
 										p
-											b ALlergence
+											b Allergence
 									li
 										| hey
-						input.form-control(type="text", value="{{p_edit.allergence}}")
+						input.form-control(type="text")
 				.row
 					.col-sm-4
 						label
 							b Product size
-						input.form-control(type="text", value="{{p_edit.size}}")
+						input.form-control(type="text")
 					.col-sm-4
 						label
 							b Unit
@@ -78,12 +83,11 @@ style.
 							option Grams
 					.col-sm-4
 						label
-							b Type
+							b Type (It is a)
 						select.form-control(value="{{p_edit.type}}")
-							option Bottle
 							option Package
-							option Piece
 							option Stk
+							option Bottle
 				.row
 					.col-sm-4
 						label
@@ -164,7 +168,7 @@ style.
 											b Other Nutritions
 									li
 										| hey
-						input.form-control(type="text", placeholder="Add nutritions", value="{{p_edit.other_nut}}")
+						tags-input.bootstrap(ng-model="nutr", replace-spaces-with-dashes="false")
 					.col-xs-12
 						label(style="width: 100%;")
 							b Ingredients
@@ -175,7 +179,7 @@ style.
 											b Ingredients
 									li
 										| hey
-						input.form-control(type="text", placeholder="Add ingredients", value="{{p_edit.ingredients}}")
+						tags-input.bootstrap(ng-model="ingr", replace-spaces-with-dashes="false")
 				.row
 					.col-xs-12
 						label

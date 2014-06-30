@@ -1,6 +1,8 @@
 angular.module("zoidberg")
 .controller("ProductsCtrl", ["$scope","$http", "$state", function ($scope, $http, $state) {
 	$scope.p_edit = {};
+	$scope.ingr = [];
+	$scope.nutr = [];
 	$scope.products = [
 		{
 			barcode: "5741000138076",

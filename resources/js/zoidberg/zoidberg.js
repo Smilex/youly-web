@@ -1,4 +1,4 @@
-angular.module("zoidberg", ["ui.router", "ui.bootstrap"])
+angular.module("zoidberg", ["ui.router", "ui.bootstrap", "ngTagsInput"])
 .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise("/");
 	$stateProvider

@@ -6,50 +6,66 @@ style.
 			| Edit Product
 	.panel-body
 		.row
-			.col-sm-6.col-md-3.col-xs-12
-				label
-					b Barcode
-				input.form-control(type="text", value="{{p_edit.barcode}}")
-			.col-sm-6.col-md-3.col-xs-12
-				label
-					b Product Name
-				input.form-control(type="text", value="{{p_edit.name}}")
-			.col-sm-6.col-md-3.col-xs-12
-				label
-					b Brand Name
-				input.form-control(type="text", value="{{p_edit.brand_name}}")
-			.col-sm-6.col-md-3.col-xs-12
-				label
-					b Brand Owner
-				input.form-control(type="text", value="{{p_edit.brand_owner}}")
-		.row
-			.col-md-6.col-xs-12
-				label
-					b Additional Description
-				input.form-control(type="text", value="{{p_edit.add_desc}}")
-			.col-md-6.col-xs-12
-				label
-					b Category
-				input.form-control(type="text",	value="{{p_edit.category}}")
-		.row
-			.col-sm-4.col-xs-12
-				label
-					b Product Image
-				.fileinput.fileinput-new(data-provides="fileinput")
-					input(type="hidden")
-					.fileinput-new.thumbnail(data-trigger="fileinput", style="width: 250px; height: 250px;")
-						img(alt="..." src="http://placehold.it/250x250")
-					.fileinput-preview.fileinput-exists.thumbnail(style="max-width: 200px; max-height: 150px; line-height: 6px;")
-
-
-
-			.col-sm-8.col-xs-12
+			.col-xs-12.col-sm-6
 				.row
-					.col-sm-3
+					.col-xs-12.col-sm-4
 						label
-							b Size
+							b Product Image
+						.fileinput.fileinput-new(data-provides="fileinput")
+							input(type="hidden")
+							.fileinput-new.thumbnail(data-trigger="fileinput", style="width: 120px; height: 120px;")
+								img(alt="..." src="http://placehold.it/120x120")
+							.fileinput-preview.fileinput-exists.thumbnail(style="max-width: 120px; max-height: 120px; line-height: 6px;")
+					.col-xs-12.col-sm-8
+						.row
+							.col-xs-12
+								label
+									b Barcode
+								input.form-control(type="text", value="{{p_edit.barcode}}")
+							.col-xs-12
+								label
+									b Product Name
+								input.form-control(type="text", value="{{p_edit.name}}")
+							.col-xs-12
+								label
+									b Brand Name
+								input.form-control(type="text", value="{{p_edit.brand_name}}")
+							.col-xs-12
+								label
+									b Brand Owner
+								input.form-control(type="text", value="{{p_edit.brand_owner}}")
+					.col-xs-12.col-sm-6
+						label
+							b Additional Description
+						input.form-control(type="text", value="{{p_edit.add_desc}}")
+					.col-xs-12.col-sm-6
+						label(style="width: 100%;")
+							b Category
+								span.pull-right(data-toggle="dropdown", style="cursor: pointer;") ?
+								div.text-center.dropdown-menu.alert-info(role="menu", aria-labelledby="dLabel", style="margin-left: -90%; width: 380%; padding: 15px; color: #222;")
+									| Category
+						input.form-control(type="text",	value="{{p_edit.category}}")
+					.col-xs-12.col-sm-6
+						label
+							b Approval
+						input.form-control(type="text", value="{{p_edit.approval}}")
+					.col-xs-12.col-sm-6
+						label(style="width: 100%;")
+							b Allergence
+								span.pull-right(data-toggle="dropdown", style="cursor: pointer;") ?
+								ul.dropdown-menu.dropdown_about_cnt.alert-info(role="menu", aria-labelledby="dLabel", style="width: 100%; padding: 15px;")
+									li.text-center(style="color: #222;")
+										p
+											b ALlergence
+									li
+										| hey
+						input.form-control(type="text", value="{{p_edit.allergence}}")
+				.row
+					.col-sm-4
+						label
+							b Product size
 						input.form-control(type="text", value="{{p_edit.size}}")
-					.col-sm-3
+					.col-sm-4
 						label
 							b Unit
 						select.form-control(value="{{p_edit.size_unit}}")
@@ -60,15 +76,37 @@ style.
 							option Milliliters
 							option Kilo Grams
 							option Grams
+					.col-sm-4
+						label
+							b Type
+						select.form-control(value="{{p_edit.type}}")
+							option Bottle
+							option Package
+							option Piece
+							option Stk
 				.row
-					.col-xs-12
-						hr
+					.col-sm-4
+						label
+							b Stk.
+						input.form-control(type="text", value="{{p_edit.stk}}")
+					.col-sm-4
+						label
+							b Type
+						select.form-control(value="{{p_edit.stk_type}}")
+							option Stk
+							option Pieces
+							option Biscuits
+							option Slices
+							option Undefined
+
+
+			.col-xs-12.col-sm-6
 				.row
-					.col-sm-2
+					.col-md-4.col-sm-6
 						label
 							b Nutritions per
 						input.form-control(type="text", value="{{p_edit.nut_pr}}")
-					.col-sm-3
+					.col-md-4.col-sm-6
 						label
 							b Unit 
 						select.form-control(value="{{p_edit.nut_unit}}")
@@ -79,77 +117,68 @@ style.
 							option Milliliters
 							option Kilo Grams
 							option Grams
-					.col-sm-2
+				.row
+					.col-md-4.col-sm-6
 						label
 							b KJ
 						input.form-control(type="text", value="{{p_edit.kj}}")
-					.col-sm-2
+					.col-md-4.col-sm-6
 						label
 							b Kcal
 						input.form-control(type="text", value="{{p_edit.kcal}}")
-					.col-sm-3
+				.row
+					.col-md-4.col-sm-6.col-xs-12
 						label
 							b Protein
 						input.form-control(type="text", value="{{p_edit.protein}}")
-				.row
-					.col-sm-3
-						label
+					.col-md-4.col-sm-6.col-xs-12
+						label(style="width: 100%;")
 							b Fat
+								span.pull-right(data-toggle="dropdown", style="cursor: pointer;") ?
+								ul.dropdown-menu.dropdown_about_cnt.alert-info(role="menu", aria-labelledby="dLabel", style="width: 100%; padding: 15px;")
+									li.text-center(style="color: #222;")
+										p
+											b Fat Instructions
+									li
+										| hey
 						input.form-control(type="text", value="{{p_edit.fat}}")
-					.col-sm-3
-						label
+					.col-md-4.col-sm-6.col-xs-12
+						label(style="width: 100%;")
 							b Carbohydrate
+								span.pull-right(data-toggle="dropdown", style="cursor: pointer;") ?
+								ul.dropdown-menu.dropdown_about_cnt.alert-info(role="menu", aria-labelledby="dLabel", style="width: 100%; padding: 15px;")
+									li.text-center(style="color: #222;")
+										p
+											b Carbohydrate Instructions
+									li
+										| hey
 						input.form-control(type="text", value="{{p_edit.carbs}}")
-					.col-sm-3
-						label
-							b Sodium
-						input.form-control(type="text", value="{{p_edit.sodium}}")
-					.col-sm-3
-						label
-							b Natrium
-						input.form-control(type="text", value="{{p_edit.natrium}}")
 				.row
-					.col-sm-3
-						label
-							b Cholesterol
-						input.form-control(type="text", value="{{p_edit.cholesterol}}")
-					.col-sm-3
-						label
-							b Potassium
-						input.form-control(type="text", value="{{p_edit.potassium}}")
-					.col-sm-3
-						label
-							b Caffeine
-						input.form-control(type="text", value="{{p_edit.caffeine }}")
-		.row
-			.col-xs-12
-				hr
-		.row
-			.col-sm-3
-				label
-					b Ingredients
-				input.form-control(type="text")
-				.panel.panel-default
-					.panel-body
-						| &nbsp;
-			.col-sm-3
-				label
-					b Vitamins
-				input.form-control(type="text")
-				.panel.panel-default
-					.panel-body
-						| &nbsp;
-			.col-sm-3
-				label
-					b Minerals
-				input.form-control(type="text")
-				.panel.panel-default
-					.panel-body
-						| &nbsp;
-			.col-sm-3
+					.col-xs-12
+						label(style="width: 100%;")
+							b Other nutritions
+								span.pull-right(data-toggle="dropdown", style="cursor: pointer;") ?
+								ul.dropdown-menu.dropdown_about_cnt.alert-info(role="menu", aria-labelledby="dLabel", style="width: 100%; padding: 15px;")
+									li.text-center(style="color: #222;")
+										p
+											b Other Nutritions
+									li
+										| hey
+						input.form-control(type="text", placeholder="Add nutritions", value="{{p_edit.other_nut}}")
+					.col-xs-12
+						label(style="width: 100%;")
+							b Ingredients
+								span.pull-right(data-toggle="dropdown", style="cursor: pointer;") ?
+								ul.dropdown-menu.dropdown_about_cnt.alert-info(role="menu", aria-labelledby="dLabel", style="width: 100%; padding: 15px;")
+									li.text-center(style="color: #222;")
+										p
+											b Ingredients
+									li
+										| hey
+						input.form-control(type="text", placeholder="Add ingredients", value="{{p_edit.ingredients}}")
 				.row
 					.col-xs-12
 						label
 							b &nbsp;
 					.col-xs-12
-						button.btn.btn-green Submit Product
+						button.pull-right.btn.btn-green Submit Product

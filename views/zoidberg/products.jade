@@ -1,0 +1,103 @@
+.row
+	.col-xs-4
+		button.btn.btn-green.btn-sm(ng-click="new()") New Product
+	.col-xs-4
+		.alert.alert-info.text-center(style="margin: 0px; padding: 3px 10px;")
+			i.entypo-check
+			b Filter has been refreshed
+	.col-xs-4
+		div.pull-right(ng-init="isCollapsed = false")
+			button.btn.btn-primary.btn-sm(ng-click="isCollapsed = !isCollapsed")
+				i.glyphicon.glyphicon-filter
+			span
+				| &nbsp;
+			button.btn.btn-primary.btn-sm
+				i.glyphicon.glyphicon-refresh
+br
+div(collapse="isCollapsed")
+	.panel.panel-dark
+		.panel-body
+			.row
+				.col-xs-12.col-sm-6
+					label(style="width: 100%;")
+						b Search
+							span.pull-right(data-toggle="dropdown", style="cursor: pointer;") ?
+							ul.dropdown-menu.dropdown_about_cnt.alert-info(role="menu", aria-labelledby="dLabel", style="width: 100%; padding: 15px;")
+								li.text-center(style="color: #222;")
+									p
+										b Search Instructions
+								li
+									div
+										.row
+											.col-xs-1 bc
+											.col-xs-1 :
+											.col-xs-8 Barcode
+										.row
+											.col-xs-1 b
+											.col-xs-1 :
+											.col-xs-8 Brand
+										.row
+											.col-xs-1 p
+											.col-xs-1 :
+											.col-xs-8 Product
+										.row
+											.col-xs-1 bo
+											.col-xs-1 :
+											.col-xs-8 Brand Owner
+										.row
+											.col-xs-1 c
+											.col-xs-1 :
+											.col-xs-8 Category
+										.row
+											.col-xs-1 i
+											.col-xs-1 :
+											.col-xs-8 Ingredients
+										.row
+											.col-xs-1 a
+											.col-xs-1 :
+											.col-xs-8 Allergy
+										br
+										.row(style="color: #222;")
+											.col-xs-12 Search Sample:
+											.col-xs-12 b: Arla, c: drink, i: Strawberry, i: Sugar
+											br
+											.col-xs-12 "Use comma to separate search rules"
+
+					.input-group
+						input.form-control(type="text", placeholder="Search product, brand, title etc...")
+						span.input-group-btn
+							button.btn.btn-primary
+								i.entypo-search
+				.col-xs-12.visible-xs &nbsp;
+				.col-xs-12.col-sm-2
+					label
+						b Image
+					select.form-control
+						option
+							| All (default)
+						option
+							| With
+						option
+							| Without
+				.col-xs-12.visible-xs &nbsp;
+				.col-xs-6.col-sm-1
+					label
+						b From
+					input.form-control(type="text", placeholder=".")
+				.col-xs-6.col-sm-1
+					label
+						b To
+					input.form-control(type="text", placeholder=".")
+				.col-xs-12.col-sm-2
+					label
+						b Unit
+					select.form-control
+						option All
+						option Liter
+						option Deceliters
+						option Centiliters
+						option Milliliters
+						option Kilo Grams
+						option Grams
+
+ui-view

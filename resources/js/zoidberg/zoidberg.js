@@ -1,4 +1,4 @@
-angular.module("zoidberg", ["ui.router", "ui.bootstrap"])
+angular.module("zoidberg", ["ui.router", "ui.bootstrap", "ngTagsInput"])
 .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise("/");
 	$stateProvider
@@ -18,6 +18,24 @@ angular.module("zoidberg", ["ui.router", "ui.bootstrap"])
 	.state("blogs.edit", {
 		url: "/edit",
 		templateUrl: "blog_edit.html"
+	})
+	.state("products", {
+		url: "/products",
+		abstract: true,
+		templateUrl: "products.html",
+		controller: "ProductsCtrl"
+	})
+	.state("products.list", {
+		url: "/",
+		templateUrl: "products_list.html"
+	})
+	.state("products.edit", {
+		url: "/edit",
+		templateUrl: "products_edit.html"
+	})
+	.state("category", {
+		url: "/category",
+		templateUrl: "category.html"
 	});
 }])
 .directive("zoidBreadcrumbs", ["$location", "$rootScope", function ($location, $rootScope) {

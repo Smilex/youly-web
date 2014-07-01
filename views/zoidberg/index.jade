@@ -21,6 +21,8 @@ html(lang="en" ng-app="zoidberg")
 		link(rel="stylesheet" href="/js/neon/select2/select2-bootstrap.css")
 		link(rel="stylesheet" href="/js/neon/select2/select2.css")
 		link(rel="stylesheet" href="/js/neon/wysihtml5/bootstrap-wysihtml5.css")
+		link(rel="stylesheet" href="/css/ng-tags-input.min.css")
+		link(rel="stylesheet" href="/css/ng-tags-style.css")
 
 		script(src="/js/neon/jquery-1.11.0.min.js")
 	body.page-body
@@ -36,6 +38,14 @@ html(lang="en" ng-app="zoidberg")
 			include blog_list
 		script(id="blog_edit.html" type="text/ng-template")
 			include blog_edit
+		script(id="products.html" type="text/ng-template")
+			include products
+		script(id="products_list.html" type="text/ng-template")
+			include products_list
+		script(id="products_edit.html" type="text/ng-template")
+			include products_edit
+		script(id="category.html" type="text/ng-template")
+			include category
 		// Bottom scripts
 		script(src="/js/neon/gsap/main-gsap.js")
 		script(src="/js/neon/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js")
@@ -44,7 +54,6 @@ html(lang="en" ng-app="zoidberg")
 		script(src="/js/neon/resizeable.js")
 		script(src="/js/neon/neon-api.js")
 		script(src="/js/neon/neon-custom.js")
-		script(src="/js/neon/neon-demo.js")
 		script(src="/js/neon/jquery.dataTables.min.js")
 		script(src="/js/neon/datatables/TableTools.min.js")
 		script(src="/js/neon/dataTables.bootstrap.js")
@@ -62,3 +71,7 @@ html(lang="en" ng-app="zoidberg")
 		script(src="/js/zoidberg/zoidberg.js")
 		script(src="/js/zoidberg/user-controller.js")
 		script(src="/js/zoidberg/blog-controller.js")
+		script(src="/js/zoidberg/products-controller.js")
+		script(src="/js/ng-tags-input.min.js")
+		script(src="/js/neon/fileinput.js")
+

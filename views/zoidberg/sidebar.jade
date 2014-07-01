@@ -2,7 +2,7 @@ div.sidebar-menu
 	header.logo-env
 		div.logo
 			a(href="#")
-				img(src="/images/neon/logo@2x.png" width="120")
+				img(src="/img/branding/youly_text_white_shadow_zoidberg.png", width="90px", height="auto")
 		div.sidebar-collapse
 			a.sidebar-collapse-icon.with-animation(href="#")
 				i.entypo-menu
@@ -17,8 +17,22 @@ div.sidebar-menu
 					i.entypo-search
 		li
 			a(ui-sref="home")
-				i.entypo-gauge
+				i.entypo-home
 				span Dashboard
+		li
 			a(ui-sref="blogs.list")
 				i.entypo-doc-text
 				span Blogs
+		li
+			a(ui-sref="products.list")
+				i.entypo-database
+				span Products
+			ul
+				li
+					a(ui-sref="category")
+						i.entypo-flow-tree
+						span Category Tree
+				li
+					a(href="#") 
+						i.entypo-leaf
+						span Agriculture

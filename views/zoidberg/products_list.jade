@@ -1,0 +1,26 @@
+.dataTables_wrapper.form-inline(role="grid")
+	table#table-products.table.table-bordered.datatable
+		thead
+			tr
+				th Barcode
+				th Brand
+				th Product
+				th Brand Owner
+				th Category
+				th Img
+				th Size
+				th Unit
+				th Edit
+		tbody
+			tr(ng-repeat="product in products")
+				th {{product.barcode}}
+				th {{product.name}}
+				th {{product.brand_name}}
+				th {{product.brand_owner}}
+				th {{product.category}}
+				th
+					a.entypo-camera
+				th {{product.size}}
+				th {{product.unit}}
+				th
+					a.entypo-pencil(ng-click="edit(product)")

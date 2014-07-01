@@ -32,6 +32,10 @@ angular.module("zoidberg", ["ui.router", "ui.bootstrap", "ngTagsInput"])
 	.state("products.edit", {
 		url: "/edit",
 		templateUrl: "products_edit.html"
+	})
+	.state("category", {
+		url: "/category",
+		templateUrl: "category.html"
 	});
 }])
 .directive("zoidBreadcrumbs", ["$location", "$rootScope", function ($location, $rootScope) {

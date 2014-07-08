@@ -1,0 +1,85 @@
+style.
+	#zdb_cat span {
+		padding: 8px;
+		display: block;
+		width: 100%;
+	}
+	#zdb_cat i:hover {cursor: pointer;}
+	#zdb_cat span:hover {
+		cursor: context-menu;
+		background-color: #d6d6d6;
+	}
+	#zdb_cat span.active {
+		background-color: #f0f0f0;
+		margin: 0px;
+		color: #888;
+		font-weight: 700;
+	}
+	#zdb_cat th {
+		padding: 0px;
+		height: 32px;
+	}
+	#zdb_cat input {
+		display: block;
+		width: 100%;
+		background-color: inherit;
+		border-style: solid;
+		border-color: #222;
+		border-width: 1px 0px;
+		margin-top: 8px;
+		padding: 8px;
+	}
+
+.row
+	.col-md-12
+		table.table.table-bordered.responsive
+			thead
+				tr
+					th(width="25%")
+						b Food Group
+						a(href="#")
+							i.pull-right.entypo-pencil
+					th(width="25%")
+						b Sub Category
+					th(width="25%")
+						b Type
+					th(width="25%")
+						b Product
+			tbody#zdb_cat
+				tr
+					th
+						ul.list-unstyled
+							li(ng-repeat="v in lvl1")
+								span(ng-click="sel_lvl1(v)" ng-class="{active: lvl1_sel == v}") {{v.name}}
+							li
+								input(value="", placeholder="Add New", ng-keypress="add_lvl1($event)", ng-model="lvl1_edit")
+
+
+					th
+						ul.list-unstyled
+							li(ng-repeat="v in lvl1_sel.children")
+								span(ng-click="sel_lvl2(v)" ng-class="{active: lvl2_sel == v}") {{v.name}}
+									i.pull-right.entypo-pencil(onclick="lvl_pencil()")
+							li
+								input(value="", placeholder="Add New", ng-keypress="add_lvl2($event)", ng-model="lvl2_edit",
+									ng-show="lvl1_sel")
+
+					th
+						ul.list-unstyled
+							li(ng-repeat="v in lvl2_sel.children")
+								span(ng-click="sel_lvl3(v)" ng-class="{active: lvl3_sel == v}") {{v.name}}
+									i.pull-right.entypo-pencil
+							li
+								input(value="", placeholder="Add New", ng-keypress="add_lvl3($event)", ng-model="lvl3_edit",
+									ng-show="lvl2_sel")
+
+
+					th
+						ul.list-unstyled
+							li(ng-repeat="v in lvl3_sel.children")
+								span(ng-click="sel_lvl4(v)" ng-class="{active: lvl4_sel == v}") {{v.name}}
+
+script.
+	function lvl_pencil() {
+		alert("Heeey")
+	}

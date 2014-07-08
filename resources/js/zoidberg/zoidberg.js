@@ -35,7 +35,8 @@ angular.module("zoidberg", ["ui.router", "ui.bootstrap", "ngTagsInput"])
 	})
 	.state("category", {
 		url: "/category",
-		templateUrl: "category.html"
+		templateUrl: "category.html",
+		controller: "CategoryCtrl"
 	});
 }])
 .directive("zoidBreadcrumbs", ["$location", "$rootScope", function ($location, $rootScope) {

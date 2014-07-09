@@ -63,6 +63,11 @@ a:hover {
 	color: #fff;
 	border-radius: 0px;
 	border: 0 none;
+
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	background-attachment: fixed;
+	background-position: top center;
 }
 .btn-youly:hover, .btn-youly:visited, .btn-youly:focus {
 	background-color: #3FAEA4;

@@ -314,8 +314,31 @@ a:hover {
 	border-top-color: #fff;
 	bottom: -11px;
 }
-
-
+#yly-content-tabs span {
+	height: 22px;
+	width: 100%;
+	display: block;
+}
+#yly-content-tabs h3 {
+	margin-top: 20px;
+}
+#yly-content-tabs h3, h6, span {
+	margin-bottom: 10px;
+}
+.tabs_bg {
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	background-attachment: relative;
+	background-position: center top;
+}
+.tabs_bg_arw_b { background-image: url("../img/index/tabs/arw_b.png"); }
+.tabs_bg_arw_g { background-image: url("../img/index/tabs/arw_g.png"); }
+.tabs_bg_cek_b { background-image: url("../img/index/tabs/cek_b.png"); }
+.tabs_bg_cek_g { background-image: url("../img/index/tabs/cek_g.png"); }
+.tabs_bg_usr_b { background-image: url("../img/index/tabs/usr_b.png"); }
+.tabs_bg_usr_g { background-image: url("../img/index/tabs/usr_g.png"); }
+.tabs_bg_dta_b { background-image: url("../img/index/tabs/dta_b.png"); }
+.tabs_bg_dta_g { background-image: url("../img/index/tabs/dta_g.png"); }
 
 /* **** Index_tabs_download **** */
 .index-tabs-dl-xs a {

@@ -1,32 +1,11 @@
-style.
-	#yly-content-tabs span {
-		height: 22px;
-		width: 100%;
-		display: block;
-	}
-	.tabs_bg {
-		background-repeat: no-repeat;
-		background-size: 20px 20px;
-		background-attachment: relative;
-		background-position: center top;
-	}
-	.tabs_bg_arw_b { background-image: url("img/icons/arrow_down.png"); }
-	.tabs_bg_arw_g { background-image: url("img/icons/arrow_down_green.png"); }
-	.tabs_bg_cek_b { background-image: url("img/icons/check.png"); }
-	.tabs_bg_cek_g { background-image: url("img/icons/check_green.png"); }
-	.tabs_bg_usr_b { background-image: url("img/icons/users.png"); }
-	.tabs_bg_usr_g { background-image: url("img/icons/users_green.png"); }
-	.tabs_bg_dta_b { background-image: url("img/icons/data.png"); }
-	.tabs_bg_dta_g { background-image: url("img/icons/data_green.png"); }
-
 .container-fluid
 	.row
 		ul.nav.nav-tabs#yly-content-tabs
 			li.active
 				.arrow
 				a.text-center(href="#yly-content-tabs-download", data-toggle="tab" onclick="tab_clk('#tab_1')")
-					h3.hidden-xs.deerip Download
-					h6.visible-xs.deerip Download
+					h3.hidden-xs Download
+					h6.visible-xs Download
 					span.tabs_bg#tab_1(data-on="tabs_bg_arw_g", data-off="tabs_bg_arw_b")
 						| &nbsp;
 			li
@@ -34,21 +13,21 @@ style.
 				a.text-center(href="#yly-content-tabs-features", data-toggle="tab" onclick="tab_clk('#tab_2')")
 					h3.hidden-xs Features
 					h6.visible-xs Features
-					span.tabs_bg#tab_2(data-on="tabs_bg_arw_g", data-off="tabs_bg_arw_b")
+					span.tabs_bg#tab_2(data-on="tabs_bg_cek_g", data-off="tabs_bg_cek_b")
 						| &nbsp;
 			li
 				.arrow
 				a.text-center(href="#yly-content-tabs-users", data-toggle="tab" onclick="tab_clk('#tab_3')")
 					h3.hidden-xs Users
 					h6.visible-xs Users
-					span.tabs_bg#tab_3(data-on="tabs_bg_arw_g", data-off="tabs_bg_arw_b")
+					span.tabs_bg#tab_3(data-on="tabs_bg_usr_g", data-off="tabs_bg_usr_b")
 						| &nbsp;
 			li
 				.arrow
-				a.text-center(href="#yly-content-tabs-data", data-toggle="tab" onclick="tab_clk('#tab_')")
+				a.text-center(href="#yly-content-tabs-data", data-toggle="tab" onclick="tab_clk('#tab_4')")
 					h3.hidden-xs Data
 					h6.visible-xs Data
-					span.tabs_bg#tab_4(data-on="tabs_bg_arw_g", data-off="tabs_bg_arw_b")
+					span.tabs_bg#tab_4(data-on="tabs_bg_dta_g", data-off="tabs_bg_dta_b")
 						| &nbsp;
 
 .container-fluid(style="margin-top: 1px; min-height: 10px;")
@@ -68,8 +47,6 @@ script.
 		$("#yly-content-tabs > li").find("span").each(function(i, e) {
 			var on = $(this).attr("data-on");
 			var off = $(this).attr("data-off");
-			console.log(on);
-			console.log(off);
 			$(this).removeClass(on);
 			$(this).addClass(off);
 		});
@@ -77,19 +54,20 @@ script.
 		$("#yly-content-tabs > li.active").find("span").each(function(i, e) {
 			var on = $(this).attr("data-on");
 			var off = $(this).attr("data-off");
-			console.log(on);
-			console.log(off);
 			$(this).removeClass(off);
 			$(this).addClass(on);
 		});
 	};
 
 	function tab_clk(id) {
+		$("#yly-content-tabs > li").find("span").each(function(i, e) {
+			var on = $(this).attr("data-on");
+			var off = $(this).attr("data-off");
+			$(this).removeClass(on);
+			$(this).addClass(off);
+		});
+
 		var el = $(id);
 		var on = el.attr("data-on");
-		var off = el.attr("data-off");
-		console.log(on);
-		console.log(off);
-		el.removeClass(off);
 		el.addClass(on);
 	}

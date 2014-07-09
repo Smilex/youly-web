@@ -22,17 +22,14 @@
 
 <!-- index_tabs_features XS only -->
 .visible-xs
-	.container-fluid(style="padding: 40px 0px; background-color: #e4e9f0;")
-		.text-center
-			div
-				.col-xs-12(style="margin-top: 30px;")
-					h2 Allergies
+	.container-fluid(style="background-color: #e4e9f0;")
+		.row.text-center
+			.col-xs-12.tab-content-xs
+				h2 Allergies
 				include users/allergies
-			div
-				.col-xs-12(style="margin-top: 30px;")
-					h2 Veggies
+			.col-xs-12.tab-content-xs.bg_fff
+				h2 Veggies
 				include users/veggies
-			div
-				.col-xs-12(style="margin-top: 30px;")
-					h2 customize
+			.col-xs-12.tab-content-xs
+				h2 customize
 				include users/customize

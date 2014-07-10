@@ -77,10 +77,11 @@ div(collapse="isCollapsed")
 							role="menu", aria-labelledby="productSearch",
 							style="width: 100%; padding: 15px;")
 							li(ng-repeat="res in search_results")
-								span
-									b {{res.found}}
-									span {{res.rest}}
-								i.pull-right {{res.desc}}
+								div(ng-click="set_search_str(res.id)")
+									span
+										b {{res.found}}
+										span {{res.rest}}
+									i.pull-right {{res.desc}}
 				.col-xs-12.visible-xs &nbsp;
 				.col-xs-12.col-sm-2
 					label

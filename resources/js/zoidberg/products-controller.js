@@ -55,6 +55,10 @@ angular.module("zoidberg")
 		}
 	}
 
+	$scope.set_search_str = function (v) {
+		$scope.search_str = v;
+	}
+
 	$scope.parse_search = function () {
 		var str = $scope.search_str;
 		var spl = str.split(",");

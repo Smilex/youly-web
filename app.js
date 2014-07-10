@@ -24,7 +24,7 @@ app.use(uglify({
 	dest: __dirname + "/public/js/",
 	prefix: "/js",
 	compressFilter: /\.js$/,
-	compress: true
+	compress: false
 }));
 app.set('port', process.env.PORT || 9001);
 app.set('view engine', 'jade');

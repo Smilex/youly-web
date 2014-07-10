@@ -28,4 +28,13 @@ products.get("/", function (req, res) {
 	res.status(200).send(products);
 });
 
+
+products.get("/search/:id", function (req, res) {
+	if (req.param("id") == "bc") {
+		res.status(200).send([{id:'12561354', desc:'Sopi'},{id:'78425646', desc:'Pepsi'}]);
+	}
+	else
+		res.status(200).send([{id:'ab', desc:'A'},{id:'ba', desc:'B'}]);
+});
+
 exports.products = products;

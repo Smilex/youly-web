@@ -23,6 +23,7 @@ div(collapse="isCollapsed")
 					label(style="width: 100%;")
 						b Search
 							span.pull-right(data-toggle="dropdown", style="cursor: pointer;") ?
+							
 							ul.dropdown-menu.dropdown_about_cnt.alert-info(role="menu", aria-labelledby="dLabel", style="width: 100%; padding: 15px;")
 								li.text-center(style="color: #222;")
 									p
@@ -64,13 +65,22 @@ div(collapse="isCollapsed")
 											br
 											.col-xs-12 "Use comma to separate search rules"
 
-					.input-group
-						input.form-control(type="text",
+					.input-group.dropdown
+						input.form-control(type="text", id="productSearch"
 						placeholder="Search product, brand, title etc...",
-						ng-model="search_str")
+						ng-model="search_str" zoid-product-search="search_str"
+						)
 						span.input-group-btn
 							button.btn.btn-primary(ng-click="parse_search()")
 								i.entypo-search
+						ul.dropdown-menu.dropdown_about_cnt(
+							role="menu", aria-labelledby="productSearch",
+							style="width: 100%; padding: 15px;")
+							li(ng-repeat="res in search_results")
+								span
+									b {{res.found}}
+									span {{res.rest}}
+								i.pull-right {{res.desc}}
 				.col-xs-12.visible-xs &nbsp;
 				.col-xs-12.col-sm-2
 					label

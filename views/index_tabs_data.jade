@@ -8,19 +8,16 @@
 				.row
 					.col-xs-12
 						.data-img-top
-							img#data_mnf.center-block(src="img/index/tabs/dta/mnf.png", data-toggle="dropdown", onmouseover="mnf_on()", onmouseout="mnf_off()")
-							img#data_mnf_hvr.center-block(src="img/index/tabs/dta/mnf_hvr.png", data-toggle="dropdown")
+							img#data_agr.center-block(src="img/index/tabs/dta/agr.png", data-toggle="dropdown", onmouseover="agr_on()", onmouseout="agr_off()")
+							img#data_agr_hvr.center-block(src="img/index/tabs/dta/agr_hvr.png", data-toggle="dropdown")
 							div.dropdown-menu.data_dropdown(role="menu", aria-labelledby="dLabel", style="width: 300%;")
 								.row
 									.col-xs-10
 										h2.data_dropdown_h Aggregators
 									.col-xs-2
 										button.close(type="button", onclick="data_close()") &times;
-								.row
-									.col-xs-12
-										p Something
 					.col-xs-12
-						h4 Aggregators	
+						h4#data-agr-h4 Aggregators
 			.col-xs-4.data-line-v
 				.row
 					.col-xs-12
@@ -30,39 +27,25 @@
 							div.dropdown-menu.data_dropdown(role="menu", aria-labelledby="dLabel", style="width: 300%; margin-left: -100%;")
 								.row
 									.col-xs-10
-										h2.data_dropdown_h Brands
+										h2.data_dropdown_h Brand Owners
 									.col-xs-2
 										button.close(type="button", onclick="data_close()") &times;
-								.row
-									.col-xs-4
-										h5
-											| We work closely with various brand owners. In order to get clear confirmation of product nutritional and ingredient information as well as labeling.
-									.col-xs-8
-										h4.data_dropdown_h Something
-								.row
-									.col-xs-4
-										| &nbsp;
-									.col-xs-8
-										p
-											| Lorem ipsum dollar sit, lorem ipsum dollar sit, lorem ipsum dollar sit, lorem ipsum dollar sit, lorem ipsum dollar sit, lorem ipsum dollar sit, lorem ipsum dollar sit, lorem ipsum dollar sit, lorem ipsum dollar sit, .row
 					.col-xs-12
-						h4 Brands
+						h4#data-bnd-h4 Brand Owners
 			.col-xs-4.data-line-v
 				.row
 					.col-xs-12
 						.data-img-top
-							img.center-block(src="img/icons/manufacture.png" sytle="width: 100%;", data-toggle="dropdown")
+							img#data_ctb.center-block(src="img/index/tabs/dta/ctb.png", data-toggle="dropdown", onmouseover="ctb_on()", onmouseout="ctb_off()")
+							img#data_ctb_hvr.center-block(src="img/index/tabs/dta/ctb_hvr.png", data-toggle="dropdown")
 							div.dropdown-menu.data_dropdown(role="menu", aria-labelledby="dLabel", style="width: 300%; margin-left: -200%;")
 								.row
 									.col-xs-10
 										h2.data_dropdown_h Contributors
 									.col-xs-2
 										button.close(type="button", onclick="data_close()") &times;
-								.row
-									.col-xs-12
-										p Something
 					.col-xs-12
-						h4 Contributors
+						h4#data-ctb-h4 Contributors
 			.col-xs-8.col-xs-offset-2(style="border-top: 2px dashed #3faea4;")
 
 		.container.index_tabs_data
@@ -86,20 +69,35 @@
 			p data
 
 script.
-	function mnf_off() {
+	function agr_off() {
 		setTimeout(function() {
-			$('#data_mnf_hvr').css("display", "noen");
-		}, 250);
+			$('#data_agr_hvr').css("display", "none");
+			$('#data-agr-h4').text("Aggregators")
+		}, 150);
 	}
-	function mnf_on() {
-		$('#data_mnf_hvr').css("display", "block");
+	function agr_on() {
+		$('#data_agr_hvr').css("display", "block");
+		$('#data-agr-h4').text("Click - And learn more")
 	}
 
 	function bnd_off() {
 		setTimeout(function() {
-			$('#data_bnd_hvr').css("display", "noen");
-		}, 250);
+			$('#data_bnd_hvr').css("display", "none");
+			$('#data-bnd-h4').text("Brand Owners")
+		}, 150);
 	}
 	function bnd_on() {
 		$('#data_bnd_hvr').css("display", "block");
+		$('#data-bnd-h4').text("Click - And learn more")
+	}
+
+	function ctb_off() {
+		setTimeout(function() {
+			$('#data_ctb_hvr').css("display", "none");
+			$('#data-ctb-h4').text("Contributors")
+		}, 150);
+	}
+	function ctb_on() {
+		$('#data_ctb_hvr').css("display", "block");
+		$('#data-ctb-h4').text("Click - And learn more")
 	}

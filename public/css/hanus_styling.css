@@ -375,11 +375,15 @@ a:hover {
 	width: 100%;
 	height: 100%;
 }
-#data_mnf_hvr {
+#data_bnd_hvr {
 	display: none;
 	margin-top: -186px;
 }
-#data_bnd_hvr {
+#data_agr_hvr {
+	display: none;
+	margin-top: -186px;
+}
+#data_ctb_hvr {
 	display: none;
 	margin-top: -186px;
 }

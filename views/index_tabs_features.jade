@@ -10,6 +10,7 @@ style.
 		border: 0 none;
 		background-color: #fff;
 		min-height: 700px;
+		min-width: 210px;
 	}
 	.tab-content > .tab-pane,
 	.pill-content > .pill-pane {
@@ -84,6 +85,16 @@ style.
 		margin-left: 150px;
 		text-align: justify;
 	}
+	.tab-content-xs {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	.tab-soon {
+		background-image: url("../img/icons/vertical_tabs_soon.png");
+		background-position: right top;
+		background-repeat: no-repeat;
+		background-size: auto 100%;
+	}
 .hidden-xs
 	.container-fluid.tabs_yly#awdawdawd
 		.tabs-left
@@ -97,11 +108,9 @@ style.
 				li
 					a(href="#tab_fet_fam", data-toggle="tab") Family Friendly
 				li
-					a(href="#tab_fet_die", data-toggle="tab") Diets
-				li
 					a(href="#tab_fet_nut", data-toggle="tab") Nutritional Info
-				li
-					a(href="#tab_fet_kit", data-toggle="tab") Kitchen Assistant
+				li.tab-soon
+					a(href="#tab_fet_die", data-toggle="tab") Diets
 
 
 			.tab-content(style="padding-top: 60px;")
@@ -117,36 +126,28 @@ style.
 					include features/diets
 				.tab-pane#tab_fet_nut 
 					include features/nutritional
-				.tab-pane#tab_fet_kit 
-					include features/kitchen
 <!-- index_tabs_features XS only -->
 .visible-xs
-	.container-fluid(style="padding: 40px 0px; background-color: #e4e9f0;")
-		.text-center
-			div(style="margin-top: 40px;")
+	.container-fluid(style="background-color: #e4e9f0;")
+		.row.text-center
+			.col-xs-12.tab-content-xs
 				h2 Barcode Scanning
 				include features/barcode
-			div(style="margin-top: 40px;")
-				hr
+			.col-xs-12.tab-content-xs.bg_fff
 				h2 Manuel Search
 				include features/manuel
-			div(style="margin-top: 40px;")
-				hr
+			.col-xs-12.tab-content-xs
 				h2 Alternative Finder
 				include features/alternative
-			div(style="margin-top: 40px;")
-				hr
+			.col-xs-12.tab-content-xs.bg_fff
 				h2 Family Friendly
 				include features/family
-			div(style="margin-top: 40px;")
-				hr
-				h2 Diets
-				include features/diets
-			div(style="margin-top: 40px;")
-				hr
+			.col-xs-12.tab-content-xs
 				h2 Nutritional Info
 				include features/nutritional
-			div(style="margin-top: 40px;")
-				hr
-				h2 Kitchen Assistant
-				include features/kitchen
+			.col-xs-12.tab-content-xs.bg_fff
+				h2 Diets
+					small.yly-c-youly &nbsp;(
+						u Coming soon
+						| )
+				include features/diets

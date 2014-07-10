@@ -19,9 +19,20 @@ div.sidebar-menu
 			a(ui-sref="home")
 				i.entypo-home
 				span Dashboard
+		li
 			a(ui-sref="blogs.list")
 				i.entypo-doc-text
 				span Blogs
+		li
 			a(ui-sref="products.list")
 				i.entypo-database
 				span Products
+			ul
+				li
+					a(ui-sref="category")
+						i.entypo-flow-tree
+						span Category Tree
+				li
+					a(href="#") 
+						i.entypo-leaf
+						span Agriculture

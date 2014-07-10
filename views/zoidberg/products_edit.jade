@@ -26,7 +26,8 @@ style.
 							.col-xs-12
 								label
 									b Barcode
-								input.form-control(type="text", value="{{p_edit.barcode}}")
+								input.form-control(type="text", value="{{p_edit.barcode}}",
+								name="barcode", ng-minlength="13", required, pattern="[0-9]")
 							.col-xs-12
 								label
 									b Product Name

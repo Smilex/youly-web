@@ -1,18 +1,21 @@
 angular.module("zoidberg")
-.controller("ProductsCtrl", ["$scope","$http", "$state", function ($scope, $http, $state) {
+.controller("ProductsCtrl", ["$scope","$http", "$state", "$q", function ($scope, $http, $state, $q) {
 	$scope.p_edit = {};
 	$scope.products = [];
 	$scope.search_str = "";
+	$scope.search_results = [];
+	$scope.search_state = "id";
 	$scope.alert = false;
 	$scope.alert_class = "";
 	$scope.alert_msg = "";
+	$scope.vals = {};
 
-	function alert_error (msg) {
+	$scope.alert_error = function(msg) {
 		$scope.alert = true;
 		$scope.alert_class = "alert-danger";
 		$scope.alert_msg = msg;
 	}
-	function alert_info (msg) {
+	$scope.alert_info = function(msg) {
 		$scope.alert = true;
 		$scope.alert_class = "alert-info";
 		$scope.alert_msg = msg;
@@ -60,13 +63,13 @@ angular.module("zoidberg")
 			var s = spl[i].trim();
 			var l = s.split(":");
 			if (l.length < 2) {
-				alert_error("Search qualifier '" + spl[i] + "' is not correct");
+				$scope.alert_error("Search qualifier '" + spl[i] + "' is not correct");
 				return;
 			}
 
 			var id = l[0];
 			if (!ck_id(id)) {
-				alert_error("Search identifier '" + id + "' is unknown");
+				$scope.alert_error("Search identifier '" + id + "' is unknown");
 				return;
 			}
 			var val = l[1];
@@ -74,12 +77,45 @@ angular.module("zoidberg")
 			ret.push({id: id, val: val});
 		}
 
-		$http.post("zoidberg/products/search", ret)
+		/*$http.post("zoidberg/products/search", ret)
 			.success(function (data) {
-				alert_info("Search was successful.")
+				$scope.alert_info("Search was successful.")
 			})
 			.error(function (msg) {
-				alert_error(msg);
+				$scope.alert_error(msg);
 			});
+		*/
+	}
+
+	$scope.get_ids = function () {
+		return [
+			{id: "b", desc: "Brand"},
+			{id: "bc", desc: "Barcode"},
+			{id: "p", desc: "Product"},
+			{id: "bo", desc: "Brand Owner"},
+			{id: "c", desc: "Category"},
+			{id: "i", desc: "Ingredient"},
+			{id: "a", desc: "Allergy"}
+		];
+	}
+
+	$scope.get_vals = function (id) {
+		$scope.vals_d = $q.defer();
+		if ($scope.vals[id]) {
+			$scope.vals_d.resolve($scope.vals[id]);
+			return $scope.vals_d.promise;
+		}
+		var str = "zoidberg/products/search/";
+		str += id;
+		$http.get(str)
+			.success(function (vals) {
+				$scope.vals[id] = vals;
+				$scope.vals_d.resolve(vals);
+			})
+			.error(function () {
+				$scope.vals_d.reject();
+			});
+
+		return $scope.vals_d.promise;
 	}
 }]);

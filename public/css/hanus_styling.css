@@ -63,6 +63,11 @@ a:hover {
 	color: #fff;
 	border-radius: 0px;
 	border: 0 none;
+
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	background-attachment: fixed;
+	background-position: top center;
 }
 .btn-youly:hover, .btn-youly:visited, .btn-youly:focus {
 	background-color: #3FAEA4;
@@ -318,8 +323,31 @@ a:hover {
 	border-top-color: #fff;
 	bottom: -11px;
 }
-
-
+#yly-content-tabs span {
+	height: 22px;
+	width: 100%;
+	display: block;
+}
+#yly-content-tabs h3 {
+	margin-top: 20px;
+}
+#yly-content-tabs h3, h6, span {
+	margin-bottom: 10px;
+}
+.tabs_bg {
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	background-attachment: relative;
+	background-position: center top;
+}
+.tabs_bg_arw_b { background-image: url("../img/index/tabs/arw_b.png"); }
+.tabs_bg_arw_g { background-image: url("../img/index/tabs/arw_g.png"); }
+.tabs_bg_cek_b { background-image: url("../img/index/tabs/cek_b.png"); }
+.tabs_bg_cek_g { background-image: url("../img/index/tabs/cek_g.png"); }
+.tabs_bg_usr_b { background-image: url("../img/index/tabs/usr_b.png"); }
+.tabs_bg_usr_g { background-image: url("../img/index/tabs/usr_g.png"); }
+.tabs_bg_dta_b { background-image: url("../img/index/tabs/dta_b.png"); }
+.tabs_bg_dta_g { background-image: url("../img/index/tabs/dta_g.png"); }
 
 /* **** Index_tabs_download **** */
 .index-tabs-dl-xs a {
@@ -344,7 +372,6 @@ a:hover {
 }
 .data-img-top {
 	background-color: #e4e9f0;
-	background-image: url("../img/icons/sircle.png");
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 	background-position: center top;
@@ -353,8 +380,20 @@ a:hover {
 	width: 186px;
 	cursor: pointer;
 }
+.data-img-top img {
+	width: 100%;
+	height: 100%;
+}
+#data_mnf_hvr {
+	display: none;
+	margin-top: -186px;
+}
+#data_bnd_hvr {
+	display: none;
+	margin-top: -186px;
+}
 .data-img-top_active {
-	background-image: url("../img/icons/sirclehover.png");
+	background-image: url("../img/index/tabs/dta/slr_hvr.png");
 	cursor: pointer;
 }
 .data-img-top_active > img {
@@ -365,7 +404,7 @@ a:hover {
 	background-color: #e4e9f0;
 }
 .data-line-v {
-	background-image: url("../img/icons/border_middle-yly-light.png");
+	background-image: url("../img/index/tabs/dta/brd_m.png");
 	background-position: top center;
 	background-repeat: repeat-y;
 }
@@ -381,21 +420,6 @@ a:hover {
 	padding-top: 0px !important;
 	text-align: left !important;
 }
-.logoParade
-{
-	width: 100%;
-	height: 75px;
-	position: relative;
-}
-
-.logoParade div.scrollableArea a
-{
-	display: block;
-	float: left;
-	padding-left: 10px;
-}
-
-
 /* Index_Tabs_Features Sliding Image */
 .yly-download-btn {
 	border-radius: 32px;

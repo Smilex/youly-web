@@ -31,15 +31,15 @@ style.
 							.col-xs-12
 								label
 									b Product Name
-								input.form-control(type="text", value="{{p_edit.name}}")
+								input.form-control(type="text", value="{{p_edit.name}}", required)
 							.col-xs-12
 								label
 									b Brand Name
-								input.form-control(type="text", value="{{p_edit.brand_name}}")
+								input.form-control(type="text", value="{{p_edit.brand_name}}", required)
 							.col-xs-12
 								label
 									b Brand Owner
-								input.form-control(type="text", value="{{p_edit.brand_owner}}")
+								input.form-control(type="text", value="{{p_edit.brand_owner}}", required)
 					.col-xs-12.col-sm-6
 						label
 							b Additional Description
@@ -50,7 +50,7 @@ style.
 								span.pull-right(data-toggle="dropdown", style="cursor: pointer;") ?
 								div.text-center.dropdown-menu.alert-info(role="menu", aria-labelledby="dLabel", style="margin-left: -90%; width: 380%; padding: 15px; color: #222;")
 									a(href="zoidberg/pdf/Categories.pdf") Category Tree PDF
-						input.form-control(type="text",	value="{{p_edit.category}}")
+						input.form-control(type="text",	value="{{p_edit.category}}", required)
 					.col-xs-12.col-sm-6
 						label
 							b Approval

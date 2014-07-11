@@ -35,22 +35,25 @@ html(lang="en")
 		.container-fluid.segment.bg_sky
 			.container
 				.col-xs-12
-					h2.segment-heading.yly-c-youly.text-center We are here to help!
+					h2.segment-heading.yly-c-youly We are here to help!
 				.col-xs-12.yly-contact-form
 					form(method="POST", action="/mail", target="_blank" id="contact_form")
 						.row
-							.col-xs.12.col-sm-4
-								.input-group.input-group-lg(style="width: 100%;")
-									input.form-control(type="text", name="email", placeholder="Email*")
-							.col-xs.12.col-sm-4
-								.input-group.input-group-lg(style="width: 100%;")
-									input.form-control(type="text", name="name" placeholder="Name*")
-							.col-xs.12.col-sm-4
-								.input-group.input-group-lg(style="width: 100%;")
-									input.form-control(type="text", name="subject" placeholder="Subject*")
-						.row
-							.col-xs-12
-								textarea.form-control(rows="8", name="message", placeholder="Write something...", style="max-width: 100%;")
+							.col-xs-4
+								.row
+									.col-xs-12
+										.input-group.input-group-lg(style="width: 100%;")
+											input.form-control(type="text", name="email", placeholder="Email*")
+								.row
+									.col-xs-12
+										.input-group.input-group-lg(style="width: 100%;")
+											input.form-control(type="text", name="name" placeholder="Name*")
+								.row
+									.col-xs-12
+										.input-group.input-group-lg(style="width: 100%;")
+											input.form-control(type="text", name="subject" placeholder="Subject*")
+							.col-xs-8
+								textarea.form-control(rows="8", name="message", placeholder="What's on your mind?", style="max-width: 100%;")
 								.btn-group(style="margin-top: 10px;")
 									button.btn.btn-youly(type="button", onclick="contact_send();") Send!
 								span#form_alert(style="margin-left: 15px; margin-top: 17px; position: absolute;")
@@ -122,53 +125,6 @@ html(lang="en")
 				.col-xs-12
 					#map_canvas
 
-
-		.container-fluid.segment.bg_sky#yly_contact-c-a-q
-			.container
-				.col-xs-12
-					h2.hidden-xs.segment-heading.text-center Commonly Asked Questions
-					h3.visible-xs.segment-heading.text-center Commonly Asked Questions
-			.container
-				.col-xs-12.col-sm-4
-					div.alert.alert-info(style="margin-top: 30px;")
-						button.close(type="button", data-dismiss="alert", aria-hidden="true") &times;
-						h4 Question #8?
-						p
-							b No!
-							| Youly works for the users... lorem ipsum
-							| Suspendisse potenti. Pellentesque quis velit ipsum. Sed tincidunt metus enim, et pellentesque 
-							| ipsum varius vel. Proin vel felis purus. Proin non nibh nulla. Pellentesque eu quam lectus.
-						p
-							| Fusce urna ipsum, tempor vitae elit a, tempor eleifend lorem.
-				.col-xs-12.col-sm-4
-					ul.list-unstyled
-						li
-							h3 Youly in General
-						li
-							a(href="contact#yly_contact-c-a-q") Question #1?
-						li
-							a(href="contact#yly_contact-c-a-q") Question #2?
-						li
-							a(href="contact#yly_contact-c-a-q") Question #3?
-						li
-							a(href="contact#yly_contact-c-a-q") Question #4?
-				.col-xs-12.col-sm-4
-					ul.list-unstyled
-						li
-							h3 Youly in General
-						li
-							a(href="contact#yly_contact-c-a-q") Question #5?
-						li
-							a(href="contact#yly_contact-c-a-q") Question #6?
-						li
-							a(href="contact#yly_contact-c-a-q") Question #7?
-						li
-							a(href="contact#yly_contact-c-a-q") Question #8?
-						li
-							a(href="contact#yly_contact-c-a-q") Who's using Youly?
-						li
-							a(href="contact#yly_contact-c-a-q") Who's using Youly?
-
 		include nav_buttom
 		include footer
 		include script
@@ -184,7 +140,7 @@ html(lang="en")
 
 				var contentString = '<div id="map_canvas_mrk">'+
 
-						'<h4>Where all the magic happens!</h4>'+
+						'<h4>Where all the Youly magic happens!</h4>'+
 					
 						'<div class="col-xs-6">'+
 						'<img src="img/contact/office.png" />'+

@@ -34,8 +34,8 @@ html(lang="en")
 
 		.container-fluid.bg_eee
 			.container.yly-m-t_b
-				.col-xs-12
-					h2 Press contact
+				.col-xs-12.col-sm-4
+					h3 Press contact
 					p
 						span.glyphicon.glyphicon-phone
 						span(style="margin-left: 20px;") (+298) 24 33 42
@@ -50,19 +50,42 @@ html(lang="en")
 						| or visit our 
 						a(href="/contact") contact page.
 
-
 		.container
 			.col-xs-12.col-sm-9.yly-m-t_b#press_design-guidelines-wrapper
+				.row.section.yly-m-t#press_release
+					.col-xs-12
+						h3.text-center.yly-m-t_b Press Release
+					.col-xs-12
+						table.table.table-hover
+							thead
+								tr
+									th Date
+									th Title
+									th Publisher
+							tbody
+								tr
+									td 11-07-2014
+									td
+										b
+											a(href="#") Youly launching new app for Android
+									td Børsen
+								tr
+									td 11-07-2014
+									td
+										b
+											a(href="#") Youly launching new app for Android
+									td Børsen
+						h1(style="margin-top: 50px;") &nbsp;
 				.row.section.yly-m-t#press_design_guidelines
 					.col-xs-12
 						h3.text-center.yly-m-t_b Design Guidelines
 				.row
 					.col-xs-12.col-sm-6
 						p
-							| eget volutpat mi. Maecenas hendrerit, leo nec consequat suscipit, lorem turpis egestas 
-							| purus, elementum volutpat mauris ante condimentum nulla. Proin eu nibh eu felis semper 
-							| convallis quis vel sapien. Praesent gravida purus nec nulla ultricies pharetra. Quisque 
-							| dignissim nulla ut velit luctus venenatis. Suspendisse potenti.
+							| We have gathered all the necessary Youly contents and graphics for the Press usage.
+							| It includes: Logos, photography, colour palette and our typography.
+						p
+							| If you are seeking any additional information, don't hesitate to ask for assistance.
 						.btn-group
 							button.btn.btn-youly.btn-lg(type="button") DOWNLOAD - 38 MB
 
@@ -103,31 +126,14 @@ html(lang="en")
 						h4 Default logo
 					.col-xs-12.col-sm-5
 						p
-							| Our default logo is set with our green brandign colour. This image 
+							| Green colour and transparent background is our most used logo.
 						p
 
 							| Downlaod as 
-							a(href="#") PNG
+							a(href="img/branding/youly_text_green_shadow.png", target="_blank", download="youly_text_green_shadow.png") PNG
 					.col-xs-12.col-sm-4.col-sm-offset-1
 						a(href="img/branding/youly_text_green_shadow.png", target="_blank")
 							img.bg_eee(src="img/branding/youly_text_green_shadow.png", width="100%")
-
-
-				.row.yly-m-t#press_logos_inverted
-					.col-xs-12
-						h4 Inverted logo
-					.col-xs-12.col-sm-5
-						p
-							| convallis quis vel sapien. Praesent gravida purus nec nulla ultricies pharetra. Quisque 
-							| dignissim nulla ut velit luctus venenatis. Suspendisse potenti.
-						p
-
-							| Downlaod as 
-							a(href="#") PNG
-					.col-xs-12.col-sm-4.col-sm-offset-1
-						a(href="img/branding/youly_green_bg.png", target="_blank")
-							img(src="img/branding/youly_green_bg.png", width="100%")
-
 
 
 				.row.yly-m-t#press_logos_white
@@ -135,15 +141,31 @@ html(lang="en")
 						h4 White logo
 					.col-xs-12.col-sm-5
 						p
-							| convallis quis vel sapien. Praesent gravida purus nec nulla ultricies pharetra. Quisque 
-							| dignissim nulla ut velit luctus venenatis. Suspendisse potenti.
+							| White logo with transparent background
 						p
 
 							| Downlaod as 
-							a(href="#") PNG
+							a(href="img/branding/youly_text_white_shadow.png", target="_blank", download="youly_text_white_shadow.png") PNG
 					.col-xs-12.col-sm-4.col-sm-offset-1
 						a(href="img/branding/youly_text_white_shadow.png", target="_blank")
 							img(src="img/branding/youly_text_white_shadow.png", width="100%")
+
+
+				.row.yly-m-t#press_logos_inverted
+					.col-xs-12
+						h4 Inverted logo
+					.col-xs-12.col-sm-5
+						p
+							| White logo with our branding green colour as background
+						p
+
+							| Downlaod as 
+							a(href="img/branding/youly_green_bg.png", target="_blank", download="youly_green_bg.png") PNG
+					.col-xs-12.col-sm-4.col-sm-offset-1
+						a(href="img/branding/youly_green_bg.png", target="_blank")
+							img(src="img/branding/youly_green_bg.png", width="100%")
+
+
 
 
 
@@ -279,6 +301,8 @@ html(lang="en")
 			.col-xs-12.col-sm-3.yly-m-t_b
 				.vertical-right-navbar.vertical-affix
 					ul.list-unstyled.nav
+						li
+							a(href="#press_release") Press Release
 						li
 							a(href="#press_design_guidelines") Design Guidelines
 						li

@@ -1,0 +1,1 @@
+About_Us > Partners_ Use 250x250 img size.

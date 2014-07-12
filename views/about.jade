@@ -1,4 +1,4 @@
-doctype html		
+doctype html
 html(lang="en")
 	head
 		include meta
@@ -98,24 +98,103 @@ html(lang="en")
 
 
 		.container-fluid.segment
-			.container.yly-about_us-manage-team
+			.container
 				.col-xs-12
 					h2.segment-heading.yly-c-youly.text-center Partners
-				.col-xs-12.col-sm-4.col-md-2.col-md-offset-1
-					a(href="#")
-						img.center-block(src="img/partners/1worldsync.png", width="100%;")
-				.col-xs-12.col-sm-4.col-md-2
-					a(href="#")
-						img.center-block(src="img/partners/brand_bank.jpg", width="100%;")
-				.col-xs-12.col-sm-4.col-md-2
-					a(href="#")
-						img.center-block(src="img/partners/miklagardur.jpg", width="100%;")
-				.col-xs-12.col-sm-4.col-md-2
-					a(href="#")
-						img.center-block(src="img/partners/poul_hansen.png", width="100%;")
-				.col-xs-12.col-sm-4.col-md-2
-					a(href="#")
-						img.center-block(src="img/partners/super_gros.jpg", width="100%;")
+				.col-xs-12.col-sm-3.yly-about_us-prt
+					img.center-block(src="img/partners/iverksetarahusid.png", width="100%;", data-toggle="modal", data-target="#modal_is")
+					.modal.fade#modal_is(tabindex="-1" role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+						.modal-dialog
+							.modal-content
+								.modal-header
+									button.close(type="button", data-dismiss="modal")
+										span(aria-hidden="true") &times;
+										span.sr-only Close
+									h4 &Iacute;verksetarah&uacute;si&eth;
+								.modal-body(style="text-align: justify;")
+									p Our local 
+										u "House of Innovation"
+										| &nbsp;lacinia. Sed consequat nec felis id fermentum. Class aptent taciti sociosqu ad litora torquent 
+										| per conubia nostra, per inceptos himenaeos. Donec a enim aliquam, molestie nunc pulvinar, 
+										| malesuada dolor. Maecenas magna urna, ornare at laoreet vitae, pellentesque ac libero. 
+										| Suspendisse potenti. Pellentesque quis velit ipsum. Sed tincidunt metus enim, et pellentesque 
+									p
+										br
+										| Visit their 
+										a(href="http://www.is.fo/", title="Íverksetarahúsið", target="_blank") website
+
+
+
+				.col-xs-12.col-sm-3.yly-about_us-prt
+					img.center-block(src="img/partners/miklagardur.jpg", width="100%;", data-toggle="modal", data-target="#modal_sms")
+					.modal.fade#modal_sms(tabindex="-1" role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+						.modal-dialog
+							.modal-content
+								.modal-header
+									button.close(type="button", data-dismiss="modal")
+										span(aria-hidden="true") &times;
+										span.sr-only Close
+									h4 Miklagar&eth;ur
+								.modal-body(style="text-align: justify;")
+									p 
+										| Miklagar&eth;ur is one of our famous places for grocery shopping, great quality with reasonable prices.
+									p
+										| per conubia nostra, per inceptos himenaeos. Donec a enim aliquam, molestie nunc pulvinar, 
+										| malesuada dolor. Maecenas magna urna, ornare at laoreet vitae, pellentesque ac libero. 
+										| Suspendisse potenti. Pellentesque quis velit ipsum. Sed tincidunt metus enim, et pellentesque 
+									p
+										br
+										| Visit their 
+										a(href="http://www.sms.fo/Default.aspx?ID=31&Action=1&NewsId=18&M=NewsV2&PID=29", title="Miklagarður", target="_blank") website
+
+
+
+				.col-xs-12.col-sm-3.yly-about_us-prt
+					img.center-block(src="img/partners/ph.png", width="100%;", data-toggle="modal", data-target="#modal_ph")
+					.modal.fade#modal_ph(tabindex="-1" role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+						.modal-dialog
+							.modal-content
+								.modal-header
+									button.close(type="button", data-dismiss="modal")
+										span(aria-hidden="true") &times;
+										span.sr-only Close
+									h4 Poul Hansen
+								.modal-body(style="text-align: justify;")
+									p 
+										| Poul Hansen is the largest wholesaler operating in the Faroe Islands, with approximately 75 working on a daily basis. 
+										| As a family runned business with over 80 years of experience in food delivery and quality ensurance Poul Hansen has a wide product range of quality brands.
+									p
+										| per conubia nostra, per inceptos himenaeos. Donec a enim aliquam, molestie nunc pulvinar, 
+										| malesuada dolor. Maecenas magna urna, ornare at laoreet vitae, pellentesque ac libero. 
+										| Suspendisse potenti. Pellentesque quis velit ipsum. Sed tincidunt metus enim, et pellentesque 
+									p
+										br
+										| Visit their 
+										a(href="http://www.ph.fo/", title="Poul Hansen", target="_blank") website
+
+
+
+				.col-xs-12.col-sm-3.yly-about_us-prt
+					img.center-block(src="img/partners/miklagardur.jpg", width="100%;", data-toggle="modal", data-target="#modal_sms")
+					.modal.fade#modal_sms(tabindex="-1" role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+						.modal-dialog
+							.modal-content
+								.modal-header
+									button.close(type="button", data-dismiss="modal")
+										span(aria-hidden="true") &times;
+										span.sr-only Close
+									h4 Miklagar&eth;ur
+								.modal-body
+									p 
+										| Miklagar&eth;ur is one of our famous places for grocery shopping, great quality with reasonable prices.
+									p
+										| per conubia nostra, per inceptos himenaeos. Donec a enim aliquam, molestie nunc pulvinar, 
+										| malesuada dolor. Maecenas magna urna, ornare at laoreet vitae, pellentesque ac libero. 
+										| Suspendisse potenti. Pellentesque quis velit ipsum. Sed tincidunt metus enim, et pellentesque 
+									p
+										br
+										| Visit their 
+										a(href="http://www.sms.fo/Default.aspx?ID=31&Action=1&NewsId=18&M=NewsV2&PID=29", title="Miklagarður", target="_blank") website
 
 
 		include nav_buttom

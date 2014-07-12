@@ -1,6 +1,6 @@
 .row.blog_item(id="#{blog._id}")
-	.col-xs-6.col-sm-2
-		img.img-circle(src="#{blog.img}")
+	.col-xs-6.col-sm-2.blog_item_author_img
+		img(src="#{blog.img}")
 	.col-xs-12.col-sm-9
 		.row
 			.col-xs-12
@@ -22,8 +22,10 @@
 					img(src="img/social/pluss_round.png")
 				a(href="#", title="Google+")
 					img(src="img/social/twitter_round.png")
+				a(href="mailto:?subject=#{blog.title}&body=%0D%0A%0D%0Ahttp://www.youly.dk/blog##{blog._id}") 
+					img(src="img/social/envelope_round.png", alt="Email", title="Email")
 				a(href="#", title="Twitter", data-toggle="modal", data-target="#blog_modal_#{blog._id}")
-					img(src="img/social/envelope_round.png")
+
 
 				.modal.fade(tabindex="-1", id="blog_modal_#{blog._id}" role="dialog", aria-labelledby="blog_label_#{blog._id}", aria-hidden="true")
 					.modal-dialog.modal-sm

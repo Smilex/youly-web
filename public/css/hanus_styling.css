@@ -124,6 +124,17 @@ a:hover {
 	margin-bottom: 0px;
 }
 #yly_head_collapse { border-top: 0 none; }
+.yly_head_collapse-span {
+	border: none 0;
+	margin-top: 25px;
+	padding: 9px 13px 13px 13px;
+}
+.yly_head_collapse-span span {
+	margin: 4px 0px 0px 0px;
+	padding: 0px;
+	width: 22px;
+	height: 2px;
+}
 .navbar-nav-xs li a {
 	color: red;
 	font-weight: 700;

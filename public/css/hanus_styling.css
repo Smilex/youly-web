@@ -184,7 +184,10 @@ a:hover {
 	margin-right: auto;
 	width: 100%;
 }
-.blog_item_author_date { color: #555; }
+.blog_item_author_date {
+	color: #555;
+	margin-bottom: 15px;
+}
 .blog_item_share {
 	border-width: 1px 0px 1px 0px;
 	border-style: solid;

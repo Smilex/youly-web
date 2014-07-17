@@ -487,6 +487,12 @@ a:hover {
 	margin-top: 50px;
 	width: 70% !important;
 }
+.yly-about_us-prt img {
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	cursor: pointer;
+}
 /***************** Vertical info list *****************/
 .yly-info-list-head {
 	margin-top: 20px; 

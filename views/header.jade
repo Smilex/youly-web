@@ -4,7 +4,8 @@
 			<!-- Brand and toggle get grouped for better mobile display -->
 			.navbar-header(style="margin-top: 5px;")
 				a.navbar-brand(href="/", style="padding: 0; height: 75px;")
-					img(src="/img/branding/youly_logo.png", style="height: 100%;")
+					img.hidden-xs(src="/img/branding/youly_logo.png", style="height: 100%;")
+					img.visible-xs(src="/img/branding/youly_logo.png", style="height: 60%; margin-top: 15px;")
 				span.navbar-toggle.yly_head_collapse-span(data-toggle="collapse", data-target="#yly_head_collapse")
 					span.sr-only
 					span.icon-bar
@@ -17,21 +18,21 @@
 
 				ul.nav.navbar-nav.navbar-right.navbar-nav-sm.hidden-xs
 					include nav_btn
-						li.dropdown.hidden-xs
-							a.dropdown-toggle(href="#", style="color: #fff; background-color: #0a9e90;", data-toggle="dropdown") 
-								span(style="margin-right: 5px; background-color: inherit; padding: 35px 10px;") DOWNLOAD&nbsp;
-									i(style="font-size: 0.8em;").glyphicon.glyphicon-chevron-down
+					li.dropdown.hidden-xs
+						a.dropdown-toggle(href="#", style="color: #fff; background-color: #0a9e90; padding: 35px 15px;", data-toggle="dropdown") 
+							span(style="margin-right: 5px; background-color: inherit;") DOWNLOAD 
+								i.glyphicon.glyphicon-chevron-down(style="top: 0px; font-size: 0.8em;")
 
-							ul.dropdown-menu.navbar-nav-sm-dl
-								li
-									a.bususs(href="#")
-										img(src="img/icons/and_gray.png")
-										span Android
-								li
-									a(href="#")
-										img(src="img/icons/apple_gray.png")
-										span iOS
-								li
-									a(href="#")
-										img(src="img/icons/window_gray.png")
-										span Windows
+						ul.dropdown-menu.navbar-nav-sm-dl
+							li
+								a.bususs(href="#")
+									img(src="img/icons/and_gray.png")
+									span Android
+							li
+								a(href="#")
+									img(src="img/icons/apple_gray.png")
+									span iOS
+							li
+								a(href="#")
+									img(src="img/icons/window_gray.png")
+									span Windows

@@ -43,14 +43,14 @@ blogs.post("/publish", function (req, res) {
 		return;
 	}
 	var date = new Date();
+	var monthNames = [ "January", "February", "March", "April", "May", "June",
+		"July", "August", "September", "October", "November", "December" ];
 	var dd = date.getDate();
-	var mm = date.getMonth() + 1;
+	var mm = date.getMonth();
 	var yyyy = date.getFullYear();
 	if (dd<10)
 		dd='0'+dd;
-	if (mm<10)
-		mm='0'+mm;
-	date = dd + '/' + mm + '/' + yyyy;
+	date = dd + ' ' + monthNames[mm] + ', ' + yyyy;
 	blogs.update({_id: req_blog.id},
 	   	{
 			$set: {

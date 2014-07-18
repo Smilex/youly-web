@@ -1,30 +1,30 @@
 .row.blog_item(id="#{blog._id}")
 	.col-xs-6.col-sm-2.blog_item_author_img
-		img(src="#{blog.img}")
+		img.img-circle(src="#{blog.img}")
 	.col-xs-12.col-sm-9
 		.row
+			.col-xs-12.blog_item_author_date
+				span= blog.date
+		.row
 			.col-xs-12
-				h1= blog.title
+				h1.blog_item_title= blog.title
 		.row
 			.col-xs-12.blog_item_author_date
 				span by - 
 					a(href="#")= blog.author
-				span.pull-right= blog.date
 		.row
-			.col-xs-12
-				= blog.post
-				include blog_item1
+			.col-xs-12.blog_item_post
+				span= blog.post
 		.row.blog_item_share
 			.col-xs-12
-				a(href="#", title="Facebook")
+				a(href="#", title="Share on Facebook")
 					img(src="img/social/facebook_round.png")
-				a(href="#", title="Google+")
+				a(href="#", title="Share on Google+")
 					img(src="img/social/pluss_round.png")
-				a(href="#", title="Google+")
+				a(href="#", title="Share on Twitter")
 					img(src="img/social/twitter_round.png")
-				a(href="mailto:?subject=#{blog.title}&body=%0D%0A%0D%0Ahttp://www.youly.dk/blog##{blog._id}") 
-					img(src="img/social/envelope_round.png", alt="Email", title="Email")
-				a(href="#", title="Twitter", data-toggle="modal", data-target="#blog_modal_#{blog._id}")
+				a(href="mailto:?subject=#{blog.title}&body=%0D%0A%0D%0Ahttp://www.youly.dk/blog##{blog._id}", title="Email a friend")
+					img(src="img/social/envelope_round.png")
 
 
 				.modal.fade(tabindex="-1", id="blog_modal_#{blog._id}" role="dialog", aria-labelledby="blog_label_#{blog._id}", aria-hidden="true")

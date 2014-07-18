@@ -6,7 +6,8 @@ html(lang="en")
 		include style
 		style.
 	body(data-spy="scroll" data-target=".vertical-right-navbar")
-		include header
+		.yly-b-bottom
+			include header
 		.container-fluid
 			.container
 				.col-xs-12.col-sm-9
@@ -17,6 +18,7 @@ html(lang="en")
 						.vertical-affix
 							include blog_right
 
-		include nav_buttom
+		.yly-b-top
+			include nav_buttom
 		include footer
 		include script

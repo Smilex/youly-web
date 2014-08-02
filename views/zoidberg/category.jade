@@ -32,54 +32,19 @@ style.
 
 .row
 	.col-md-12
-		table.table.table-bordered.responsive
-			thead
-				tr
-					th(width="25%")
-						b Food Group
-						a(href="#")
-							i.pull-right.entypo-pencil
-					th(width="25%")
-						b Sub Category
-					th(width="25%")
-						b Type
-					th(width="25%")
-						b Product
-			tbody#zdb_cat
-				tr
-					th
-						ul.list-unstyled
-							li(ng-repeat="v in lvl1")
-								span(ng-click="sel_lvl1(v)" ng-class="{active: lvl1_sel == v}") {{v.name}}
-							li
-								input(value="", placeholder="Add New", ng-keypress="add_lvl1($event)", ng-model="lvl1_edit")
+		ul
+			li Root
+				button(ng-click="add(null)") +
+				ul
+					li(ng-repeat="data in get_children(null)" ng-include="'tree_item.html'" ng-model="tree")
 
+script(type="text/ng-template" id="tree_item.html").
+	<span ng-click="select(data)" ng-hide="data.edit"> {{data.name}} </span>
+	<input ng-show="data.edit" zoid-enter="edit(data, {name: data.name})" ng-model="data.name"></input>
 
-					th
-						ul.list-unstyled
-							li(ng-repeat="v in lvl1_sel.children")
-								span(ng-click="sel_lvl2(v)" ng-class="{active: lvl2_sel == v}") {{v.name}}
-									i.pull-right.entypo-pencil(onclick="lvl_pencil()")
-							li
-								input(value="", placeholder="Add New", ng-keypress="add_lvl2($event)", ng-model="lvl2_edit",
-									ng-show="lvl1_sel")
-
-					th
-						ul.list-unstyled
-							li(ng-repeat="v in lvl2_sel.children")
-								span(ng-click="sel_lvl3(v)" ng-class="{active: lvl3_sel == v}") {{v.name}}
-									i.pull-right.entypo-pencil
-							li
-								input(value="", placeholder="Add New", ng-keypress="add_lvl3($event)", ng-model="lvl3_edit",
-									ng-show="lvl2_sel")
-
-
-					th
-						ul.list-unstyled
-							li(ng-repeat="v in lvl3_sel.children")
-								span(ng-click="sel_lvl4(v)" ng-class="{active: lvl4_sel == v}") {{v.name}}
-
-script.
-	function lvl_pencil() {
-		alert("Heeey")
-	}
+	<button ng-click="add(data)">+</button>
+	<button ng-click="remove(data)">X</button>
+	<button ng-click="data.edit = true">E</button>
+	<ul ng-if="data.selected">
+		<li ng-repeat="data in get_children(data._id)" ng-include="'tree_item.html'">
+	</ul>

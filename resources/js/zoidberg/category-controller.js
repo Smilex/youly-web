@@ -3,50 +3,75 @@ angular.module("zoidberg")
 	$scope.lvl1_edit = "";
 	$scope.lvl2_edit = "";
 	$scope.lvl3_edit = "";
-	$scope.lvl1 = [];
+	$scope.lvl = [];
+	$scope.selected = [];
+	$scope.tree = [];
+	var tree = $scope.tree;
+	var n_lvls = 4;
 
-	$http.get("js/category.json")
+	$scope.get_children = function (parent) {
+		var ret = [];
+		for (var i = 0; i < tree.length; i++) {
+			if (tree[i].parent == parent)
+				ret.push(tree[i]);
+		}
+		return ret;
+	};
+
+	$scope.select = function(obj) {
+		obj.selected = !obj.selected;
+	};
+
+	$http.get("zoidberg/categories/get")
 	.success(function(data) {
-		$scope.lvl1 = data;
-		$scope.lvl1_sel = $scope.lvl1[0];
+		tree = data;
+		for (var i = 0; i < tree.length; i++) {
+			tree[i].selected = false;
+		}
 	})
 	.error(function() {
 		alert("Her er galid");
 	});
 
-	$scope.sel_lvl1 = function(v) {
-		$scope.lvl1_sel = v;
-		$scope.lvl2_sel = null;
-		$scope.lvl3_sel = null;
-		$scope.lvl4_sel = null;
-	};
-	$scope.sel_lvl2 = function(v) {
-		$scope.lvl3_sel = null;
-		$scope.lvl4_sel = null;
-		$scope.lvl2_sel = v;
-	};
-	$scope.sel_lvl3 = function(v) {
-		$scope.lvl4_sel = null;
-		$scope.lvl3_sel = v;
-	};
+	$scope.add = function (parent) {
+		var id = null;
+		if (parent != null)
+			id = parent._id;
+		var item = {parent: id, name: "_"};
+		tree.push(item);
 
+		$http.post("zoidberg/categories/insert", item)
+			.success(function (data) {
+				item = data;
+			});
+	}
 
-	$scope.add_lvl1 = function(e) {
-		if(e.key == "Enter" && $scope.lvl1_edit !="") {
-			$scope.lvl1.push({name: $scope.lvl1_edit, children:[]});
-			$scope.lvl1_edit = "";
-		}
+	$scope.remove = function (obj) {
+		var yes = confirm("Are you sure you want to delete '" + obj.name + "', and all of its children?");
+		if (!yes)
+			return;
+
+		$http.post("zoidberg/categories/remove", {id: obj._id})
+			.success(function (data) {
+				var i = tree.indexOf(obj);
+				tree.splice(i, 1);
+			})
+			.error(function (e) {
+				alert("Failed to remove");
+			});
 	}
-	$scope.add_lvl2 = function(e) {
-		if(e.key == "Enter" && $scope.lvl2_edit !="") {
-			$scope.lvl1_sel.children.push({name: $scope.lvl2_edit, children:[]});
-			$scope.lvl2_edit = "";
-		}
-	}
-	$scope.add_lvl3 = function(e) {
-		if(e.key == "Enter" && $scope.lvl3_edit !="") {
-			$scope.lvl2_sel.children.push({name: $scope.lvl3_edit, children:[]});
-			$scope.lvl3_edit = "";
-		}
+
+	$scope.edit = function (obj, ch) {
+		ch._id = obj._id;
+		$http.post("zoidberg/categories/edit", {edit: ch})
+			.success(function (data) {
+				if (ch.name)
+					obj.name = ch.name;
+			})
+			.error(function (e) {
+				alert("Failed to edit");
+			});
+
+		obj.edit = false;
 	}
 }]);

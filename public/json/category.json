@@ -1,0 +1,30 @@
+{
+	"vals": [
+		{
+			"name": "Drinks",
+			"children": [
+				{
+					"name": "Derp",
+					"children": [
+						{
+							"name": "Derp",
+							"children": [
+								{"name": "Fuck face 101"},
+								{"name": "Fuck face 102"},
+								{"name": "Fuck face 103"},
+								{"name": "Fuck face 104"},
+								{"name": "Fuck face 105"}
+							]
+						},
+						{"name": "Derp1"},
+						{"name": "Derp2"}
+					]
+				},
+				{"name": "Derp1"},
+				{"name": "Derp2"}
+			]
+		},
+		{"name": "Fruits"},
+		{"name": "Grains"}
+	]
+}

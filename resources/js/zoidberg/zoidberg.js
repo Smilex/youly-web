@@ -35,7 +35,8 @@ angular.module("zoidberg", ["ui.router", "ui.bootstrap", "ngTagsInput"])
 	})
 	.state("category", {
 		url: "/category",
-		templateUrl: "category.html"
+		templateUrl: "category.html",
+		controller: "CategoryCtrl"
 	});
 }])
 .directive("zoidBreadcrumbs", ["$location", "$rootScope", function ($location, $rootScope) {
@@ -103,4 +104,22 @@ angular.module("zoidberg", ["ui.router", "ui.bootstrap", "ngTagsInput"])
 	};
 
 	return directive;
+})
+.directive("zoidEnter", function () {
+	var link = function (scope, element, attrs) {
+		element.bind("keydown keypress", function (event) {
+			if (event.which === 13) {
+				scope.$apply(function () {
+					scope.$eval(attrs.zoidEnter);
+				});
+
+				event.preventDefault();
+			}
+		});
+	};
+
+	return {
+		restrict: "A",
+		link: link
+	};
 });

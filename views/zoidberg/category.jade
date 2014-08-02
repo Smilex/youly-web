@@ -1,0 +1,50 @@
+style.
+	#zdb_cat span {
+		padding: 8px;
+		display: block;
+		width: 100%;
+	}
+	#zdb_cat i:hover {cursor: pointer;}
+	#zdb_cat span:hover {
+		cursor: context-menu;
+		background-color: #d6d6d6;
+	}
+	#zdb_cat span.active {
+		background-color: #f0f0f0;
+		margin: 0px;
+		color: #888;
+		font-weight: 700;
+	}
+	#zdb_cat th {
+		padding: 0px;
+		height: 32px;
+	}
+	#zdb_cat input {
+		display: block;
+		width: 100%;
+		background-color: inherit;
+		border-style: solid;
+		border-color: #222;
+		border-width: 1px 0px;
+		margin-top: 8px;
+		padding: 8px;
+	}
+
+.row
+	.col-md-12
+		ul
+			li Root
+				button(ng-click="add(null)") +
+				ul
+					li(ng-repeat="data in get_children(null)" ng-include="'tree_item.html'" ng-model="tree")
+
+script(type="text/ng-template" id="tree_item.html").
+	<span ng-click="select(data)" ng-hide="data.edit"> {{data.name}} </span>
+	<input ng-show="data.edit" zoid-enter="edit(data, {name: data.name})" ng-model="data.name"></input>
+
+	<button ng-click="add(data)">+</button>
+	<button ng-click="remove(data)">X</button>
+	<button ng-click="data.edit = true">E</button>
+	<ul ng-if="data.selected">
+		<li ng-repeat="data in get_children(data._id)" ng-include="'tree_item.html'">
+	</ul>

@@ -37,7 +37,7 @@ angular.module("zoidberg")
 		var id = null;
 		if (parent != null)
 			id = parent._id;
-		var item = {parent: id, name: "_"};
+		var item = {_id: 0, parent: id, name: "_"};
 		tree.push(item);
 
 		$http.post("zoidberg/categories/insert", item)
